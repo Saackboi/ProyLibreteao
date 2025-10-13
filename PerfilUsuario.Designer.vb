@@ -95,7 +95,6 @@ Partial Class PerfilUsuario
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PictureBox2.Image = Global.ProyLibreteao.My.Resources.Resources._1280x1024_pngtree_book_icon_vector_image_png_image_8926794
         Me.PictureBox2.Location = New System.Drawing.Point(3, 5)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
@@ -106,7 +105,6 @@ Partial Class PerfilUsuario
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources._4916174
         Me.PictureBox1.Location = New System.Drawing.Point(697, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
@@ -152,7 +150,6 @@ Partial Class PerfilUsuario
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.ProyLibreteao.My.Resources.Resources._5a4525f5546ddca7e1fcbc86
         Me.PictureBox4.Location = New System.Drawing.Point(51, 114)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(27, 22)
@@ -247,7 +244,6 @@ Partial Class PerfilUsuario
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.ProyLibreteao.My.Resources.Resources.romeo_y_julieta
         Me.PictureBox3.Location = New System.Drawing.Point(16, 43)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(122, 152)

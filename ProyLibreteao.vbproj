@@ -148,10 +148,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\1280x1024-pngtree-book-icon-vector-image-png-image_8926794.png" />
-    <Content Include="Resources\4916174.png" />
-    <Content Include="Resources\5a4525f5546ddca7e1fcbc86.png" />
-    <Content Include="Resources\romeo-y-julieta.jpg" />
+    <Content Include="Resources\icono_booktree.png" />
+    <Content Include="Resources\icono_user.png" />
+    <Content Include="Resources\icono_phone.png" />
+    <Content Include="Resources\romeoUlieta.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
