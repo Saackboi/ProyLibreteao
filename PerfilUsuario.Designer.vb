@@ -105,6 +105,7 @@ Partial Class PerfilUsuario
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
         Me.PictureBox1.Location = New System.Drawing.Point(697, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
