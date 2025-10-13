@@ -41,4 +41,8 @@
         End If
     End Function
 
+    Private Sub btnEntrarInvitado_Click(sender As Object, e As EventArgs) Handles btnEntrarInvitado.Click
+        Interface_invitados.Show()
+        Me.Hide()
+    End Sub
 End Class
