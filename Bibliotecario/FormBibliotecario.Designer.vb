@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Formulario_Bibliotecario
+Partial Class FormBibliotecario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,8 +23,8 @@ Partial Class Formulario_Bibliotecario
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UserControlEncabezado1 = New ProyLibreteao.UCEncabezado()
-        Me.UserControlNavegacion1 = New ProyLibreteao.UCNavegacion()
+        Me.UserControlEncabezado1 = New ProyLibreteao.UCHeader()
+        Me.UserControlNavegacion1 = New ProyLibreteao.UCNav()
         Me.UserControlContenidoReportes11 = New ProyLibreteao.UCCReportes1()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -92,8 +92,8 @@ Partial Class Formulario_Bibliotecario
 
     End Sub
 
-    Friend WithEvents UserControlNavegacion1 As UCNavegacion
-    Friend WithEvents UserControlEncabezado1 As UCEncabezado
+    Friend WithEvents UserControlNavegacion1 As UCNav
+    Friend WithEvents UserControlEncabezado1 As UCHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents UserControlContenidoReportes11 As UCCReportes1
 End Class

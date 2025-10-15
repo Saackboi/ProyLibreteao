@@ -1,4 +1,4 @@
-﻿Public Class UCEncabezado
+﻿Public Class UCHeader
 
     Public Sub ActualizarEncabezado(ByVal nuevaImagen As Image, ByVal nuevoTexto As String)
         PictureBox2.Image = nuevaImagen

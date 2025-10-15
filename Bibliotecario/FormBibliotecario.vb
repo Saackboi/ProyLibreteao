@@ -1,4 +1,4 @@
-﻿Public Class Formulario_Bibliotecario
+﻿Public Class FormBibliotecario
     Private ucInicio As New UCCInicio1()
     Private ucLibro As New UCCLibros1()
     Private ucPrestamo As New UCCPrestamo1()
