@@ -1,4 +1,4 @@
-﻿Public Class UserControlContenidoReportes1
+﻿Public Class UCCReportes1
     ' Cambia el texto del Label1 por el título  de la pestaña seleccionada
 
     Private Sub btnDescargarReportes_Click(sender As Object, e As EventArgs)
@@ -24,7 +24,7 @@
 
     'Muestra el formulario de filtros de periodo al hacer clic en el botón
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
-        FormContenidoReportesActividadSemanalFiltrosDePeriodo.ShowDialog()
+        FormFiltro.ShowDialog()
     End Sub
 
     Private Sub TabControl1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles TabControlContenidoReportes.DrawItem

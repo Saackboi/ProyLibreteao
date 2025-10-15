@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UserControlContenidoClientes1
+Partial Class UCCPrestamo1
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,19 +28,18 @@ Partial Class UserControlContenidoClientes1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(153, 263)
+        Me.Label1.Location = New System.Drawing.Point(415, 314)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(234, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "FORMULARIO  DE  CLIENTES"
+        Me.Label1.Size = New System.Drawing.Size(245, 20)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "FORMULARIO  DE  PRESTAMO"
         '
-        'UserControlContenidoClientes1
+        'UserControlContenidoPrestamo1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Controls.Add(Me.Label1)
-        Me.Name = "UserControlContenidoClientes1"
+        Me.Name = "UserControlContenidoPrestamo1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
         Me.PerformLayout()

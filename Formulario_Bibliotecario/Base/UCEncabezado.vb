@@ -1,4 +1,4 @@
-﻿Public Class UserControlEncabezado
+﻿Public Class UCEncabezado
 
     Public Sub ActualizarEncabezado(ByVal nuevaImagen As Image, ByVal nuevoTexto As String)
         PictureBox2.Image = nuevaImagen

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UserControlContenidoVistas1
+Partial Class UCCMensajeria1
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,18 +28,18 @@ Partial Class UserControlContenidoVistas1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(205, 309)
+        Me.Label1.Location = New System.Drawing.Point(415, 314)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(203, 20)
+        Me.Label1.Size = New System.Drawing.Size(264, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "FORMULARIO  DE  VISTA"
+        Me.Label1.Text = "FORMULARIO  DE  MENSAJERIA "
         '
-        'UserControlContenidoVistas1
+        'UserControlContenidoMensajeria1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label1)
-        Me.Name = "UserControlContenidoVistas1"
+        Me.Name = "UserControlContenidoMensajeria1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
         Me.PerformLayout()

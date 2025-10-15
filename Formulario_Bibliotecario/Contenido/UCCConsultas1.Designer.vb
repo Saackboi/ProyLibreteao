@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class UserControlContenidoGestionarCatálogo1
+Partial Class UCCConsultas1
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -30,16 +30,16 @@ Partial Class UserControlContenidoGestionarCatálogo1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(415, 314)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(343, 20)
+        Me.Label1.Size = New System.Drawing.Size(242, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "FORMULARIO  DE  GESTIONAR CATALOGO"
+        Me.Label1.Text = "FORMULARIO  DE  CONSULTA"
         '
-        'UserControlContenidoGestionarCatálogo1
+        'UserControlContenidoConsultas1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label1)
-        Me.Name = "UserControlContenidoGestionarCatálogo1"
+        Me.Name = "UserControlContenidoConsultas1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
         Me.PerformLayout()

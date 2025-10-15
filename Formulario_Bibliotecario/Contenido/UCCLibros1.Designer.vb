@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UserControlContenidosLibros1
+Partial Class UCCLibros1
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,16 +22,29 @@ Partial Class UserControlContenidosLibros1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'UserControlContenidosLibros1
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(415, 314)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(220, 20)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "FORMULARIO  DE  LIBROS "
+        '
+        'UserControlContenidoLibros1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Name = "UserControlContenidosLibros1"
+        Me.Controls.Add(Me.Label1)
+        Me.Name = "UserControlContenidoLibros1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents Label1 As Label
 End Class

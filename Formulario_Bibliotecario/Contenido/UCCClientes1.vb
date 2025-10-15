@@ -1,4 +1,4 @@
-﻿Public Class UserControlContenidoClientes1
+﻿Public Class UCCClientes1
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub

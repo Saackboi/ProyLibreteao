@@ -1,4 +1,4 @@
-﻿Public Class FormContenidoReportesActividadSemanalFiltrosDePeriodo
+﻿Public Class FormFiltro
     Private Sub FormContenidoReportesActividadSemanalFiltrosDePeriodo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Configurar todos los RadioButtons dentro del TableLayoutPanel2
         For Each rb As RadioButton In TableLayoutPanel2.Controls.OfType(Of RadioButton)()

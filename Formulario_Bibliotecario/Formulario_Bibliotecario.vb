@@ -1,14 +1,14 @@
 ﻿Public Class Formulario_Bibliotecario
-    Private ucInicio As New UserControlContenidoInicio1()
-    Private ucLibro As New UserControlContenidoLibros1()
-    Private ucPrestamo As New UserControlContenidoPrestamo1()
-    Private ucMensajeria As New UserControlContenidoMensajeria1()
-    Private ucClientes As New UserControlContenidoClientes1()
-    Private ucVistas As New UserControlContenidoVistas1()
-    Private ucReportes As New UserControlContenidoReportes1()
-    Private ucSolicitud As New UserControlContenidoSolicitudDeLibro1()
-    Private ucGestionar As New UserControlContenidoGestionarCatálogo1()
-    Private ucConsulta As New UserControlContenidoConsultas1()
+    Private ucInicio As New UCCInicio1()
+    Private ucLibro As New UCCLibros1()
+    Private ucPrestamo As New UCCPrestamo1()
+    Private ucMensajeria As New UCCMensajeria1()
+    Private ucClientes As New UCCClientes1()
+    Private ucVistas As New UCCVistas1()
+    Private ucReportes As New UCCReportes1()
+    Private ucSolicitud As New UCCSolicitud1()
+    Private ucGestionar As New UCCGestionar1()
+    Private ucConsulta As New UCCConsultas1()
 
 
     Private Sub Formulario_Bibliotecario_Load(sender As Object, e As EventArgs) Handles MyBase.Load

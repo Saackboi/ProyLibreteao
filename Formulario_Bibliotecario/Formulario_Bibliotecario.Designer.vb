@@ -23,9 +23,9 @@ Partial Class Formulario_Bibliotecario
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UserControlEncabezado1 = New ProyLibreteao.UserControlEncabezado()
-        Me.UserControlNavegacion1 = New ProyLibreteao.UserControlNavegacion()
-        Me.UserControlContenidoReportes11 = New ProyLibreteao.UserControlContenidoReportes1()
+        Me.UserControlEncabezado1 = New ProyLibreteao.UCEncabezado()
+        Me.UserControlNavegacion1 = New ProyLibreteao.UCNavegacion()
+        Me.UserControlContenidoReportes11 = New ProyLibreteao.UCCReportes1()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,8 +92,8 @@ Partial Class Formulario_Bibliotecario
 
     End Sub
 
-    Friend WithEvents UserControlNavegacion1 As UserControlNavegacion
-    Friend WithEvents UserControlEncabezado1 As UserControlEncabezado
+    Friend WithEvents UserControlNavegacion1 As UCNavegacion
+    Friend WithEvents UserControlEncabezado1 As UCEncabezado
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents UserControlContenidoReportes11 As UserControlContenidoReportes1
+    Friend WithEvents UserControlContenidoReportes11 As UCCReportes1
 End Class

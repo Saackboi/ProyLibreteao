@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UserControlContenidoInicio1
+Partial Class UCCSolicitud1
     Inherits System.Windows.Forms.UserControl
 
     'UserControl reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,18 +28,18 @@ Partial Class UserControlContenidoInicio1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(415, 314)
+        Me.Label1.Location = New System.Drawing.Point(175, 297)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(205, 20)
+        Me.Label1.Size = New System.Drawing.Size(322, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "FORMULARIO  DE  INICIO"
+        Me.Label1.Text = "FORMULARIO  DE  SOLICITUD DE LIBRO"
         '
-        'UserControlContenidoInicio1
+        'UserControlContenidoSolicitudDeLibro1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label1)
-        Me.Name = "UserControlContenidoInicio1"
+        Me.Name = "UserControlContenidoSolicitudDeLibro1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -11,9 +11,10 @@
     <AssemblyName>ProyLibreteao</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,10 +74,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\FormContenidoReportesActividadSemanalFiltrosDePeriodo.Designer.vb">
-      <DependentUpon>FormContenidoReportesActividadSemanalFiltrosDePeriodo.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\Reportes\FormFiltro.Designer.vb">
+      <DependentUpon>FormFiltro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\FormContenidoReportesActividadSemanalFiltrosDePeriodo.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\Reportes\FormFiltro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario_Bibliotecario\Formulario_Bibliotecario.Designer.vb">
@@ -126,88 +127,82 @@
     <Compile Include="PerfilUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoClientes1.Designer.vb">
-      <DependentUpon>UserControlContenidoClientes1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCClientes1.Designer.vb">
+      <DependentUpon>UCCClientes1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoClientes1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCClientes1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoConsultas1.Designer.vb">
-      <DependentUpon>UserControlContenidoConsultas1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCConsultas1.Designer.vb">
+      <DependentUpon>UCCConsultas1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoConsultas1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCConsultas1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoGestionarCatálogo1.Designer.vb">
-      <DependentUpon>UserControlContenidoGestionarCatálogo1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCGestionar1.Designer.vb">
+      <DependentUpon>UCCGestionar1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoGestionarCatálogo1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCGestionar1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoInicio1.Designer.vb">
-      <DependentUpon>UserControlContenidoInicio1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCInicio1.Designer.vb">
+      <DependentUpon>UCCInicio1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoInicio1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCInicio1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoLibros1.Designer.vb">
-      <DependentUpon>UserControlContenidoLibros1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCLibros1.Designer.vb">
+      <DependentUpon>UCCLibros1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoLibros1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCLibros1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoMensajeria1.Designer.vb">
-      <DependentUpon>UserControlContenidoMensajeria1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCMensajeria1.Designer.vb">
+      <DependentUpon>UCCMensajeria1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoMensajeria1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCMensajeria1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoPrestamo1.Designer.vb">
-      <DependentUpon>UserControlContenidoPrestamo1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCPrestamo1.Designer.vb">
+      <DependentUpon>UCCPrestamo1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoPrestamo1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCPrestamo1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\UserControlContenidoReportes1.Designer.vb">
-      <DependentUpon>UserControlContenidoReportes1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\Reportes\UCCReportes1.Designer.vb">
+      <DependentUpon>UCCReportes1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\UserControlContenidoReportes1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\Reportes\UCCReportes1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidosLibros1.Designer.vb">
-      <DependentUpon>UserControlContenidosLibros1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCSolicitud1.Designer.vb">
+      <DependentUpon>UCCSolicitud1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidosLibros1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCSolicitud1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoSolicitudDeLibro1.Designer.vb">
-      <DependentUpon>UserControlContenidoSolicitudDeLibro1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCVistas1.Designer.vb">
+      <DependentUpon>UCCVistas1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoSolicitudDeLibro1.vb">
+    <Compile Include="Formulario_Bibliotecario\Contenido\UCCVistas1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoVistas1.Designer.vb">
-      <DependentUpon>UserControlContenidoVistas1.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Base\UCEncabezado.Designer.vb">
+      <DependentUpon>UCEncabezado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoVistas1.vb">
+    <Compile Include="Formulario_Bibliotecario\Base\UCEncabezado.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlEncabezado.Designer.vb">
-      <DependentUpon>UserControlEncabezado.vb</DependentUpon>
+    <Compile Include="Formulario_Bibliotecario\Base\UCNavegacion.Designer.vb">
+      <DependentUpon>UCNavegacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlEncabezado.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlNavegacion.Designer.vb">
-      <DependentUpon>UserControlNavegacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlNavegacion.vb">
+    <Compile Include="Formulario_Bibliotecario\Base\UCNavegacion.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\FormContenidoReportesActividadSemanalFiltrosDePeriodo.resx">
-      <DependentUpon>FormContenidoReportesActividadSemanalFiltrosDePeriodo.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\Reportes\FormFiltro.resx">
+      <DependentUpon>FormFiltro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario_Bibliotecario\Formulario_Bibliotecario.resx">
       <DependentUpon>Formulario_Bibliotecario.vb</DependentUpon>
@@ -230,44 +225,41 @@
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoClientes1.resx">
-      <DependentUpon>UserControlContenidoClientes1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCClientes1.resx">
+      <DependentUpon>UCCClientes1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoConsultas1.resx">
-      <DependentUpon>UserControlContenidoConsultas1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCConsultas1.resx">
+      <DependentUpon>UCCConsultas1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoGestionarCatálogo1.resx">
-      <DependentUpon>UserControlContenidoGestionarCatálogo1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCGestionar1.resx">
+      <DependentUpon>UCCGestionar1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoInicio1.resx">
-      <DependentUpon>UserControlContenidoInicio1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCInicio1.resx">
+      <DependentUpon>UCCInicio1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoLibros1.resx">
-      <DependentUpon>UserControlContenidoLibros1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCLibros1.resx">
+      <DependentUpon>UCCLibros1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoMensajeria1.resx">
-      <DependentUpon>UserControlContenidoMensajeria1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCMensajeria1.resx">
+      <DependentUpon>UCCMensajeria1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoPrestamo1.resx">
-      <DependentUpon>UserControlContenidoPrestamo1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCPrestamo1.resx">
+      <DependentUpon>UCCPrestamo1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\Formulario_Contenido_Reportes\UserControlContenidoReportes1.resx">
-      <DependentUpon>UserControlContenidoReportes1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\Reportes\UCCReportes1.resx">
+      <DependentUpon>UCCReportes1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidosLibros1.resx">
-      <DependentUpon>UserControlContenidosLibros1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCSolicitud1.resx">
+      <DependentUpon>UCCSolicitud1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoSolicitudDeLibro1.resx">
-      <DependentUpon>UserControlContenidoSolicitudDeLibro1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Contenido\UCCVistas1.resx">
+      <DependentUpon>UCCVistas1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido\UserControlContenidoVistas1.resx">
-      <DependentUpon>UserControlContenidoVistas1.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Base\UCEncabezado.resx">
+      <DependentUpon>UCEncabezado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlEncabezado.resx">
-      <DependentUpon>UserControlEncabezado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario_Bibliotecario\Control_De_Usuario_Formulario_Bibliotecario\Formulario_Contenido_Base\UserControlNavegacion.resx">
-      <DependentUpon>UserControlNavegacion.vb</DependentUpon>
+    <EmbeddedResource Include="Formulario_Bibliotecario\Base\UCNavegacion.resx">
+      <DependentUpon>UCNavegacion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
