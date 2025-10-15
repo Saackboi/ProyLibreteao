@@ -6,7 +6,7 @@
 
     End Sub
 
-    Private Sub UserControlContenidoReportes1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub UserCCReportes1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         DataGridViewTablaActividadSemanal.Columns.Clear()
 

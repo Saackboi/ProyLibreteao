@@ -34,13 +34,13 @@ Partial Class UCCClientes1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "FORMULARIO  DE  CLIENTES"
         '
-        'UserControlContenidoClientes1
+        'UCCClientes1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Controls.Add(Me.Label1)
-        Me.Name = "UserControlContenidoClientes1"
+        Me.Name = "UCCClientes1"
         Me.Size = New System.Drawing.Size(1073, 648)
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -169,6 +169,9 @@ Partial Class UCNav
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
+        'SplitContainer1.Panel1
+        '
+        '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
@@ -193,7 +196,7 @@ Partial Class UCNav
         Me.SplitContainer2.SplitterWidth = 1
         Me.SplitContainer2.TabIndex = 0
         '
-        'UserControlNavegacion
+        'UCNav
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(17.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -201,7 +204,7 @@ Partial Class UCNav
         Me.Controls.Add(Me.SplitContainer1)
         Me.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.Name = "UserControlNavegacion"
+        Me.Name = "UCNav"
         Me.Size = New System.Drawing.Size(272, 527)
         Me.MenuStripMenuNavegacion.ResumeLayout(False)
         Me.MenuStripMenuNavegacion.PerformLayout()

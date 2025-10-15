@@ -129,7 +129,7 @@ Partial Class UCHeader
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Name = "UserControlEncabezado"
+        Me.Name = "UCHeader"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.Size = New System.Drawing.Size(733, 85)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

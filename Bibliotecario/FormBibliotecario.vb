@@ -1,4 +1,5 @@
 ﻿Public Class FormBibliotecario
+
     Private ucInicio As New UCCInicio1()
     Private ucLibro As New UCCLibros1()
     Private ucPrestamo As New UCCPrestamo1()
@@ -13,7 +14,7 @@
 
     Private Sub Formulario_Bibliotecario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Conecta el evento del menú de navegación (UserControlNavegacion)
-        AddHandler UserControlNavegacion1.ItemSeleccionado, AddressOf Navegacion_Click
+        AddHandler UcNav2.ItemSeleccionado, AddressOf Navegacion_Click
 
         ' (Opcional) Muestra un mensaje inicial o pantalla vacía
         Panel1.Controls.Add(New Label With {
@@ -27,7 +28,7 @@
 
     Private Sub Navegacion_Click(imagen As Image, texto As String)
         ' Actualiza encabezado
-        UserControlEncabezado1.ActualizarEncabezado(imagen, texto)
+        UcHeader2.ActualizarEncabezado(imagen, texto)
 
         ' Carga el contenido adecuado
         MostrarUserControl(texto)
