@@ -117,56 +117,66 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icono_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="romeoUlieta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\romeoUlieta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono_booktree" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_booktree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoFiltro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoContenidoReporte\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoGestionarCatálogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoInicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoLibro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoLibro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoLibros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoLibros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconomensajería" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconomensajería.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosEncabezado\iconoPerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPreguntas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPreguntas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPrestamo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPrestamo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoReportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoReportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoSolicitud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoSolicitud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoVista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoVista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>
