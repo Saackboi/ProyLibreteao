@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ProyLibreteao.Formulario_Bibliotecario
+            Me.MainForm = Global.ProyLibreteao.FormBibliotecario
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
