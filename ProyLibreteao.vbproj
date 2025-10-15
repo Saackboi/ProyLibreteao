@@ -148,6 +148,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\iconos\iconoContenidoReporte\iconoFiltro.png" />
+    <Content Include="Resources\iconos\iconosEncabezado\iconoPerfil.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoClientes.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoInicio.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoLibro.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoLibros.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconomensajería.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoPreguntas.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoPrestamo.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoReportes.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoSolicitud.png" />
+    <Content Include="Resources\iconos\iconosNavegacion\iconoVista.png" />
     <Content Include="Resources\icono_booktree.png" />
     <Content Include="Resources\icono_user.png" />
     <Content Include="Resources\icono_phone.png" />
