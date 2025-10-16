@@ -73,4 +73,11 @@
         End If
     End Sub
 
+    Private Sub UcNav2_Load(sender As Object, e As EventArgs) Handles UcNav2.Load
+
+    End Sub
+
+    Private Sub UccReportes11_Load(sender As Object, e As EventArgs) Handles UccReportes11.Load
+
+    End Sub
 End Class
