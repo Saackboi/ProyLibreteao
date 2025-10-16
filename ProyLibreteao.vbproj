@@ -275,6 +275,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\biblioteca.jpg" />
     <Content Include="Resources\iconos\iconoContenidoReporte\iconoFiltro.png" />
     <Content Include="Resources\iconos\iconosEncabezado\iconoPerfil.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoClientes.png" />
@@ -292,6 +293,7 @@
     <Content Include="Resources\icono_user.png" />
     <Content Include="Resources\icono_phone.png" />
     <Content Include="Resources\romeoUlieta.jpg" />
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
