@@ -1,23 +1,26 @@
-﻿Public Class FormBibliotecario
+﻿
 
-    Private ucInicio As New UCCInicio1()
-    Private ucLibro As New UCCLibros1()
-    Private ucPrestamo As New UCCPrestamo1()
-    Private ucMensajeria As New UCCMensajeria1()
-    Private ucClientes As New UCCClientes1()
-    Private ucVistas As New UCCVistas1()
-    Private ucReportes As New UCCReportes1()
-    Private ucSolicitud As New UCCSolicitud1()
-    Private ucGestionar As New UCCGestionar1()
-    Private ucConsulta As New UCCConsultas1()
+Imports ProyLibreteao
+Public Class FormBibliotecario
 
+    Private ucReportes = New UCCReportes1()
 
-    Private Sub Formulario_Bibliotecario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Conecta el evento del menú de navegación (UserControlNavegacion)
-        AddHandler UcNav2.ItemSeleccionado, AddressOf Navegacion_Click
+    ' Evento que se dispara al seleccionar un ítem del menú
+    Public Event ItemSeleccionado(ByVal imagen As Image, ByVal texto As String)
 
-        ' (Opcional) Muestra un mensaje inicial o pantalla vacía
-        Panel1.Controls.Add(New Label With {
+    ' Al cargar el formulario, muestra un mensaje inicial
+    Private Sub FormBibliotecario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        MostrarMensajeInicial()
+
+        ' Conectar el evento al método que actualiza el encabezado
+        AddHandler ItemSeleccionado, AddressOf ActualizarEncabezado
+    End Sub
+
+    ' Muestra mensaje inicial
+    Private Sub MostrarMensajeInicial()
+        PanelContenido.Controls.Clear()
+        PanelContenido.Controls.Add(New Label With {
             .Text = "Seleccione una opción del menú.",
             .Dock = DockStyle.Fill,
             .Font = New Font("Segoe UI", 10, FontStyle.Italic),
@@ -26,58 +29,61 @@
         })
     End Sub
 
-    Private Sub Navegacion_Click(imagen As Image, texto As String)
-        ' Actualiza encabezado
-        UcHeader2.ActualizarEncabezado(imagen, texto)
+    ' Maneja los clics de los botones del menú de navegación
+    Private Sub MenuStripMenuNavegacion_Click(sender As Object, e As EventArgs) _
+        Handles btn_NavInicioToolStripMenuItem.Click,
+                btn_NavLIBROSToolStripMenuItem.Click,
+                btn_NavPRESTAMOSToolStripMenuItem.Click,
+    btn_NavMENSAJERÍAToolStripMenuItem.Click,
+                btn_NavCLIENTESToolStripMenuItem.Click,
+                btn_NavVISTASToolStripMenuItem.Click,
+                btn_NavREPORTESToolStripMenuItem.Click,
+                btn_NavSOLICITUDToolStripMenuItem.Click, btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Click,
+                btn_NavCONSULTASToolStripMenuItem.Click
 
-        ' Carga el contenido adecuado
-        MostrarUserControl(texto)
-    End Sub
+        Dim item As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
 
-    Private Sub MostrarUserControl(texto As String)
-        Panel1.Controls.Clear()
+        Select Case item.Name
+            Case "btn_NavInicioToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoInicio, "INICIO")
 
-        Select Case texto
-            Case "INICIO"
-                Panel1.Controls.Add(ucInicio)
-            Case "LIBROS"
-                Panel1.Controls.Add(ucLibro)
-            Case "PRÉSTAMOS"
-                Panel1.Controls.Add(ucPrestamo)
-            Case "MENSAJERÍA"
-                Panel1.Controls.Add(ucMensajeria)
-            Case "CLIENTES"
-                Panel1.Controls.Add(ucClientes)
-            Case "VISTAS"
-                Panel1.Controls.Add(ucVistas)
-            Case "REPORTES"
-                Panel1.Controls.Add(ucReportes)
-            Case "SOLICITUD DE LIBROS"
-                Panel1.Controls.Add(ucSolicitud)
-            Case "GESTIÓN DE CATÁLOGO"
-                Panel1.Controls.Add(ucGestionar)
-            Case "CONSULTAS"
-                Panel1.Controls.Add(ucConsulta)
+            Case "btn_NavLIBROSToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoLibros, "LIBROS")
 
-            Case Else
-                Panel1.Controls.Add(New Label With {
-                    .Text = "Vista no disponible.",
-                    .Dock = DockStyle.Fill,
-                    .TextAlign = ContentAlignment.MiddleCenter
-                })
+            Case "btn_NavPRESTAMOSToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoPrestamo, "PRÉSTAMOS")
+
+            Case "btn_NavMENSAJERIAToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconomensajería, "MENSAJERÍA")
+
+            Case "btn_NavCLIENTESToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoClientes, "CLIENTES")
+
+            Case "btn_NavVISTASToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoVista, "VISTAS")
+
+            Case "btn_NavREPORTESToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoReportes, "REPORTES")
+                PanelContenido.Controls.Clear()
+                ucReportes.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(ucReportes)
+
+
+            Case "btn_NavSOLICITUDToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoSolicitud, "SOLICITUD DE LIBROS")
+
+            Case "btn_NavGESTIONDECATALOGOSToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoGestionarCatálogo, "GESTIÓN DE CATÁLOGO")
+
+            Case "btn_NavCONSULTASToolStripMenuItem"
+                RaiseEvent ItemSeleccionado(My.Resources.iconoPreguntas, "CONSULTAS")
         End Select
-
-        ' Asegura que el control agregado se ajuste al panel
-        If Panel1.Controls.Count > 0 Then
-            Panel1.Controls(0).Dock = DockStyle.Fill
-        End If
     End Sub
 
-    Private Sub UcNav2_Load(sender As Object, e As EventArgs) Handles UcNav2.Load
-
+    ' Actualiza el encabezado con una nueva imagen y texto
+    Private Sub ActualizarEncabezado(ByVal nuevaImagen As Image, ByVal nuevoTexto As String)
+        PictureBox2.Image = nuevaImagen
+        lblTituloMenuEncabezado.Text = nuevoTexto
     End Sub
 
-    Private Sub UccReportes11_Load(sender As Object, e As EventArgs) Handles UccReportes11.Load
-
-    End Sub
 End Class
