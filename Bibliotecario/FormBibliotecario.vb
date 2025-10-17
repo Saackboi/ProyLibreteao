@@ -3,8 +3,6 @@
 Imports ProyLibreteao
 Public Class FormBibliotecario
 
-    Private ucReportes = New UCCReportes1()
-
     ' Evento que se dispara al seleccionar un ítem del menú
     Public Event ItemSeleccionado(ByVal imagen As Image, ByVal texto As String)
 
@@ -14,7 +12,7 @@ Public Class FormBibliotecario
         ' Conectar el evento al método que actualiza el encabezado
         AddHandler ItemSeleccionado, AddressOf ActualizarEncabezado
 
-
+        MostrarMensajeInicial()
         DataGridViewTablaActividadSemanal.Columns.Clear()
 
         DataGridViewTablaActividadSemanal.Columns.Add("Semana", "Semana")
@@ -49,7 +47,8 @@ Public Class FormBibliotecario
                 btn_NavCLIENTESToolStripMenuItem.Click,
                 btn_NavVISTASToolStripMenuItem.Click,
                 btn_NavREPORTESToolStripMenuItem.Click,
-                btn_NavSOLICITUDToolStripMenuItem.Click, btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Click,
+                btn_NavSOLICITUDToolStripMenuItem.Click,
+                btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Click,
                 btn_NavCONSULTASToolStripMenuItem.Click
 
         Dim item As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
@@ -57,56 +56,49 @@ Public Class FormBibliotecario
         Select Case item.Name
             Case "btn_NavInicioToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoInicio, "INICIO")
-
                 MostrarMensajeInicial()
-
 
             Case "btn_NavLIBROSToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoLibros, "LIBROS")
-
                 MostrarMensajeInicial()
-
-
             Case "btn_NavPRESTAMOSToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoPrestamo, "PRÉSTAMOS")
-
                 MostrarMensajeInicial()
 
-
-            Case "btn_NavMENSAJERIAToolStripMenuItem"
+            Case "btn_NavMENSAJERÍAToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconomensajería, "MENSAJERÍA")
-
+                MostrarMensajeInicial()
             Case "btn_NavCLIENTESToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoClientes, "CLIENTES")
-
                 MostrarMensajeInicial()
-
 
             Case "btn_NavVISTASToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoVista, "VISTAS")
-
                 MostrarMensajeInicial()
 
 
             Case "btn_NavREPORTESToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoReportes, "REPORTES")
 
+                ' Mostrar el layout de reportes dentro del PanelContenido
+                PanelContenido.Controls.Clear()
+                tlpReporte.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(tlpReporte)
+
+
 
             Case "btn_NavSOLICITUDToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoSolicitud, "SOLICITUD DE LIBROS")
-
                 MostrarMensajeInicial()
 
 
-            Case "btn_NavGESTIONDECATALOGOSToolStripMenuItem"
+            Case "btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoGestionarCatálogo, "GESTIÓN DE CATÁLOGO")
-
                 MostrarMensajeInicial()
 
 
             Case "btn_NavCONSULTASToolStripMenuItem"
                 RaiseEvent ItemSeleccionado(My.Resources.iconoPreguntas, "CONSULTAS")
-
                 MostrarMensajeInicial()
 
         End Select
@@ -145,21 +137,6 @@ Public Class FormBibliotecario
     End Sub
 
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        MessageBox.Show("Descargando Reportes...")
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MessageBox.Show("Descargando Reportes...")
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        MessageBox.Show("Descargando Reportes...")
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MessageBox.Show("Descargando Reportes...")
-    End Sub
 
 
     Private Sub TabControlContenidoReportes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControlContenidoReportes.SelectedIndexChanged
