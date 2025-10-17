@@ -80,6 +80,12 @@
     <Compile Include="Bibliotecario\Contenido\Reportes\FormFiltro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bibliotecario\Contenido\Reportes\ucContenidoReporte.Designer.vb">
+      <DependentUpon>ucContenidoReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\Reportes\ucContenidoReporte.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Bibliotecario\FormBibliotecario.Designer.vb">
       <DependentUpon>FormBibliotecario.vb</DependentUpon>
     </Compile>
@@ -127,82 +133,19 @@
     <Compile Include="PerfilUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCClientes1.Designer.vb">
-      <DependentUpon>UCCClientes1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCClientes1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCConsultas1.Designer.vb">
-      <DependentUpon>UCCConsultas1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCConsultas1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCGestionar1.Designer.vb">
-      <DependentUpon>UCCGestionar1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCGestionar1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCInicio1.Designer.vb">
-      <DependentUpon>UCCInicio1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCInicio1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCLibros1.Designer.vb">
-      <DependentUpon>UCCLibros1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCLibros1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCMensajeria1.Designer.vb">
-      <DependentUpon>UCCMensajeria1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCMensajeria1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCPrestamo1.Designer.vb">
-      <DependentUpon>UCCPrestamo1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCPrestamo1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\UCCReportes1.Designer.vb">
       <DependentUpon>UCCReportes1.vb</DependentUpon>
     </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\UCCReportes1.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCSolicitud1.Designer.vb">
-      <DependentUpon>UCCSolicitud1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCSolicitud1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCVistas1.Designer.vb">
-      <DependentUpon>UCCVistas1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\UCCVistas1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Base\UCHeader.Designer.vb">
-      <DependentUpon>UCHeader.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Base\UCHeader.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bibliotecario\Base\UCNav.Designer.vb">
-      <DependentUpon>UCNav.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Base\UCNav.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormFiltro.resx">
       <DependentUpon>FormFiltro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\ucContenidoReporte.resx">
+      <DependentUpon>ucContenidoReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\FormBibliotecario.resx">
       <DependentUpon>FormBibliotecario.vb</DependentUpon>
@@ -225,41 +168,8 @@
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCClientes1.resx">
-      <DependentUpon>UCCClientes1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCConsultas1.resx">
-      <DependentUpon>UCCConsultas1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCGestionar1.resx">
-      <DependentUpon>UCCGestionar1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCInicio1.resx">
-      <DependentUpon>UCCInicio1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCLibros1.resx">
-      <DependentUpon>UCCLibros1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCMensajeria1.resx">
-      <DependentUpon>UCCMensajeria1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCPrestamo1.resx">
-      <DependentUpon>UCCPrestamo1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\UCCReportes1.resx">
       <DependentUpon>UCCReportes1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCSolicitud1.resx">
-      <DependentUpon>UCCSolicitud1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Contenido\UCCVistas1.resx">
-      <DependentUpon>UCCVistas1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Base\UCHeader.resx">
-      <DependentUpon>UCHeader.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\Base\UCNav.resx">
-      <DependentUpon>UCNav.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
