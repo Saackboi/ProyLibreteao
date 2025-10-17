@@ -446,7 +446,7 @@ Partial Class UCCReportes1
         Me.lblTituloTabControl.Text = "BIENVENIDA"
         Me.lblTituloTabControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'UserControlContenidoReportes1
+        'UCCReportes1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -454,7 +454,7 @@ Partial Class UCCReportes1
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "UserControlContenidoReportes1"
+        Me.Name = "UCCReportes1"
         Me.Size = New System.Drawing.Size(984, 668)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()

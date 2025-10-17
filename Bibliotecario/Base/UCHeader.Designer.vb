@@ -42,7 +42,7 @@ Partial Class UCHeader
         Me.lblTituloEncabezado.AutoSize = True
         Me.lblTituloEncabezado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloEncabezado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblTituloEncabezado.Location = New System.Drawing.Point(432, 0)
+        Me.lblTituloEncabezado.Location = New System.Drawing.Point(430, 0)
         Me.lblTituloEncabezado.Name = "lblTituloEncabezado"
         Me.lblTituloEncabezado.Size = New System.Drawing.Size(190, 75)
         Me.lblTituloEncabezado.TabIndex = 0
@@ -107,7 +107,7 @@ Partial Class UCHeader
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.8607!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.13931!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lblTituloEncabezadoMenu, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lblTituloEncabezado, 2, 0)
@@ -121,7 +121,7 @@ Partial Class UCHeader
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(723, 75)
         Me.TableLayoutPanel1.TabIndex = 1
         '
-        'UserControlEncabezado
+        'UCHeader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font

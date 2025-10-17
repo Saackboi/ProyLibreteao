@@ -1,4 +1,5 @@
 ﻿Public Class UCNav
+    Inherits UserControl
     ' --- Declaramos un evento público ---
     Public Event ItemSeleccionado(ByVal imagen As Image, ByVal texto As String)
 
