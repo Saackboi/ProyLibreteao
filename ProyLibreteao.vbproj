@@ -80,15 +80,22 @@
     <Compile Include="Bibliotecario\Contenido\Reportes\FormFiltro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bibliotecario\FormBibliotecario.Designer.vb">
-      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    <Compile Include="Bibliotecario\Contenido\Reportes\FormReportes.Designer.vb">
+      <DependentUpon>FormReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Bibliotecario\FormBibliotecario.vb">
+    <Compile Include="Bibliotecario\Contenido\Reportes\FormReportes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClaseCodigoContenidoReportes.vb" />
-    <Compile Include="ClaseCodigoEncabezado.vb" />
-    <Compile Include="ClaseCodigoNavegacion.vb" />
+    <Compile Include="Bibliotecario\Contenido\ClaseConsultas.vb" />
+    <Compile Include="Bibliotecario\Contenido\Reportes\ClaseReportes.vb" />
+    <Compile Include="Bibliotecario\ClaseEncabezado.vb" />
+    <Compile Include="Bibliotecario\ClaseNav.vb" />
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.Designer.vb">
+      <DependentUpon>FormConsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interface_invitados.Designer.vb">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </Compile>
@@ -101,6 +108,7 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModuloNav.vb" />
     <Compile Include="NuevoUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -132,11 +140,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bibliotecario\Contenido\FormConsultas.resx">
+      <DependentUpon>FormConsultas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormFiltro.resx">
       <DependentUpon>FormFiltro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\FormBibliotecario.resx">
-      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormReportes.resx">
+      <DependentUpon>FormReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface_invitados.resx">
       <DependentUpon>Interface_invitados.vb</DependentUpon>

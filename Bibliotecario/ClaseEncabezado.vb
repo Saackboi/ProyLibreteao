@@ -1,5 +1,5 @@
 ﻿Namespace ProyLibreteao
-    Public Class ClaseCodigoEncabezado
+    Public Class ClaseEncabezado
         Private ReadOnly _lblTitulo As Label
         Private ReadOnly _picture As PictureBox
 

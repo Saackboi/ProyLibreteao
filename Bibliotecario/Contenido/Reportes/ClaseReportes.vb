@@ -1,17 +1,20 @@
 ﻿Namespace ProyLibreteao
-    Public Class ClaseCodigoContenidoReportes
+    Public Class ClaseReportes
         Private panelContenido As Panel
         Private dgvActividad As DataGridView
         Private tlpReporte As TableLayoutPanel
         Private tabControl As TabControl
         Private lblTituloTab As Label
+        Private btnFiltro As Button
 
-        Public Sub New(panel As Panel, dgv As DataGridView, tlp As TableLayoutPanel, tab As TabControl, lblTitulo As Label)
+
+        Public Sub New(panel As Panel, dgv As DataGridView, tlp As TableLayoutPanel, tab As TabControl, lblTitulo As Label, btnFiltroReporte As Button)
             panelContenido = panel
             dgvActividad = dgv
             tlpReporte = tlp
             tabControl = tab
             lblTituloTab = lblTitulo
+            btnFiltro = btnFiltroReporte
 
             ' Configurar TabControl (solo una vez)
             tabControl.DrawMode = TabDrawMode.OwnerDrawFixed
@@ -21,18 +24,9 @@
         End Sub
 
 
-        '  Mostrar mensaje inicial
-        '============================
-        Public Sub MostrarMensajeInicial()
-            panelContenido.Controls.Clear()
-            panelContenido.Controls.Add(New Label With {
-                .Text = "Seleccione una opción del menú.",
-                .Dock = DockStyle.Fill,
-                .Font = New Font("Segoe UI", 10, FontStyle.Italic),
-                .ForeColor = Color.Gray,
-                .TextAlign = ContentAlignment.MiddleCenter
-            })
-        End Sub
+
+
+
 
         '============================
         ' Mostrar sección de reportes
@@ -90,5 +84,6 @@
         Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs)
             lblTituloTab.Text = tabControl.SelectedTab.Text
         End Sub
+
     End Class
 End Namespace

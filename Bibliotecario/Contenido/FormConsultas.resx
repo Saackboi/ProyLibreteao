@@ -117,65 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="iconomensajería" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconomensajería.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPreguntas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPreguntas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoLibros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoLibros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="romeoUlieta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\romeoUlieta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoLibro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoLibro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoFiltro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoContenidoReporte\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosEncabezado\iconoPerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPrestamo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPrestamo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoGestionarCatálogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="biblioteca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\biblioteca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoSolicitud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoSolicitud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoVista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoVista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono_booktree" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono_booktree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoReportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoReportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoInicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoPreguntas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPreguntas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="msMenuNavegacion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
