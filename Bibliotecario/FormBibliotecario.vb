@@ -1,49 +1,87 @@
-﻿
+﻿Imports ProyLibreteao.ProyLibreteao
+'//////////////////////////////////////////////////////////
+' ESQUEMA DEL CÓDIGO — FORMULARIO: FormBibliotecario.vb
+'═══════════════════════════════════════════════════════════════════════════════
+'
+' FormBibliotecario
+' ├──  Clases creadas (logico y manejo de algunos controles),para secciones bases  del formulario
+' │      ├─ ClaseCodigoEncabezado        → Maneja el encabezado (título e icono de la sección seleccionada)
+' │      ├─ ClaseCodigoNavegacion        → Maneja el menú lateral y sus eventos (inicio, vistas, reportes, etc.)
+' │      └─ ClaseCodigoContenidoReportes → Controla el contenido de la sección REPORTES
+'
+' ├──  Controles del formulario
+' │      ├─ PanelContenido                 → Panel central donde se cargan las secciones
+' │      ├─ lblTituloMenuEncabezado        → Muestra el título superior
+' │      ├─ pb2seccionMenuNav              → Icono del encabezado
+' │      ├─ dgvTablaActividadSemanal       → DataGridView con datos de reportes
+' │      ├─ tcContenidoReportes            → TabControl con pestañas de reportes
+' │      └─ lblTituloTabControl            → Título dinámico del tab seleccionado
+'
+' ├──  Flujo general del formulario
+' │      1️ Form_Load()
+' │           ├─ Inicializa clases auxiliares
+' │           ├─ Vincula eventos del menú → CambiarSeccion()
+' │           └─ Muestra mensaje inicial en PanelContenido
+' │
+' │      2️ MenuItem_Click()
+' │           ├─ Detecta opción seleccionada en el menú
+' │           └─ Llama a codigoNavegacion.ManejarClick()
+' │
+' │      3️ CambiarSeccion(titulo, icono)
+' │           ├─ Actualiza encabezado (ClaseCodigoEncabezado)
+' │           ├─ Según el título:
+' │           │    ├─ "REPORTES" → Muestra reportes (ClaseCodigoContenidoReportes)
+' │           │    └─ Otro → Muestra mensaje inicial
+' │
+' │      4️ TabControlContenidoReportes_DrawItem()
+' │           ├─ Dibuja pestañas personalizadas (colores, subrayado)
+' │           └─ Controla apariencia del TabControl
+' │
+' │      5️  TabControlContenidoReportes_SelectedIndexChanged()
+' │           └─ Actualiza lblTituloTabControl con la pestaña activa
+'
+' └──  Eventos importantes
+'        ├─ SeSeleccionoOpcion (ClaseCodigoNavegacion)
+'        ├─ DrawItem (TabControl personalizado)
+'        └─ SelectedIndexChanged (Cambio de pestaña)
+'
+'  17/10/2025
+'  Formulario principal del área de bibliotecario.
+'    maneja  la navegación,  el encabezado y contenido de  la seccion de reportes.
+'    notas: los nombres de controles  los renombro así 
+'           lbl → Label, tc → TabControl, dgv → DataGridView, pb → PictureBox
 
-Imports ProyLibreteao
+'///////////////////////////////////////////////////////
+
+
 Public Class FormBibliotecario
 
-    ' Evento que se dispara al seleccionar un ítem del menú
-    Public Event ItemSeleccionado(ByVal imagen As Image, ByVal texto As String)
+    '  Declaración de clases auxiliares
 
-    ' Al cargar el formulario, muestra un mensaje inicial
+    Private codigoEncabezado As ClaseCodigoEncabezado
+    Private codigoNavegacion As ClaseCodigoNavegacion
+    Private codigoContenidoReporte As ClaseCodigoContenidoReportes
+
+
+    '  al cargar el formulario
+
     Private Sub FormBibliotecario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        codigoEncabezado = New ClaseCodigoEncabezado(lblTituloMenuEncabezado, pb2seccionMenuNav)
+        codigoNavegacion = New ClaseCodigoNavegacion()
+        codigoContenidoReporte = New ClaseCodigoContenidoReportes(PanelContenido, dgvTablaInfoReporte, tlpReporte, tcContenidoReportes, lblTituloTabControl)
 
-        ' Conectar el evento al método que actualiza el encabezado
-        AddHandler ItemSeleccionado, AddressOf ActualizarEncabezado
-
-        MostrarMensajeInicial()
-        DataGridViewTablaActividadSemanal.Columns.Clear()
-
-        DataGridViewTablaActividadSemanal.Columns.Add("Semana", "Semana")
-        DataGridViewTablaActividadSemanal.Columns.Add("Prestamos", "Préstamos")
-        DataGridViewTablaActividadSemanal.Columns.Add("Devoluciones", "Devolución")
-        DataGridViewTablaActividadSemanal.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
-        DataGridViewTablaActividadSemanal.Columns.Add("Multas", "Multas")
-        '  filas  de ejemplo
-        DataGridViewTablaActividadSemanal.Rows.Add("1 - 7 de octubre", 100, 90, 10, 9)
-        DataGridViewTablaActividadSemanal.Rows.Add("8 - 14 de octubre", 80, 75, 5, 8)
-
+        AddHandler codigoNavegacion.SeSeleccionoOpcion, AddressOf CambiarSeccion
+        codigoContenidoReporte.MostrarMensajeInicial()
     End Sub
 
-    ' Muestra mensaje inicial
-    Private Sub MostrarMensajeInicial()
-        PanelContenido.Controls.Clear()
-        PanelContenido.Controls.Add(New Label With {
-            .Text = "Seleccione una opción del menú.",
-            .Dock = DockStyle.Fill,
-            .Font = New Font("Segoe UI", 10, FontStyle.Italic),
-            .ForeColor = Color.Gray,
-            .TextAlign = ContentAlignment.MiddleCenter
-        })
-    End Sub
 
-    ' Maneja los clics de los botones del menú de navegación
-    Private Sub MenuStripMenuNavegacion_Click(sender As Object, e As EventArgs) _
+    'manejar clics del menú
+
+    Private Sub MenuItem_Click(sender As Object, e As EventArgs) _
         Handles btn_NavInicioToolStripMenuItem.Click,
                 btn_NavLIBROSToolStripMenuItem.Click,
                 btn_NavPRESTAMOSToolStripMenuItem.Click,
-    btn_NavMENSAJERÍAToolStripMenuItem.Click,
+                btn_NavMENSAJERÍAToolStripMenuItem.Click,
                 btn_NavCLIENTESToolStripMenuItem.Click,
                 btn_NavVISTASToolStripMenuItem.Click,
                 btn_NavREPORTESToolStripMenuItem.Click,
@@ -51,97 +89,23 @@ Public Class FormBibliotecario
                 btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Click,
                 btn_NavCONSULTASToolStripMenuItem.Click
 
-        Dim item As ToolStripMenuItem = DirectCast(sender, ToolStripMenuItem)
-
-        Select Case item.Name
-            Case "btn_NavInicioToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoInicio, "INICIO")
-                MostrarMensajeInicial()
-
-            Case "btn_NavLIBROSToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoLibros, "LIBROS")
-                MostrarMensajeInicial()
-            Case "btn_NavPRESTAMOSToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoPrestamo, "PRÉSTAMOS")
-                MostrarMensajeInicial()
-
-            Case "btn_NavMENSAJERÍAToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconomensajería, "MENSAJERÍA")
-                MostrarMensajeInicial()
-            Case "btn_NavCLIENTESToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoClientes, "CLIENTES")
-                MostrarMensajeInicial()
-
-            Case "btn_NavVISTASToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoVista, "VISTAS")
-                MostrarMensajeInicial()
+        Dim item As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
+        codigoNavegacion.ManejarClick(item)
+    End Sub
 
 
-            Case "btn_NavREPORTESToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoReportes, "REPORTES")
+    ' cambiar de sección
+    '============================
+    Private Sub CambiarSeccion(titulo As String, icono As Image)
+        codigoEncabezado.Actualizar(titulo, icono)
 
-                ' Mostrar el layout de reportes dentro del PanelContenido
-                PanelContenido.Controls.Clear()
-                tlpReporte.Dock = DockStyle.Fill
-                PanelContenido.Controls.Add(tlpReporte)
-
-
-
-            Case "btn_NavSOLICITUDToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoSolicitud, "SOLICITUD DE LIBROS")
-                MostrarMensajeInicial()
-
-
-            Case "btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoGestionarCatálogo, "GESTIÓN DE CATÁLOGO")
-                MostrarMensajeInicial()
-
-
-            Case "btn_NavCONSULTASToolStripMenuItem"
-                RaiseEvent ItemSeleccionado(My.Resources.iconoPreguntas, "CONSULTAS")
-                MostrarMensajeInicial()
-
+        Select Case titulo
+            Case "REPORTES"
+                codigoContenidoReporte.MostrarReportes()
+            Case Else
+                codigoContenidoReporte.MostrarMensajeInicial()
         End Select
     End Sub
 
-    ' Actualiza el encabezado con una nueva imagen y texto
-    Private Sub ActualizarEncabezado(ByVal nuevaImagen As Image, ByVal nuevoTexto As String)
-        PictureBox2.Image = nuevaImagen
-        lblTituloMenuEncabezado.Text = nuevoTexto
-    End Sub
-    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
-        FormFiltro.ShowDialog()
-    End Sub
-
-    Private Sub TabControl1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles TabControlContenidoReportes.DrawItem
-        Dim g As Graphics = e.Graphics
-        Dim tab As TabPage = TabControlContenidoReportes.TabPages(e.Index)
-        Dim rect = e.Bounds
-
-
-        ' Colores del tema lavanda
-        Dim colorSeleccionado As Color = Color.FromArgb(37, 33, 59)
-        Dim colorTexto As Color = If(e.Index = TabControlContenidoReportes.SelectedIndex, colorSeleccionado, Color.FromArgb(110, 104, 147))
-
-        ' Fondo del tab
-        g.FillRectangle(New SolidBrush(TabControlContenidoReportes.BackColor), rect)
-
-        ' Texto centrado
-        Dim sf As New StringFormat With {.Alignment = StringAlignment.Center, .LineAlignment = StringAlignment.Center}
-        g.DrawString(tab.Text, TabControlContenidoReportes.Font, New SolidBrush(colorTexto), rect, sf)
-
-        ' Subrayado solo si está seleccionado
-        If e.Index = TabControlContenidoReportes.SelectedIndex Then
-            g.FillRectangle(New SolidBrush(colorSeleccionado), rect.X + 10, rect.Bottom - 2, rect.Width - 20, 3)
-        End If
-    End Sub
-
-
-
-
-    Private Sub TabControlContenidoReportes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControlContenidoReportes.SelectedIndexChanged
-        ' Cambia el texto del Label del titulo al nombre de la pestaña  que selecciones
-        lblTituloTabControl.Text = TabControlContenidoReportes.SelectedTab.Text
-    End Sub
 
 End Class

@@ -86,6 +86,9 @@
     <Compile Include="Bibliotecario\FormBibliotecario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ClaseCodigoContenidoReportes.vb" />
+    <Compile Include="ClaseCodigoEncabezado.vb" />
+    <Compile Include="ClaseCodigoNavegacion.vb" />
     <Compile Include="Interface_invitados.Designer.vb">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </Compile>

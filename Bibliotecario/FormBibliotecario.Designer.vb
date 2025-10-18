@@ -22,34 +22,15 @@ Partial Class FormBibliotecario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.tlpReporte = New System.Windows.Forms.TableLayoutPanel()
-        Me.TabControlContenidoReportes = New System.Windows.Forms.TabControl()
+        Me.tcContenidoReportes = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridViewTablaActividadSemanal = New System.Windows.Forms.DataGridView()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.lblTituloTabControl = New System.Windows.Forms.Label()
@@ -57,8 +38,8 @@ Partial Class FormBibliotecario
         Me.tlpEncabezado = New System.Windows.Forms.TableLayoutPanel()
         Me.lblTituloMenuEncabezado = New System.Windows.Forms.Label()
         Me.lblTituloEncabezado = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pb2seccionMenuNav = New System.Windows.Forms.PictureBox()
+        Me.pb1Perfil = New System.Windows.Forms.PictureBox()
         Me.PanelNavegacion = New System.Windows.Forms.Panel()
         Me.scNav = New System.Windows.Forms.SplitContainer()
         Me.scMenu = New System.Windows.Forms.SplitContainer()
@@ -74,30 +55,18 @@ Partial Class FormBibliotecario
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavCONSULTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.btnFiltroReporteAS = New System.Windows.Forms.Button()
+        Me.dgvTablaInfoReporte = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.tlpActividadSemenal = New System.Windows.Forms.TableLayoutPanel()
         Me.PanelContenido.SuspendLayout()
         Me.tlpReporte.SuspendLayout()
-        Me.TabControlContenidoReportes.SuspendLayout()
+        Me.tcContenidoReportes.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.DataGridViewTablaActividadSemanal, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
         Me.PanelEncabezado.SuspendLayout()
         Me.tlpEncabezado.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb2seccionMenuNav, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb1Perfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelNavegacion.SuspendLayout()
         CType(Me.scNav, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.scNav.Panel2.SuspendLayout()
@@ -106,13 +75,8 @@ Partial Class FormBibliotecario
         Me.scMenu.Panel1.SuspendLayout()
         Me.scMenu.SuspendLayout()
         Me.MenuStripMenuNavegacion.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel4.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvTablaInfoReporte, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tlpActividadSemenal.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelContenido
@@ -133,7 +97,7 @@ Partial Class FormBibliotecario
         Me.tlpReporte.ColumnCount = 1
         Me.tlpReporte.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpReporte.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpReporte.Controls.Add(Me.TabControlContenidoReportes, 0, 1)
+        Me.tlpReporte.Controls.Add(Me.tcContenidoReportes, 0, 1)
         Me.tlpReporte.Controls.Add(Me.lblTituloTabControl, 0, 0)
         Me.tlpReporte.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpReporte.Location = New System.Drawing.Point(3, 3)
@@ -144,30 +108,30 @@ Partial Class FormBibliotecario
         Me.tlpReporte.Size = New System.Drawing.Size(1335, 829)
         Me.tlpReporte.TabIndex = 2
         '
-        'TabControlContenidoReportes
+        'tcContenidoReportes
         '
-        Me.TabControlContenidoReportes.Controls.Add(Me.TabPage1)
-        Me.TabControlContenidoReportes.Controls.Add(Me.TabPage2)
-        Me.TabControlContenidoReportes.Controls.Add(Me.TabPage3)
-        Me.TabControlContenidoReportes.Controls.Add(Me.TabPage4)
-        Me.TabControlContenidoReportes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControlContenidoReportes.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.TabControlContenidoReportes.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControlContenidoReportes.HotTrack = True
-        Me.TabControlContenidoReportes.ImeMode = System.Windows.Forms.ImeMode.Katakana
-        Me.TabControlContenidoReportes.Location = New System.Drawing.Point(2, 85)
-        Me.TabControlContenidoReportes.Margin = New System.Windows.Forms.Padding(2)
-        Me.TabControlContenidoReportes.Multiline = True
-        Me.TabControlContenidoReportes.Name = "TabControlContenidoReportes"
-        Me.TabControlContenidoReportes.SelectedIndex = 0
-        Me.TabControlContenidoReportes.Size = New System.Drawing.Size(1331, 742)
-        Me.TabControlContenidoReportes.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
-        Me.TabControlContenidoReportes.TabIndex = 0
+        Me.tcContenidoReportes.Controls.Add(Me.TabPage1)
+        Me.tcContenidoReportes.Controls.Add(Me.TabPage2)
+        Me.tcContenidoReportes.Controls.Add(Me.TabPage3)
+        Me.tcContenidoReportes.Controls.Add(Me.TabPage4)
+        Me.tcContenidoReportes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tcContenidoReportes.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
+        Me.tcContenidoReportes.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcContenidoReportes.HotTrack = True
+        Me.tcContenidoReportes.ImeMode = System.Windows.Forms.ImeMode.Katakana
+        Me.tcContenidoReportes.Location = New System.Drawing.Point(2, 85)
+        Me.tcContenidoReportes.Margin = New System.Windows.Forms.Padding(2)
+        Me.tcContenidoReportes.Multiline = True
+        Me.tcContenidoReportes.Name = "tcContenidoReportes"
+        Me.tcContenidoReportes.SelectedIndex = 0
+        Me.tcContenidoReportes.Size = New System.Drawing.Size(1331, 742)
+        Me.tcContenidoReportes.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
+        Me.tcContenidoReportes.TabIndex = 0
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TabPage2.Controls.Add(Me.TableLayoutPanel3)
+        Me.TabPage2.Controls.Add(Me.tlpActividadSemenal)
         Me.TabPage2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage2.ForeColor = System.Drawing.Color.Purple
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
@@ -178,112 +142,9 @@ Partial Class FormBibliotecario
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Actividad Semanal"
         '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.AllowDrop = True
-        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.38573!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.61427!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Button1, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.DataGridViewTablaActividadSemanal, 0, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.Button5, 0, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(2, 2)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 2
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 481.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1319, 538)
-        Me.TableLayoutPanel3.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button1.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1129, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(147, 51)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Descargar Reportes"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTablaActividadSemanal
-        '
-        Me.DataGridViewTablaActividadSemanal.AllowUserToAddRows = False
-        Me.DataGridViewTablaActividadSemanal.AllowUserToDeleteRows = False
-        Me.DataGridViewTablaActividadSemanal.AllowUserToResizeColumns = False
-        Me.DataGridViewTablaActividadSemanal.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridViewTablaActividadSemanal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridViewTablaActividadSemanal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridViewTablaActividadSemanal.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridViewTablaActividadSemanal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridViewTablaActividadSemanal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridViewTablaActividadSemanal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTablaActividadSemanal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridViewTablaActividadSemanal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Purple
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTablaActividadSemanal.DefaultCellStyle = DataGridViewCellStyle8
-        Me.DataGridViewTablaActividadSemanal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewTablaActividadSemanal.EnableHeadersVisualStyles = False
-        Me.DataGridViewTablaActividadSemanal.GridColor = System.Drawing.Color.White
-        Me.DataGridViewTablaActividadSemanal.Location = New System.Drawing.Point(3, 60)
-        Me.DataGridViewTablaActividadSemanal.Name = "DataGridViewTablaActividadSemanal"
-        Me.DataGridViewTablaActividadSemanal.ReadOnly = True
-        Me.DataGridViewTablaActividadSemanal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTablaActividadSemanal.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
-        Me.DataGridViewTablaActividadSemanal.RowHeadersVisible = False
-        Me.DataGridViewTablaActividadSemanal.RowHeadersWidth = 62
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        Me.DataGridViewTablaActividadSemanal.RowsDefaultCellStyle = DataGridViewCellStyle10
-        Me.DataGridViewTablaActividadSemanal.RowTemplate.Height = 28
-        Me.DataGridViewTablaActividadSemanal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewTablaActividadSemanal.Size = New System.Drawing.Size(1080, 475)
-        Me.DataGridViewTablaActividadSemanal.TabIndex = 0
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        Me.Button5.Image = Global.ProyLibreteao.My.Resources.Resources.iconoFiltro
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(3, 3)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(118, 36)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Filtros"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.UseVisualStyleBackColor = False
-        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TabPage3.Controls.Add(Me.TableLayoutPanel2)
         Me.TabPage3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage3.ForeColor = System.Drawing.Color.Purple
         Me.TabPage3.Location = New System.Drawing.Point(4, 34)
@@ -296,7 +157,6 @@ Partial Class FormBibliotecario
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TabPage4.Controls.Add(Me.TableLayoutPanel4)
         Me.TabPage4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage4.ForeColor = System.Drawing.Color.Purple
         Me.TabPage4.Location = New System.Drawing.Point(4, 34)
@@ -341,11 +201,11 @@ Partial Class FormBibliotecario
         Me.tlpEncabezado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596!))
         Me.tlpEncabezado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404!))
         Me.tlpEncabezado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215.0!))
-        Me.tlpEncabezado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111.0!))
+        Me.tlpEncabezado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114.0!))
         Me.tlpEncabezado.Controls.Add(Me.lblTituloMenuEncabezado, 1, 0)
         Me.tlpEncabezado.Controls.Add(Me.lblTituloEncabezado, 2, 0)
-        Me.tlpEncabezado.Controls.Add(Me.PictureBox2, 0, 0)
-        Me.tlpEncabezado.Controls.Add(Me.PictureBox1, 3, 0)
+        Me.tlpEncabezado.Controls.Add(Me.pb2seccionMenuNav, 0, 0)
+        Me.tlpEncabezado.Controls.Add(Me.pb1Perfil, 3, 0)
         Me.tlpEncabezado.Cursor = System.Windows.Forms.Cursors.Default
         Me.tlpEncabezado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpEncabezado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -375,36 +235,36 @@ Partial Class FormBibliotecario
         Me.lblTituloEncabezado.AutoSize = True
         Me.lblTituloEncabezado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloEncabezado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblTituloEncabezado.Location = New System.Drawing.Point(1032, 31)
+        Me.lblTituloEncabezado.Location = New System.Drawing.Point(1029, 31)
         Me.lblTituloEncabezado.Name = "lblTituloEncabezado"
         Me.lblTituloEncabezado.Size = New System.Drawing.Size(190, 32)
         Me.lblTituloEncabezado.TabIndex = 0
         Me.lblTituloEncabezado.Text = "BIBLIOTECARIO"
         Me.lblTituloEncabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox2
+        'pb2seccionMenuNav
         '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.PictureBox2.Image = Global.ProyLibreteao.My.Resources.Resources.iconoReportes
-        Me.PictureBox2.Location = New System.Drawing.Point(4, 21)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(87, 52)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.pb2seccionMenuNav.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.pb2seccionMenuNav.Image = Global.ProyLibreteao.My.Resources.Resources.iconoReportes
+        Me.pb2seccionMenuNav.Location = New System.Drawing.Point(4, 21)
+        Me.pb2seccionMenuNav.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb2seccionMenuNav.Name = "pb2seccionMenuNav"
+        Me.pb2seccionMenuNav.Size = New System.Drawing.Size(87, 52)
+        Me.pb2seccionMenuNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb2seccionMenuNav.TabIndex = 0
+        Me.pb2seccionMenuNav.TabStop = False
         '
-        'PictureBox1
+        'pb1Perfil
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
-        Me.PictureBox1.Location = New System.Drawing.Point(1265, 24)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(68, 46)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.pb1Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pb1Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
+        Me.pb1Perfil.Location = New System.Drawing.Point(1265, 24)
+        Me.pb1Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb1Perfil.Name = "pb1Perfil"
+        Me.pb1Perfil.Size = New System.Drawing.Size(68, 46)
+        Me.pb1Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb1Perfil.TabIndex = 0
+        Me.pb1Perfil.TabStop = False
         '
         'PanelNavegacion
         '
@@ -568,7 +428,6 @@ Partial Class FormBibliotecario
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
         Me.TabPage1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage1.ForeColor = System.Drawing.Color.Purple
         Me.TabPage1.Location = New System.Drawing.Point(4, 34)
@@ -579,52 +438,34 @@ Partial Class FormBibliotecario
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Resumen De Informe "
         '
-        'TableLayoutPanel1
+        'btnFiltroReporteAS
         '
-        Me.TableLayoutPanel1.AllowDrop = True
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.38573!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.61427!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Button3, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.DataGridView1, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button4, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 2)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 481.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1319, 538)
-        Me.TableLayoutPanel1.TabIndex = 2
+        Me.btnFiltroReporteAS.BackColor = System.Drawing.Color.Transparent
+        Me.btnFiltroReporteAS.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFiltroReporteAS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
+        Me.btnFiltroReporteAS.Image = Global.ProyLibreteao.My.Resources.Resources.iconoFiltro
+        Me.btnFiltroReporteAS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFiltroReporteAS.Location = New System.Drawing.Point(3, 3)
+        Me.btnFiltroReporteAS.Name = "btnFiltroReporteAS"
+        Me.btnFiltroReporteAS.Size = New System.Drawing.Size(118, 36)
+        Me.btnFiltroReporteAS.TabIndex = 3
+        Me.btnFiltroReporteAS.Text = "Filtros"
+        Me.btnFiltroReporteAS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnFiltroReporteAS.UseVisualStyleBackColor = False
         '
-        'Button3
+        'dgvTablaInfoReporte
         '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button3.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(1129, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(147, 51)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Descargar Reportes"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.dgvTablaInfoReporte.AllowUserToAddRows = False
+        Me.dgvTablaInfoReporte.AllowUserToDeleteRows = False
+        Me.dgvTablaInfoReporte.AllowUserToResizeColumns = False
+        Me.dgvTablaInfoReporte.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvTablaInfoReporte.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvTablaInfoReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvTablaInfoReporte.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTablaInfoReporte.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvTablaInfoReporte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvTablaInfoReporte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -632,8 +473,8 @@ Partial Class FormBibliotecario
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTablaInfoReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvTablaInfoReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -641,14 +482,14 @@ Partial Class FormBibliotecario
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 60)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvTablaInfoReporte.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvTablaInfoReporte.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvTablaInfoReporte.EnableHeadersVisualStyles = False
+        Me.dgvTablaInfoReporte.GridColor = System.Drawing.Color.White
+        Me.dgvTablaInfoReporte.Location = New System.Drawing.Point(3, 60)
+        Me.dgvTablaInfoReporte.Name = "dgvTablaInfoReporte"
+        Me.dgvTablaInfoReporte.ReadOnly = True
+        Me.dgvTablaInfoReporte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -656,234 +497,48 @@ Partial Class FormBibliotecario
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowHeadersWidth = 62
+        Me.dgvTablaInfoReporte.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvTablaInfoReporte.RowHeadersVisible = False
+        Me.dgvTablaInfoReporte.RowHeadersWidth = 62
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1080, 475)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvTablaInfoReporte.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvTablaInfoReporte.RowTemplate.Height = 28
+        Me.dgvTablaInfoReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTablaInfoReporte.Size = New System.Drawing.Size(1080, 475)
+        Me.dgvTablaInfoReporte.TabIndex = 0
         '
-        'Button4
+        'Button1
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        Me.Button4.Image = Global.ProyLibreteao.My.Resources.Resources.iconoFiltro
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(3, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(118, 36)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Filtros"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(1129, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(147, 51)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Descargar Reportes"
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'TableLayoutPanel2
+        'tlpActividadSemenal
         '
-        Me.TableLayoutPanel2.AllowDrop = True
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.38573!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.61427!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Button2, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.DataGridView2, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button6, 0, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 481.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1323, 538)
-        Me.TableLayoutPanel2.TabIndex = 2
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button2.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(1132, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(147, 51)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Descargar Reportes"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToResizeColumns = False
-        Me.DataGridView2.AllowUserToResizeRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Purple
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle13
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.EnableHeadersVisualStyles = False
-        Me.DataGridView2.GridColor = System.Drawing.Color.White
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 60)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.RowHeadersWidth = 62
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle15
-        Me.DataGridView2.RowTemplate.Height = 28
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1083, 475)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.Transparent
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        Me.Button6.Image = Global.ProyLibreteao.My.Resources.Resources.iconoFiltro
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(3, 3)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(118, 36)
-        Me.Button6.TabIndex = 3
-        Me.Button6.Text = "Filtros"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.AllowDrop = True
-        Me.TableLayoutPanel4.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.38573!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.61427!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Button7, 1, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.DataGridView3, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.Button8, 0, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 2
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 481.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1323, 538)
-        Me.TableLayoutPanel4.TabIndex = 2
-        '
-        'Button7
-        '
-        Me.Button7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button7.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(1132, 3)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(147, 51)
-        Me.Button7.TabIndex = 3
-        Me.Button7.Text = "Descargar Reportes"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.AllowUserToResizeColumns = False
-        Me.DataGridView3.AllowUserToResizeRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Purple
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle18
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.EnableHeadersVisualStyles = False
-        Me.DataGridView3.GridColor = System.Drawing.Color.White
-        Me.DataGridView3.Location = New System.Drawing.Point(3, 60)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
-        Me.DataGridView3.RowHeadersVisible = False
-        Me.DataGridView3.RowHeadersWidth = 62
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.White
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle20
-        Me.DataGridView3.RowTemplate.Height = 28
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(1083, 475)
-        Me.DataGridView3.TabIndex = 0
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.Transparent
-        Me.Button8.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(147, Byte), Integer))
-        Me.Button8.Image = Global.ProyLibreteao.My.Resources.Resources.iconoFiltro
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(3, 3)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(118, 36)
-        Me.Button8.TabIndex = 3
-        Me.Button8.Text = "Filtros"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.tlpActividadSemenal.AllowDrop = True
+        Me.tlpActividadSemenal.BackColor = System.Drawing.Color.White
+        Me.tlpActividadSemenal.ColumnCount = 2
+        Me.tlpActividadSemenal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.38573!))
+        Me.tlpActividadSemenal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.61427!))
+        Me.tlpActividadSemenal.Controls.Add(Me.Button1, 1, 0)
+        Me.tlpActividadSemenal.Controls.Add(Me.dgvTablaInfoReporte, 0, 1)
+        Me.tlpActividadSemenal.Controls.Add(Me.btnFiltroReporteAS, 0, 0)
+        Me.tlpActividadSemenal.Dock = System.Windows.Forms.DockStyle.Top
+        Me.tlpActividadSemenal.Location = New System.Drawing.Point(2, 2)
+        Me.tlpActividadSemenal.Name = "tlpActividadSemenal"
+        Me.tlpActividadSemenal.RowCount = 2
+        Me.tlpActividadSemenal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpActividadSemenal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 481.0!))
+        Me.tlpActividadSemenal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpActividadSemenal.Size = New System.Drawing.Size(1319, 538)
+        Me.tlpActividadSemenal.TabIndex = 1
         '
         'FormBibliotecario
         '
@@ -900,18 +555,14 @@ Partial Class FormBibliotecario
         Me.PanelContenido.ResumeLayout(False)
         Me.tlpReporte.ResumeLayout(False)
         Me.tlpReporte.PerformLayout()
-        Me.TabControlContenidoReportes.ResumeLayout(False)
+        Me.tcContenidoReportes.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        CType(Me.DataGridViewTablaActividadSemanal, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage4.ResumeLayout(False)
         Me.PanelEncabezado.ResumeLayout(False)
         Me.PanelEncabezado.PerformLayout()
         Me.tlpEncabezado.ResumeLayout(False)
         Me.tlpEncabezado.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb2seccionMenuNav, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb1Perfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelNavegacion.ResumeLayout(False)
         Me.scNav.Panel2.ResumeLayout(False)
         CType(Me.scNav, System.ComponentModel.ISupportInitialize).EndInit()
@@ -922,21 +573,16 @@ Partial Class FormBibliotecario
         Me.scMenu.ResumeLayout(False)
         Me.MenuStripMenuNavegacion.ResumeLayout(False)
         Me.MenuStripMenuNavegacion.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvTablaInfoReporte, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlpActividadSemenal.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PanelNavegacion As Panel
     Friend WithEvents PanelEncabezado As Panel
     Friend WithEvents tlpEncabezado As TableLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents pb1Perfil As PictureBox
+    Friend WithEvents pb2seccionMenuNav As PictureBox
     Friend WithEvents lblTituloMenuEncabezado As Label
     Friend WithEvents lblTituloEncabezado As Label
     Friend WithEvents PanelContenido As Panel
@@ -954,26 +600,14 @@ Partial Class FormBibliotecario
     Friend WithEvents btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btn_NavCONSULTASToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tlpReporte As TableLayoutPanel
-    Friend WithEvents TabControlContenidoReportes As TabControl
+    Friend WithEvents tcContenidoReportes As TabControl
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridViewTablaActividadSemanal As DataGridView
-    Friend WithEvents Button5 As Button
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents lblTituloTabControl As Label
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button4 As Button
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents Button6 As Button
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Button7 As Button
-    Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents Button8 As Button
+    Friend WithEvents tlpActividadSemenal As TableLayoutPanel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents dgvTablaInfoReporte As DataGridView
+    Friend WithEvents btnFiltroReporteAS As Button
 End Class
