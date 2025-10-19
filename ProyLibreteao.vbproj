@@ -80,10 +80,32 @@
     <Compile Include="Bibliotecario\Contenido\Reportes\FormFiltro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bibliotecario\FormBibliotecario.Designer.vb">
-      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    <Compile Include="Bibliotecario\Contenido\Interface_Administrador.Designer.vb">
+      <DependentUpon>Interface_Administrador.vb</DependentUpon>
     </Compile>
-    <Compile Include="Bibliotecario\FormBibliotecario.vb">
+    <Compile Include="Bibliotecario\Contenido\Interface_Administrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\ClaseConsultas.vb" />
+    <Compile Include="Bibliotecario\Contenido\Reportes\ClaseReportes.vb" />
+    <Compile Include="Bibliotecario\ClaseEncabezado.vb" />
+    <Compile Include="Bibliotecario\ClaseNav.vb" />
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.Designer.vb">
+      <DependentUpon>FormConsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicio.Designer.vb">
+      <DependentUpon>FormInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\Reportes\FormReporte.Designer.vb">
+      <DependentUpon>FormReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\Reportes\FormReporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interface_invitados.Designer.vb">
@@ -98,6 +120,7 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bibliotecario\ModuloNavegacion.vb" />
     <Compile Include="NuevoUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +152,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bibliotecario\Contenido\FormConsultas.resx">
+      <DependentUpon>FormConsultas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormFiltro.resx">
       <DependentUpon>FormFiltro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bibliotecario\FormBibliotecario.resx">
-      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    <EmbeddedResource Include="Bibliotecario\Contenido\Interface_Administrador.resx">
+      <DependentUpon>Interface_Administrador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormReporte.resx">
+      <DependentUpon>FormReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface_invitados.resx">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
