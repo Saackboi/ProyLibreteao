@@ -4,7 +4,6 @@
 
         Public Event SeSeleccionoOpcion(titulo As String, icono As Image)
 
-        ' Diccionario: relaciona el nombre del botón con el título y el ícono
         Private secciones As Dictionary(Of String, Tuple(Of String, Image))
 
         Public Sub New()
@@ -22,25 +21,15 @@
             }
         End Sub
 
-        ' Maneja el clic de cualquier opción del menú
+        ' Maneja el click del menú
         Public Sub ManejarClick(sender As Object, e As EventArgs)
             Dim item As ToolStripMenuItem = TryCast(sender, ToolStripMenuItem)
             If item Is Nothing Then Return
 
             If secciones.ContainsKey(item.Name) Then
                 Dim info = secciones(item.Name)
+                ' Solo levanta el evento con el título y el ícono
                 RaiseEvent SeSeleccionoOpcion(info.Item1, info.Item2)
-
-                ' 🔄 Abrir el formulario correspondiente
-                Select Case info.Item1
-                    Case "REPORTES"
-                        Dim f As New FormReportes()
-                        f.Show()
-                    Case "CONSULTAS"
-                        Dim f As New FormConsultas()
-                        f.Show()
-                        ' puedes agregar más formularios aquí si lo necesitas
-                End Select
             Else
                 RaiseEvent SeSeleccionoOpcion(item.Text, Nothing)
             End If
@@ -49,6 +38,4 @@
     End Class
 
 End Namespace
-
-
 

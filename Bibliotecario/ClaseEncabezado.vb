@@ -1,4 +1,5 @@
 ﻿Namespace ProyLibreteao
+
     Public Class ClaseEncabezado
         Private ReadOnly _lblTitulo As Label
         Private ReadOnly _picture As PictureBox
@@ -13,5 +14,7 @@
             _picture.Image = imagen
         End Sub
     End Class
+
 End Namespace
+
 

@@ -1,6 +1,6 @@
 ﻿Namespace ProyLibreteao
     Public Class ClaseReportes
-        Private panelContenido As Panel
+
         Private dgvActividad As DataGridView
         Private tlpReporte As TableLayoutPanel
         Private tabControl As TabControl
@@ -8,8 +8,8 @@
         Private btnFiltro As Button
 
 
-        Public Sub New(panel As Panel, dgv As DataGridView, tlp As TableLayoutPanel, tab As TabControl, lblTitulo As Label, btnFiltroReporte As Button)
-            panelContenido = panel
+        Public Sub New(dgv As DataGridView, tlp As TableLayoutPanel, tab As TabControl, lblTitulo As Label, btnFiltroReporte As Button)
+
             dgvActividad = dgv
             tlpReporte = tlp
             tabControl = tab
@@ -23,18 +23,11 @@
             AddHandler tabControl.SelectedIndexChanged, AddressOf TabControl_SelectedIndexChanged
         End Sub
 
-
-
-
-
-
         '============================
         ' Mostrar sección de reportes
         '============================
         Public Sub MostrarReportes()
-            panelContenido.Controls.Clear()
-            tlpReporte.Dock = DockStyle.Fill
-            panelContenido.Controls.Add(tlpReporte)
+
 
             ' Limpiar y configurar DataGridView
             dgvActividad.Columns.Clear()

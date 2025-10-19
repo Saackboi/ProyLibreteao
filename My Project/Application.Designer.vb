@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ProyLibreteao.FormReportes
+            Me.MainForm = Global.ProyLibreteao.Interface_Administrador
 
         End Sub
         
