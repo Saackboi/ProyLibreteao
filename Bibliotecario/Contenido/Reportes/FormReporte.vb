@@ -1,18 +1,31 @@
-﻿Imports ProyLibreteao.ProyLibreteao
+﻿Imports System.Drawing.Printing
+Imports ProyLibreteao.ProyLibreteao
 
 Public Class FormReporte
     Private formFiltro As New FormFiltro()
 
-    Private codigoContenidoReporte As ClaseReportes
+    Private codigoContenidoResumen As ClaseContenidoResumen
+    Private codigoContenidoTablas As ClaseContenidoTablas
+    Private codigoDiseñoReporte As ClaseDiseño
+
+
+
     Public Property FormFiltroReportes As Object
 
     Private Sub FormReporte_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Inicializar la sección de reportes
-        codigoContenidoReporte = New ClaseReportes(dgvTablaInfoReporte,
-                                                tlpReporte, tcReportes,
-                                                lblTituloTabControl, btnFiltroReporte)
-        codigoContenidoReporte.MostrarReportes() '
+
+        codigoDiseñoReporte = New ClaseDiseño(tcReportes, lblTituloTabControl)
+        codigoContenidoResumen = New ClaseContenidoResumen(dtgCantidadUsuario, ChartPrestamo, ChartLibros)
+        codigoContenidoTablas = New ClaseContenidoTablas(dgvTablaActividadSemanal, dgvLibros, dgvMultas)
+        codigoContenidoTablas.MostrarTablaActividadSemenal() '
+        codigoContenidoTablas.MostrarTablaLibros()
+        codigoContenidoTablas.MostrarTablaMultas()
+        codigoContenidoResumen.CrearGraficoReporteCantidadUsuarios()
+        codigoContenidoResumen.MostrarGraficaPrestamos()
+        codigoContenidoResumen.MostrarGraficaLibros()
+
     End Sub
 
 
@@ -21,17 +34,49 @@ Public Class FormReporte
         ' Mostrar contenido según la sección
         Select Case titulo.ToUpper()
             Case "REPORTES"
-                codigoContenidoReporte.MostrarReportes() '
-
+                codigoContenidoTablas.MostrarTablaActividadSemenal() '
+                codigoContenidoResumen.CrearGraficoReporteCantidadUsuarios()
 
         End Select
     End Sub
 
-    Private Sub btnFiltroReporte_Click(sender As Object, e As EventArgs) Handles btnFiltroReporte.Click
+    Private Sub btnFiltroAS_Click(sender As Object, e As EventArgs) Handles btnFiltroAS.Click
+        formFiltro.ShowDialog()
+
+    End Sub
+
+    Private Sub btnFiltrosAS_Click(sender As Object, e As EventArgs) Handles btnFiltrosAS.Click
         formFiltro.ShowDialog()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnDescarga.Click
-        MessageBox.Show("Descargnado reporte...")
+    Private Sub btnFiltroM_Click(sender As Object, e As EventArgs) Handles btnFiltroM.Click
+        formFiltro.ShowDialog()
     End Sub
+
+    Private Sub btnDescargaAS_Click(sender As Object, e As EventArgs) Handles btnDescargaAS.Click
+        Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
+
+        ' Llamar al método que genera el PDF según la pestaña seleccionada
+        codigoContenidoTablas.DescargarReportes(tabSeleccionada)
+    End Sub
+
+    Private Sub btnDescargaL_Click(sender As Object, e As EventArgs) Handles btnDescargaL.Click
+        Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
+
+        ' Llamar al método que genera el PDF según la pestaña seleccionada
+        codigoContenidoTablas.DescargarReportes(tabSeleccionada)
+    End Sub
+
+    Private Sub btnDescargaM_Click(sender As Object, e As EventArgs) Handles btnDescargaM.Click
+        Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
+
+        ' Llamar al método que genera el PDF según la pestaña seleccionada
+        codigoContenidoTablas.DescargarReportes(tabSeleccionada)
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
+        formFiltro.ShowDialog()
+    End Sub
+
+
 End Class

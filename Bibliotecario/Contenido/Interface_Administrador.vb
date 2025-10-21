@@ -106,12 +106,7 @@ Public Class Interface_Administrador
         ' Abrir formulario según sección
         Select Case titulo.ToUpper()
             Case "INICIO"
-                Dim f As New FormInicio()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
-                PanelContenido.Controls.Add(f)
-                f.Show()
+
             Case "REPORTES"
                 Dim f As New FormReporte()
                 f.TopLevel = False

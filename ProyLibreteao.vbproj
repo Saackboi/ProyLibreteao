@@ -54,6 +54,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,7 +88,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bibliotecario\Contenido\ClaseConsultas.vb" />
-    <Compile Include="Bibliotecario\Contenido\Reportes\ClaseReportes.vb" />
+    <Compile Include="Bibliotecario\Contenido\Reportes\ClaseDiseño.vb" />
     <Compile Include="Bibliotecario\ClaseEncabezado.vb" />
     <Compile Include="Bibliotecario\ClaseNav.vb" />
     <Compile Include="Bibliotecario\Contenido\FormConsultas.Designer.vb">
@@ -96,18 +97,14 @@
     <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicio.Designer.vb">
-      <DependentUpon>FormInicio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormInicio.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\FormReporte.Designer.vb">
       <DependentUpon>FormReporte.vb</DependentUpon>
     </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\FormReporte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bibliotecario\Contenido\Reportes\ClaseContenidoResumen.vb" />
+    <Compile Include="ClaseContenidoTablas.vb" />
     <Compile Include="Interface_invitados.Designer.vb">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </Compile>
@@ -121,6 +118,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bibliotecario\ModuloNavegacion.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="NuevoUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +135,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -175,9 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.vb</DependentUpon>
@@ -197,8 +194,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\biblioteca.jpg" />
-    <Content Include="Resources\iconos\iconoContenidoReporte\iconoFiltro.png" />
-    <Content Include="Resources\iconos\iconosEncabezado\iconoPerfil.png" />
+    <None Include="Resources\iconos\descargar.png" />
+    <None Include="Resources\iconos\buscar.png" />
+    <Content Include="Resources\iconos\iconoFiltro.png" />
+    <Content Include="Resources\iconos\iconoPerfil.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoClientes.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoInicio.png" />

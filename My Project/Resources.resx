@@ -124,6 +124,9 @@
   <data name="icono_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconoGestionarCatálogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconoClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -140,7 +143,7 @@
     <value>..\Resources\iconos\iconosNavegacion\iconoLibro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconoFiltro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoContenidoReporte\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\iconos\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icono_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -149,13 +152,13 @@
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconoPerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosEncabezado\iconoPerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\iconos\iconoPerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconoPrestamo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconoPrestamo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconoGestionarCatálogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoGestionarCatálogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="descargar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\descargar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="biblioteca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\biblioteca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +178,7 @@
   <data name="iconoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconoInicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconoPreguntas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconosNavegacion\iconoPreguntas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
