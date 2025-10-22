@@ -24,6 +24,14 @@
         Me.Hide()
     End Sub
 
+    ' ///////////////////////////   ' Subrutina para pruebas rapidas (eliminar al finalizar)/////////////////////////////////////////
+    Public Function Registrarse(txtEmail As TextBox, txtUsuario As TextBox, txtContrasena As TextBox) As Boolean
+        If Not ValidarEntrada(txtEmail, "Debe ingresar un correo.") Then Return False
+        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.") Then Return False
+        If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.") Then Return False
+        Return True
+    End Function
+
     '============================== VALIDACIONES ==========================================
     Private Function ValidarEntrada(txt As TextBox, msg As String)
         If String.IsNullOrWhiteSpace(txt.Text) Then

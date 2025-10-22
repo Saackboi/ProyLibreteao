@@ -12,6 +12,7 @@ Public Class Login
     End Sub
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+
         ' Validacion de campo lleno y formato (letras y números para el usuario)
         If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then Exit Sub
 
@@ -28,6 +29,22 @@ Public Class Login
         MessageBox.Show("Bienvenido al sistema, " + usuarioCorrecto + "!", "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
+    ' ///////////////////////////   ' Subrutina para pruebas rapidas (eliminar al finalizar)/////////////////////////////////////////
+    Public Function IniciarSesion(txtUsuario As TextBox, txtContrasena As TextBox) As Boolean
+        ' Validación de campo lleno y formato (letras y números para el usuario)
+        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then
+            Return False
+        End If
+
+        ' Validación de campo lleno y formato (letras, números y caracteres especiales para la contraseña)
+        If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.", "^.+$", "La contraseña contiene caracteres no válidos.") Then
+            Return False
+        End If
+
+        ' Si todo está correcto
+        MessageBox.Show("Inicio de sesión exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Return True
+    End Function
 
     '-------------------------------------------- EFECTOS MOUSE -------------------------------------------------------------
     Private Sub btnEntrarInvitado_MouseHover(sender As Object, e As EventArgs) Handles btnEntrarInvitado.MouseHover
