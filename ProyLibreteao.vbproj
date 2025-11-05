@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\ClaseContenidoResumen.vb" />
     <Compile Include="ClaseContenidoTablas.vb" />
+    <Compile Include="interfacesninos.Designer.vb">
+      <DependentUpon>interfacesninos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="interfacesninos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interface_invitados.Designer.vb">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormReporte.resx">
       <DependentUpon>FormReporte.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="interfacesninos.resx">
+      <DependentUpon>interfacesninos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface_invitados.resx">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +224,7 @@
     <None Include="Resources\biblioteca.jpg" />
     <None Include="Resources\iconos\descargar.png" />
     <None Include="Resources\iconos\buscar.png" />
+    <None Include="Resources\alis.jpg" />
     <Content Include="Resources\iconos\iconoFiltro.png" />
     <Content Include="Resources\iconos\iconoPerfil.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoClientes.png" />
@@ -233,6 +243,8 @@
     <Content Include="Resources\icono_phone.png" />
     <None Include="Resources\libro.jpg" />
     <None Include="Resources\iconVerlibro.jpg" />
+    <None Include="Resources\pinochoi.jpg" />
+    <None Include="Resources\Principito.jpg" />
     <Content Include="Resources\romeoUlieta.jpg" />
     <None Include="Resources\user.png" />
   </ItemGroup>
