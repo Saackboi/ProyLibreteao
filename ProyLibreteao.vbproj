@@ -111,6 +111,12 @@
     <Compile Include="Interface_invitados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="leerlibro.Designer.vb">
+      <DependentUpon>leerlibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="leerlibro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -147,6 +153,12 @@
     <Compile Include="PerfilUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="verlibro.Designer.vb">
+      <DependentUpon>verlibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="verlibro.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bibliotecario\Contenido\FormConsultas.resx">
@@ -164,6 +176,9 @@
     <EmbeddedResource Include="Interface_invitados.resx">
       <DependentUpon>Interface_invitados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="leerlibro.resx">
+      <DependentUpon>leerlibro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="verlibro.resx">
+      <DependentUpon>verlibro.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -193,6 +211,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\usuario.jpg" />
     <None Include="Resources\biblioteca.jpg" />
     <None Include="Resources\iconos\descargar.png" />
     <None Include="Resources\iconos\buscar.png" />
@@ -212,6 +231,8 @@
     <Content Include="Resources\icono_booktree.png" />
     <Content Include="Resources\icono_user.png" />
     <Content Include="Resources\icono_phone.png" />
+    <None Include="Resources\libro.jpg" />
+    <None Include="Resources\iconVerlibro.jpg" />
     <Content Include="Resources\romeoUlieta.jpg" />
     <None Include="Resources\user.png" />
   </ItemGroup>
