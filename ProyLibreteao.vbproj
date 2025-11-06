@@ -123,6 +123,12 @@
     <Compile Include="leerlibro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="leerninos.Designer.vb">
+      <DependentUpon>leerninos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="leerninos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
