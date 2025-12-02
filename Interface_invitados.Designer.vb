@@ -55,7 +55,7 @@ Partial Class Interface_invitados
         Me.pnlEncabezado.Controls.Add(Me.lblLibreria)
         Me.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlEncabezado.Location = New System.Drawing.Point(0, 0)
-        Me.pnlEncabezado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlEncabezado.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlEncabezado.Name = "pnlEncabezado"
         Me.pnlEncabezado.Size = New System.Drawing.Size(810, 65)
         Me.pnlEncabezado.TabIndex = 0
@@ -90,7 +90,7 @@ Partial Class Interface_invitados
         '
         Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
         Me.picLogo.Location = New System.Drawing.Point(11, 10)
-        Me.picLogo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(38, 41)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -119,7 +119,7 @@ Partial Class Interface_invitados
         Me.pnlLateral.Controls.Add(Me.btnFiltrar)
         Me.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlLateral.Location = New System.Drawing.Point(0, 65)
-        Me.pnlLateral.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlLateral.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlLateral.Name = "pnlLateral"
         Me.pnlLateral.Size = New System.Drawing.Size(188, 455)
         Me.pnlLateral.TabIndex = 1
@@ -130,7 +130,7 @@ Partial Class Interface_invitados
         Me.Panel1.Controls.Add(Me.chkFiltro)
         Me.Panel1.Controls.Add(Me.lblFiltar)
         Me.Panel1.Location = New System.Drawing.Point(11, 84)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(165, 227)
         Me.Panel1.TabIndex = 8
@@ -141,7 +141,7 @@ Partial Class Interface_invitados
         Me.chkFiltro.FormattingEnabled = True
         Me.chkFiltro.Items.AddRange(New Object() {"★", "★★", "★★★", "★★★★", "★★★★★"})
         Me.chkFiltro.Location = New System.Drawing.Point(17, 43)
-        Me.chkFiltro.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.chkFiltro.Margin = New System.Windows.Forms.Padding(2)
         Me.chkFiltro.Name = "chkFiltro"
         Me.chkFiltro.Size = New System.Drawing.Size(120, 130)
         Me.chkFiltro.TabIndex = 1
@@ -164,7 +164,7 @@ Partial Class Interface_invitados
         Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.Location = New System.Drawing.Point(11, 352)
-        Me.btnRegistrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRegistrar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(165, 32)
         Me.btnRegistrar.TabIndex = 7
@@ -179,7 +179,7 @@ Partial Class Interface_invitados
         Me.btnRegresar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnRegresar.ForeColor = System.Drawing.Color.White
         Me.btnRegresar.Location = New System.Drawing.Point(11, 406)
-        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(165, 32)
         Me.btnRegresar.TabIndex = 6
@@ -190,7 +190,7 @@ Partial Class Interface_invitados
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBuscar.Location = New System.Drawing.Point(11, 32)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(114, 23)
         Me.txtBuscar.TabIndex = 0
@@ -202,7 +202,7 @@ Partial Class Interface_invitados
         Me.btnFiltrar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnFiltrar.ForeColor = System.Drawing.Color.White
         Me.btnFiltrar.Location = New System.Drawing.Point(128, 31)
-        Me.btnFiltrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnFiltrar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnFiltrar.Name = "btnFiltrar"
         Me.btnFiltrar.Size = New System.Drawing.Size(49, 24)
         Me.btnFiltrar.TabIndex = 1
@@ -218,7 +218,7 @@ Partial Class Interface_invitados
         Me.plLibro.Controls.Add(Me.btnVerlibro)
         Me.plLibro.Controls.Add(Me.PictureBox1)
         Me.plLibro.Location = New System.Drawing.Point(190, 65)
-        Me.plLibro.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.plLibro.Margin = New System.Windows.Forms.Padding(2)
         Me.plLibro.Name = "plLibro"
         Me.plLibro.Size = New System.Drawing.Size(618, 140)
         Me.plLibro.TabIndex = 2
@@ -273,7 +273,7 @@ Partial Class Interface_invitados
         Me.btnVerlibro.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnVerlibro.ForeColor = System.Drawing.Color.White
         Me.btnVerlibro.Location = New System.Drawing.Point(480, 55)
-        Me.btnVerlibro.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnVerlibro.Margin = New System.Windows.Forms.Padding(2)
         Me.btnVerlibro.Name = "btnVerlibro"
         Me.btnVerlibro.Size = New System.Drawing.Size(117, 34)
         Me.btnVerlibro.TabIndex = 9
@@ -284,7 +284,7 @@ Partial Class Interface_invitados
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 110)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -300,7 +300,7 @@ Partial Class Interface_invitados
         Me.Controls.Add(Me.plLibro)
         Me.Controls.Add(Me.pnlLateral)
         Me.Controls.Add(Me.pnlEncabezado)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(604, 414)
         Me.Name = "Interface_invitados"
         Me.Text = "Catálogo de Libros"

@@ -19,10 +19,8 @@ Partial Class verlibro
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlMenuSuperior = New System.Windows.Forms.Panel()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.picUsuario = New System.Windows.Forms.PictureBox()
         Me.pnlMenuInferior = New System.Windows.Forms.Panel()
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -34,11 +32,13 @@ Partial Class verlibro
         Me.btnHacerPedido = New System.Windows.Forms.Button()
         Me.lstComentarios = New System.Windows.Forms.ListBox()
         Me.picPortada = New System.Windows.Forms.PictureBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.picUsuario = New System.Windows.Forms.PictureBox()
         Me.pnlMenuSuperior.SuspendLayout()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlMenuInferior.SuspendLayout()
         CType(Me.picPortada, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenuSuperior
@@ -54,17 +54,6 @@ Partial Class verlibro
         Me.pnlMenuSuperior.Name = "pnlMenuSuperior"
         Me.pnlMenuSuperior.Size = New System.Drawing.Size(690, 45)
         Me.pnlMenuSuperior.TabIndex = 9
-        '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.ProyLibreteao.My.Resources.Resources.iconVerlibro
-        Me.picLogo.Location = New System.Drawing.Point(11, 6)
-        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(32, 34)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
         '
         'txtBuscar
         '
@@ -92,17 +81,6 @@ Partial Class verlibro
         Me.btnBuscar.TabIndex = 2
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'picUsuario
-        '
-        Me.picUsuario.Image = Global.ProyLibreteao.My.Resources.Resources.usuario
-        Me.picUsuario.Location = New System.Drawing.Point(645, 6)
-        Me.picUsuario.Margin = New System.Windows.Forms.Padding(2)
-        Me.picUsuario.Name = "picUsuario"
-        Me.picUsuario.Size = New System.Drawing.Size(32, 34)
-        Me.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picUsuario.TabIndex = 3
-        Me.picUsuario.TabStop = False
         '
         'pnlMenuInferior
         '
@@ -243,6 +221,28 @@ Partial Class verlibro
         Me.picPortada.TabIndex = 8
         Me.picPortada.TabStop = False
         '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.ProyLibreteao.My.Resources.Resources.iconVerlibro
+        Me.picLogo.Location = New System.Drawing.Point(11, 6)
+        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(32, 34)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
+        '
+        'picUsuario
+        '
+        Me.picUsuario.Image = Global.ProyLibreteao.My.Resources.Resources.usuario
+        Me.picUsuario.Location = New System.Drawing.Point(645, 6)
+        Me.picUsuario.Margin = New System.Windows.Forms.Padding(2)
+        Me.picUsuario.Name = "picUsuario"
+        Me.picUsuario.Size = New System.Drawing.Size(32, 34)
+        Me.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picUsuario.TabIndex = 3
+        Me.picUsuario.TabStop = False
+        '
         'verlibro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,10 +267,10 @@ Partial Class verlibro
         Me.Text = "📖 Ver Libro"
         Me.pnlMenuSuperior.ResumeLayout(False)
         Me.pnlMenuSuperior.PerformLayout()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlMenuInferior.ResumeLayout(False)
         CType(Me.picPortada, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

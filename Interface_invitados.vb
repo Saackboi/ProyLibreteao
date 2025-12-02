@@ -34,4 +34,20 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
     End Sub
+
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        NuevoUsuario.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnVerlibro_Click(sender As Object, e As EventArgs) Handles btnVerlibro.Click
+        verlibro.Show()
+        Me.Hide()
+    End Sub
 End Class
+

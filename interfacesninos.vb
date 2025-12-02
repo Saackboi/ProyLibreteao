@@ -8,6 +8,8 @@
     End Sub
 
     Private Sub btnPerfil_Click(sender As Object, e As EventArgs) Handles btnPerfil.Click
+        perfilninos.Show()
+        Me.Hide()
 
     End Sub
 
@@ -20,7 +22,8 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-
+        Login.Show()
+        Me.Hide()
     End Sub
 
     Private Sub interfacesninos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -78,10 +81,9 @@
 
             ' Acción al hacer clic en la imagen
             AddHandler pic.Click, Sub()
-                                      MessageBox.Show("📖 Has seleccionado: " & libro.Item1,
-                                                      "Lectura seleccionada",
-                                                      MessageBoxButtons.OK,
-                                                      MessageBoxIcon.Information)
+                                      leerninos.Show()
+                                      Me.Hide()
+
                                   End Sub
 
             panelLibro.Controls.Add(pic)
@@ -99,3 +101,4 @@
 
 
 End Class
+

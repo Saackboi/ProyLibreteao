@@ -137,4 +137,9 @@ Public Class Interface_Administrador
     Private Sub btn_NavCLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_NavCLIENTESToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
 End Class

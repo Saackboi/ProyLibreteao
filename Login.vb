@@ -2,7 +2,7 @@
 
 Public Class Login
     '====================================== VARIABLES DE EJEMPLO PARA AUTENTICACIÓN=====================================================
-    Private Const usuarioCorrecto As String = "pan"
+    Private Const usuarioCorrecto As String = "user"
     Private Const contrasenaCorrecta As String = "123@"
 
     '====================================== BOTONES =====================================================
@@ -13,20 +13,31 @@ Public Class Login
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
 
-        ' Validacion de campo lleno y formato (letras y números para el usuario)
-        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then Exit Sub
+        '  Obtener tipo de usuario del ComboBox
+        Dim tipoUsuario As String = cbTipoUsuario.SelectedItem.ToString()
 
-        ' Validacion de campo lleno y formato (letras, números y caracteres especiales para la contraseña)
+        ' ======================= validacione ===========================
+        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then Exit Sub
         If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.", "^.+$", "La contraseña contiene caracteres no válidos.") Then Exit Sub
 
-        ' Validacion de credenciales
+        ' =====================  validando las credenciales ======================
         If Not txtUsuario.Text = usuarioCorrecto Or Not txtContrasena.Text = contrasenaCorrecta Then
             MessageBox.Show("Usuario o contraseña incorrecto", "Error al iniciar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
-        'Bienvenida al usuario (si todas la validaciones pasan)
-        MessageBox.Show("Bienvenido al sistema, " + usuarioCorrecto + "!", "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ' ===================== redirección segun tipo de usuario =========================
+        If tipoUsuario = "Estudiante" Then
+            interfacesninos.Show()
+            Me.Hide()
+
+        ElseIf tipoUsuario = "Bibliotecario" Then
+            Interface_Administrador.Show()
+            Me.Hide()
+        End If
+
+        ' ===================== MENSAJE DE BIENVENIDA ==========================
+        MessageBox.Show("Bienvenido al sistema, " & usuarioCorrecto & "!", "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     ' ///////////////////////////   ' Subrutina para pruebas rapidas (eliminar al finalizar)/////////////////////////////////////////
@@ -74,6 +85,9 @@ Public Class Login
     End Sub
 
     '====================================================== VALIDACIONES ======================================================
+
+
+
     Private Function ValidarEntrada(txt As TextBox, msgVacio As String, patronRegex As String, msgFormato As String) As Boolean
 
         If String.IsNullOrWhiteSpace(txt.Text) Then

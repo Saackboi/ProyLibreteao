@@ -100,4 +100,10 @@
     Private Sub lblISBN_Click(sender As Object, e As EventArgs) Handles lblISBN.Click
 
     End Sub
+
+    Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
+        Interface_invitados.Show()
+        Me.Hide()
+
+    End Sub
 End Class

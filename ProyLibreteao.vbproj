@@ -200,6 +200,9 @@
     <EmbeddedResource Include="leerlibro.resx">
       <DependentUpon>leerlibro.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="leerninos.resx">
+      <DependentUpon>leerninos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +214,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfilninos.resx">
+      <DependentUpon>perfilninos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.vb</DependentUpon>
