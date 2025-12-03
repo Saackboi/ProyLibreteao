@@ -109,7 +109,7 @@ Partial Class Login
         Me.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbTipoUsuario.FormattingEnabled = True
-        Me.cbTipoUsuario.Items.AddRange(New Object() {"Estudiante", "Bibliotecario"})
+        Me.cbTipoUsuario.Items.AddRange(New Object() {"cliente", "bibliotecario"})
         Me.cbTipoUsuario.Location = New System.Drawing.Point(56, 269)
         Me.cbTipoUsuario.Name = "cbTipoUsuario"
         Me.cbTipoUsuario.Size = New System.Drawing.Size(300, 23)

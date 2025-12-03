@@ -11,33 +11,37 @@ Public Class Login
         Me.Hide()
     End Sub
 
+    Private auth As New Auth()
+
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
 
-        '  Obtener tipo de usuario del ComboBox
         Dim tipoUsuario As String = cbTipoUsuario.SelectedItem.ToString()
 
-        ' ======================= validacione ===========================
+        ' Validaciones básicas
         If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then Exit Sub
         If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.", "^.+$", "La contraseña contiene caracteres no válidos.") Then Exit Sub
 
-        ' =====================  validando las credenciales ======================
-        If Not txtUsuario.Text = usuarioCorrecto Or Not txtContrasena.Text = contrasenaCorrecta Then
+        ' Llamar al Login REAL
+        Dim user As DataRow = auth.Login(txtUsuario.Text, txtContrasena.Text, tipoUsuario.ToLower())
+
+        If user Is Nothing Then
             MessageBox.Show("Usuario o contraseña incorrecto", "Error al iniciar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
-        ' ===================== redirección segun tipo de usuario =========================
-        If tipoUsuario = "Estudiante" Then
-            interfacesninos.Show()
-            Me.Hide()
+        ' Redirección según tipo
+        Select Case tipoUsuario
+            Case "cliente"
+                interfacesninos.Show()
 
-        ElseIf tipoUsuario = "Bibliotecario" Then
-            Interface_Administrador.Show()
-            Me.Hide()
-        End If
+            Case "bibliotecario"
+                Interface_Administrador.Show()
 
-        ' ===================== MENSAJE DE BIENVENIDA ==========================
-        MessageBox.Show("Bienvenido al sistema, " & usuarioCorrecto & "!", "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Select
+
+        MessageBox.Show("Bienvenido " & user("nombre").ToString(), "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Me.Hide()
     End Sub
 
     ' ///////////////////////////   ' Subrutina para pruebas rapidas (eliminar al finalizar)/////////////////////////////////////////

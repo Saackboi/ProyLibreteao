@@ -105,6 +105,9 @@
     </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\ClaseContenidoResumen.vb" />
     <Compile Include="ClaseContenidoTablas.vb" />
+    <Compile Include="DAL\Auth.vb" />
+    <Compile Include="DAL\Conexion.vb" />
+    <Compile Include="DAL\Database.vb" />
     <Compile Include="interfacesninos.Designer.vb">
       <DependentUpon>interfacesninos.vb</DependentUpon>
     </Compile>
