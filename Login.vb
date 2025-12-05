@@ -1,5 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
-
+Imports System.Net.Http ' Para tipos relacionados con las solicitudes web (si los usas directamente)
+Imports System.Threading.Tasks ' Esencial para la palabra clave Async/Await
+Imports Newtonsoft.Json ' Para poder usar ApiService.PostAsync
 Public Class Login
     '====================================== VARIABLES DE EJEMPLO PARA AUTENTICACIÓN=====================================================
     Private Const usuarioCorrecto As String = "user"
@@ -13,35 +15,43 @@ Public Class Login
 
     Private auth As New Auth()
 
-    Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+    Private Async Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+        Try
+            ' Construimos objeto para enviar al API
+            Dim cred = New With {
+            .correo = txtUsuario.Text,
+            .contrasena = txtContrasena.Text
+        }
 
-        Dim tipoUsuario As String = cbTipoUsuario.SelectedItem.ToString()
+            ' Llamada al API /usuario/login
+            Dim usuarioLogeado = Await ApiService.PostAsync(Of Usuario)("usuario/login", cred)
 
-        ' Validaciones básicas
-        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.", "^[a-zA-ZÁÉÍÓÚáéíóúÑñ0-9]+$", "Solo se permiten letras y números en el nombre de usuario.") Then Exit Sub
-        If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.", "^.+$", "La contraseña contiene caracteres no válidos.") Then Exit Sub
+            If usuarioLogeado Is Nothing Then
+                MessageBox.Show("Usuario o contraseña incorrecto", "Error al iniciar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+            End If
 
-        ' Llamar al Login REAL
-        Dim user As DataRow = auth.Login(txtUsuario.Text, txtContrasena.Text, tipoUsuario.ToLower())
+            ' Mostrar mensaje éxito
+            MessageBox.Show("Bienvenido " & usuarioLogeado.nombre, "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        If user Is Nothing Then
-            MessageBox.Show("Usuario o contraseña incorrecto", "Error al iniciar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
+            ' Redirección según tipo de usuario
+            Select Case usuarioLogeado.tipo_usuario.ToLower()
+                Case "cliente"
+                    interfacesninos.Show()
 
-        ' Redirección según tipo
-        Select Case tipoUsuario
-            Case "cliente"
-                interfacesninos.Show()
+                Case "bibliotecario"
+                    Interface_Administrador.Show()
 
-            Case "bibliotecario"
-                Interface_Administrador.Show()
+                Case Else
+                    MessageBox.Show("Rol desconocido en el sistema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
 
-        End Select
+            Me.Hide()
 
-        MessageBox.Show("Bienvenido " & user("nombre").ToString(), "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error en la conexión con el servidor: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
-        Me.Hide()
     End Sub
 
     ' ///////////////////////////   ' Subrutina para pruebas rapidas (eliminar al finalizar)/////////////////////////////////////////

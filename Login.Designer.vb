@@ -27,7 +27,6 @@ Partial Class Login
         Me.btnIniciarSesion = New System.Windows.Forms.Button()
         Me.btnRegistrarse = New System.Windows.Forms.Label()
         Me.btnEntrarInvitado = New System.Windows.Forms.Label()
-        Me.cbTipoUsuario = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -35,6 +34,7 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cbTipoUsuario = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,17 +103,6 @@ Partial Class Login
         Me.btnEntrarInvitado.Size = New System.Drawing.Size(119, 15)
         Me.btnEntrarInvitado.TabIndex = 9
         Me.btnEntrarInvitado.Text = "Entrar como invitado"
-        '
-        'cbTipoUsuario
-        '
-        Me.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbTipoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTipoUsuario.FormattingEnabled = True
-        Me.cbTipoUsuario.Items.AddRange(New Object() {"cliente", "bibliotecario"})
-        Me.cbTipoUsuario.Location = New System.Drawing.Point(56, 269)
-        Me.cbTipoUsuario.Name = "cbTipoUsuario"
-        Me.cbTipoUsuario.Size = New System.Drawing.Size(300, 23)
-        Me.cbTipoUsuario.TabIndex = 6
         '
         'Label3
         '
@@ -186,6 +175,17 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'cbTipoUsuario
+        '
+        Me.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbTipoUsuario.FormattingEnabled = True
+        Me.cbTipoUsuario.Items.AddRange(New Object() {"cliente", "bibliotecario"})
+        Me.cbTipoUsuario.Location = New System.Drawing.Point(56, 269)
+        Me.cbTipoUsuario.Name = "cbTipoUsuario"
+        Me.cbTipoUsuario.Size = New System.Drawing.Size(300, 23)
+        Me.cbTipoUsuario.TabIndex = 6
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -211,7 +211,6 @@ Partial Class Login
     Friend WithEvents btnIniciarSesion As Button
     Friend WithEvents btnRegistrarse As Label
     Friend WithEvents btnEntrarInvitado As Label
-    Friend WithEvents cbTipoUsuario As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtContrasena As TextBox
     Friend WithEvents txtUsuario As TextBox
@@ -219,4 +218,5 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents cbTipoUsuario As ComboBox
 End Class

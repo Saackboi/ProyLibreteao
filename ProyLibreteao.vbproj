@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -113,7 +116,6 @@
     <Compile Include="ClaseContenidoTablas.vb" />
     <Compile Include="DAL\Auth.vb" />
     <Compile Include="DAL\Conexion-ejemplo.vb" />
-    <Compile Include="DAL\Conexion.vb" />
     <Compile Include="DAL\Database.vb" />
     <Compile Include="interfacesninos.Designer.vb">
       <DependentUpon>interfacesninos.vb</DependentUpon>
@@ -146,6 +148,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bibliotecario\ModuloNavegacion.vb" />
+    <Compile Include="Models\Usuario.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +184,7 @@
     <Compile Include="PerfilUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Services\ApiService.vb.vb" />
     <Compile Include="verlibro.Designer.vb">
       <DependentUpon>verlibro.vb</DependentUpon>
     </Compile>
@@ -245,6 +249,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\usuario.jpg" />
     <None Include="Resources\biblioteca.jpg" />
     <None Include="Resources\iconos\descargar.png" />

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NuevoUsuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class NuevoUsuario
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -30,164 +30,171 @@ Partial Class NuevoUsuario
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.btnRegistrarse = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnYaTengo = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnYaTengo = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(465, 143)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(53, 209)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 20)
+        Me.Label1.Size = New System.Drawing.Size(70, 23)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "USUARIO"
+        Me.Label1.Text = "Usuario"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(465, 56)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(53, 123)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 20)
+        Me.Label2.Size = New System.Drawing.Size(157, 23)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "E-MAIL"
+        Me.Label2.Text = "Correo Electrónico"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(465, 225)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(53, 295)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(119, 20)
+        Me.Label3.Size = New System.Drawing.Size(99, 23)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "CONTRASEÑA"
+        Me.Label3.Text = "Contraseña"
         '
         'txtEmail
         '
-        Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(469, 94)
+        Me.txtEmail.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEmail.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(53, 154)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(266, 26)
+        Me.txtEmail.Size = New System.Drawing.Size(426, 34)
         Me.txtEmail.TabIndex = 3
         '
         'txtUsuario
         '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(469, 183)
+        Me.txtUsuario.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(53, 240)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(266, 26)
+        Me.txtUsuario.Size = New System.Drawing.Size(426, 34)
         Me.txtUsuario.TabIndex = 4
         '
         'txtContrasena
         '
-        Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContrasena.Location = New System.Drawing.Point(469, 265)
+        Me.txtContrasena.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContrasena.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContrasena.Location = New System.Drawing.Point(53, 326)
+        Me.txtContrasena.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.Size = New System.Drawing.Size(266, 26)
+        Me.txtContrasena.Size = New System.Drawing.Size(426, 34)
         Me.txtContrasena.TabIndex = 5
+        Me.txtContrasena.UseSystemPasswordChar = True
         '
         'btnRegistrarse
         '
-        Me.btnRegistrarse.BackColor = System.Drawing.Color.Gold
-        Me.btnRegistrarse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnRegistrarse.Location = New System.Drawing.Point(475, 375)
+        Me.btnRegistrarse.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
+        Me.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrarse.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarse.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarse.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarse.Location = New System.Drawing.Point(53, 406)
+        Me.btnRegistrarse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnRegistrarse.Name = "btnRegistrarse"
-        Me.btnRegistrarse.Size = New System.Drawing.Size(125, 41)
+        Me.btnRegistrarse.Size = New System.Drawing.Size(427, 55)
         Me.btnRegistrarse.TabIndex = 6
         Me.btnRegistrarse.Text = "REGISTRARSE"
         Me.btnRegistrarse.UseVisualStyleBackColor = False
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.SeaGreen
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.btnRegistrarse)
+        Me.Panel1.Controls.Add(Me.txtContrasena)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.txtUsuario)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtEmail)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnYaTengo)
-        Me.Panel1.Location = New System.Drawing.Point(441, 12)
+        Me.Panel1.Location = New System.Drawing.Point(267, 37)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(332, 426)
-        Me.Panel1.TabIndex = 7
-        '
-        'btnYaTengo
-        '
-        Me.btnYaTengo.AutoSize = True
-        Me.btnYaTengo.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnYaTengo.Location = New System.Drawing.Point(216, 377)
-        Me.btnYaTengo.Name = "btnYaTengo"
-        Me.btnYaTengo.Size = New System.Drawing.Size(86, 13)
-        Me.btnYaTengo.TabIndex = 8
-        Me.btnYaTengo.Text = "Ya tengo cuenta"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(138, 126)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(109, 37)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Nuevo"
+        Me.Panel1.Size = New System.Drawing.Size(533, 640)
+        Me.Panel1.TabIndex = 0
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(194, 163)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(233, 37)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(135, 37)
+        Me.Label6.Size = New System.Drawing.Size(180, 54)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Registro"
         '
-        'Label7
+        'Label5
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(112, 225)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(133, 20)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "#Filtros eficientes"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(156, Byte), Integer), CType(CType(18, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(87, 37)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(147, 54)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Nuevo"
         '
-        'Label8
+        'btnYaTengo
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(177, 256)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(193, 20)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "#Sistemas automatizados"
+        Me.btnYaTengo.AutoSize = True
+        Me.btnYaTengo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnYaTengo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnYaTengo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnYaTengo.Location = New System.Drawing.Point(147, 480)
+        Me.btnYaTengo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.btnYaTengo.Name = "btnYaTengo"
+        Me.btnYaTengo.Size = New System.Drawing.Size(215, 20)
+        Me.btnYaTengo.TabIndex = 8
+        Me.btnYaTengo.Text = "¿Ya tienes cuenta? Inicia Sesión"
+        Me.btnYaTengo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'NuevoUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.btnRegistrarse)
-        Me.Controls.Add(Me.txtContrasena)
-        Me.Controls.Add(Me.txtUsuario)
-        Me.Controls.Add(Me.txtEmail)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1067, 738)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MaximizeBox = False
         Me.Name = "NuevoUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Usuario"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -202,6 +209,4 @@ Partial Class NuevoUsuario
     Friend WithEvents btnYaTengo As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
 End Class
