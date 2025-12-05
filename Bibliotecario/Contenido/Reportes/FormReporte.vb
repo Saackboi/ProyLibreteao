@@ -17,11 +17,12 @@ Public Class FormReporte
         ' Inicializar la sección de reportes
 
         codigoDiseñoReporte = New ClaseDiseño(tcReportes, lblTituloTabControl)
-        codigoContenidoResumen = New ClaseContenidoResumen(dtgCantidadUsuario, ChartPrestamo, ChartLibros)
+        codigoContenidoResumen = New ClaseContenidoResumen(dtgCantidadUsuario, ChartPrestamo, ChartLibros, Label6, Label2, Label7, Label11, Label12)
         codigoContenidoTablas = New ClaseContenidoTablas(dgvTablaActividadSemanal, dgvLibros, dgvMultas)
         codigoContenidoTablas.MostrarTablaActividadSemenal() '
         codigoContenidoTablas.MostrarTablaLibros()
         codigoContenidoTablas.MostrarTablaMultas()
+        codigoContenidoResumen.CargarDatosTarjetas()
         codigoContenidoResumen.CrearGraficoReporteCantidadUsuarios()
         codigoContenidoResumen.MostrarGraficaPrestamos()
         codigoContenidoResumen.MostrarGraficaLibros()
@@ -73,10 +74,5 @@ Public Class FormReporte
         ' Llamar al método que genera el PDF según la pestaña seleccionada
         codigoContenidoTablas.DescargarReportes(tabSeleccionada)
     End Sub
-
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
-        formFiltro.ShowDialog()
-    End Sub
-
 
 End Class

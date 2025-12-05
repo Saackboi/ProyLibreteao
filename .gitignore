@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Custom - Database Connection (Sensitive Data)
+DAL/Conexion.vb

@@ -75,6 +75,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.Designer.vb">
+      <DependentUpon>FormConsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionLibros\ClaseContenidoLibros.vb" />
+    <Compile Include="Bibliotecario\Contenido\GestionLibros\FormLibros.Designer.vb">
+      <DependentUpon>FormLibros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionLibros\FormLibros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\FormFiltro.Designer.vb">
       <DependentUpon>FormFiltro.vb</DependentUpon>
     </Compile>
@@ -87,16 +100,9 @@
     <Compile Include="Bibliotecario\Contenido\Interface_Administrador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bibliotecario\Contenido\ClaseConsultas.vb" />
     <Compile Include="Bibliotecario\Contenido\Reportes\ClaseDiseño.vb" />
     <Compile Include="Bibliotecario\ClaseEncabezado.vb" />
     <Compile Include="Bibliotecario\ClaseNav.vb" />
-    <Compile Include="Bibliotecario\Contenido\FormConsultas.Designer.vb">
-      <DependentUpon>FormConsultas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\FormReporte.Designer.vb">
       <DependentUpon>FormReporte.vb</DependentUpon>
     </Compile>
@@ -106,6 +112,7 @@
     <Compile Include="Bibliotecario\Contenido\Reportes\ClaseContenidoResumen.vb" />
     <Compile Include="ClaseContenidoTablas.vb" />
     <Compile Include="DAL\Auth.vb" />
+    <Compile Include="DAL\Conexion-ejemplo.vb" />
     <Compile Include="DAL\Conexion.vb" />
     <Compile Include="DAL\Database.vb" />
     <Compile Include="interfacesninos.Designer.vb">
@@ -182,9 +189,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Bibliotecario\Contenido\FormConsultas.resx">
-      <DependentUpon>FormConsultas.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\Contenido\Reportes\FormFiltro.resx">
       <DependentUpon>FormFiltro.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +273,8 @@
     <Content Include="Resources\romeoUlieta.jpg" />
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Bibliotecario\Contenido\Consultas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

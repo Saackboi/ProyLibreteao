@@ -107,6 +107,14 @@ Public Class Interface_Administrador
         Select Case titulo.ToUpper()
             Case "INICIO"
 
+
+            Case "LIBROS"
+                Dim f As New FormLibros()
+                f.TopLevel = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(f)
+                f.Show()
             Case "REPORTES"
                 Dim f As New FormReporte()
                 f.TopLevel = False

@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35122.118
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProyLibreteao", "ProyLibreteao.vbproj", "{B110BBEF-379A-40E5-AAE1-80DFE729027D}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestProyLibreteao", "..\TestProyLibreteao\TestProyLibreteao.vbproj", "{F0FEB700-DE16-468A-8889-48AF394620CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{B110BBEF-379A-40E5-AAE1-80DFE729027D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B110BBEF-379A-40E5-AAE1-80DFE729027D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B110BBEF-379A-40E5-AAE1-80DFE729027D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0FEB700-DE16-468A-8889-48AF394620CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0FEB700-DE16-468A-8889-48AF394620CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0FEB700-DE16-468A-8889-48AF394620CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0FEB700-DE16-468A-8889-48AF394620CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

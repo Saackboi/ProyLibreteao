@@ -1,11 +1,14 @@
 ﻿Imports System.Drawing.Printing
-
 Imports System.Drawing
+Imports System.Data.SqlClient
 
 Public Class ClaseContenidoTablas
     Private ReadOnly dgvActividad As DataGridView
     Private ReadOnly dgvLibros As DataGridView
     Private ReadOnly dgvMultas As DataGridView
+
+    ' Instancia de la clase de conexión para realizar consultas
+    Private db As New Database()
 
     Public Sub New(dgvTablaActividadSemanal As DataGridView, dgvLibros As DataGridView, dgvMultas As DataGridView)
         ' Validar dependencias recibidas para evitar NullReferenceException posteriores.
@@ -18,60 +21,136 @@ Public Class ClaseContenidoTablas
         Me.dgvMultas = dgvMultas
     End Sub
 
+    ' -------------------------------------------------------------------------
+    ' MÉTODO 1: CARGAR ACTIVIDAD SEMANAL (Estadísticas reales desde BD)
+    ' -------------------------------------------------------------------------
     Friend Sub MostrarTablaActividadSemenal()
         If dgvActividad Is Nothing Then Return
+
+        ' Limpiar y configurar columnas
         dgvActividad.Columns.Clear()
-        ' Cambiar estilo de borde
+        dgvActividad.Rows.Clear()
         dgvActividad.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
 
-
-        dgvActividad.Columns.Add("Semana", "Semana")
+        dgvActividad.Columns.Add("Semana", "Semana (Año)")
         dgvActividad.Columns.Add("Prestamos", "Préstamos")
-        dgvActividad.Columns.Add("Devoluciones", "Devolución")
-        dgvActividad.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
-        dgvActividad.Columns.Add("Multas", "Multas")
+        dgvActividad.Columns.Add("Devoluciones", "Devoluciones")
+        dgvActividad.Columns.Add("Multas", "Total Multas ($)")
 
-        dgvActividad.Rows.Add("1 - 7 de octubre", 100, 90, 10, 9)
-        dgvActividad.Rows.Add("8 - 14 de octubre", 80, 75, 5, 8)
+        ' Consulta SQL: Agrupa préstamos, devoluciones y multas por semana
+        ' Se usa DATEPART(iso_week) para identificar el número de semana
+        Dim query As String = "
+            SELECT 
+                CONCAT('Semana ', DATEPART(iso_week, p.fecha_prestamo), ' - ', YEAR(p.fecha_prestamo)) as Semana,
+                COUNT(p.id_prestamo) as CantidadPrestamos,
+                (SELECT COUNT(*) FROM devolucion d WHERE DATEPART(iso_week, d.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)) as CantidadDevoluciones,
+                ISNULL((SELECT SUM(d2.multa) FROM devolucion d2 WHERE DATEPART(iso_week, d2.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)), 0) as TotalMultas
+            FROM prestamo p
+            GROUP BY DATEPART(iso_week, p.fecha_prestamo), YEAR(p.fecha_prestamo)
+            ORDER BY YEAR(p.fecha_prestamo) DESC, DATEPART(iso_week, p.fecha_prestamo) DESC"
 
+        Try
+            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+
+            For Each row As DataRow In dt.Rows
+                dgvActividad.Rows.Add(
+                    row("Semana"),
+                    row("CantidadPrestamos"),
+                    row("CantidadDevoluciones"),
+                    Convert.ToDecimal(row("TotalMultas")).ToString("N2") ' Formato de moneda
+                )
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar la actividad semanal: " & ex.Message)
+        End Try
     End Sub
 
+    ' -------------------------------------------------------------------------
+    ' MÉTODO 2: CARGAR LIBROS (Catálogo desde BD con Categorías)
+    ' -------------------------------------------------------------------------
     Friend Sub MostrarTablaLibros()
-
         If dgvLibros Is Nothing Then Return
+
+        ' Limpiar y configurar columnas (Ajustadas a la realidad de la tabla Libro)
         dgvLibros.Columns.Clear()
-        ' Cambiar estilo de borde
+        dgvLibros.Rows.Clear()
         dgvLibros.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
 
+        dgvLibros.Columns.Add("ID", "ID")
+        dgvLibros.Columns.Add("Titulo", "Título")
+        dgvLibros.Columns.Add("Categoria", "Categoría")
+        dgvLibros.Columns.Add("Estado", "Disponibilidad")
 
-        dgvLibros.Columns.Add("Semana", "Semana")
-        dgvLibros.Columns.Add("Prestamos", "Préstamos")
-        dgvLibros.Columns.Add("Devoluciones", "Devolución")
-        dgvLibros.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
-        dgvLibros.Columns.Add("Multas", "Multas")
+        ' Consulta SQL: Une la tabla Libro con Categorias
+        Dim query As String = "
+            SELECT l.id_libro, l.titulo, c.nombre_categoria, l.disponibilidad 
+            FROM libro l
+            INNER JOIN categorias c ON l.id_categoria = c.id_categoria"
 
-        dgvLibros.Rows.Add("1 - 7 de octubre", 100, 90, 10, 9)
-        dgvLibros.Rows.Add("8 - 14 de octubre", 80, 75, 5, 8)
+        Try
+            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
 
+            For Each row As DataRow In dt.Rows
+                ' Interpretar el bit de disponibilidad (1 = Disponible, 0 = Prestado)
+                Dim estado As String = If(row("disponibilidad") IsNot DBNull.Value AndAlso Convert.ToBoolean(row("disponibilidad")), "Disponible", "Prestado")
+
+                dgvLibros.Rows.Add(
+                    row("id_libro"),
+                    row("titulo"),
+                    row("nombre_categoria"),
+                    estado
+                )
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los libros: " & ex.Message)
+        End Try
     End Sub
 
+    ' -------------------------------------------------------------------------
+    ' MÉTODO 3: CARGAR MULTAS (Usuarios con deuda activa)
+    ' -------------------------------------------------------------------------
     Friend Sub MostrarTablaMultas()
         If dgvMultas Is Nothing Then Return
+
+        ' Limpiar y configurar columnas (Ajustadas para mostrar quién debe qué)
         dgvMultas.Columns.Clear()
-        ' Cambiar estilo de borde
+        dgvMultas.Rows.Clear()
         dgvMultas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
 
+        dgvMultas.Columns.Add("Usuario", "Usuario")
+        dgvMultas.Columns.Add("Libro", "Libro")
+        dgvMultas.Columns.Add("FechaDev", "Fecha Devolución")
+        dgvMultas.Columns.Add("Monto", "Monto Multa")
 
-        dgvMultas.Columns.Add("Semana", "Semana")
-        dgvMultas.Columns.Add("Prestamos", "Préstamos")
-        dgvMultas.Columns.Add("Devoluciones", "Devolución")
-        dgvMultas.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
-        dgvMultas.Columns.Add("Multas", "Multas")
+        ' Consulta SQL: Une Devolucion, Prestamo, Usuario y Libro
+        ' Filtra solo aquellas devoluciones donde la multa sea mayor a 0
+        Dim query As String = "
+            SELECT u.nombre, l.titulo, d.fecha_real_devolucion, d.multa
+            FROM devolucion d
+            INNER JOIN prestamo p ON d.id_prestamo = p.id_prestamo
+            INNER JOIN usuario u ON p.id_usuario = u.id_usuario
+            INNER JOIN libro l ON p.id_libro = l.id_libro
+            WHERE d.multa > 0"
 
-        dgvMultas.Rows.Add("1 - 7 de octubre", 100, 90, 10, 9)
-        dgvMultas.Rows.Add("8 - 14 de octubre", 80, 75, 5, 8)
+        Try
+            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+
+            For Each row As DataRow In dt.Rows
+                dgvMultas.Rows.Add(
+                    row("nombre"),
+                    row("titulo"),
+                    Convert.ToDateTime(row("fecha_real_devolucion")).ToString("dd/MM/yyyy"),
+                    "$" & Convert.ToDecimal(row("multa")).ToString("N2")
+                )
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar las multas: " & ex.Message)
+        End Try
     End Sub
 
+    ' -------------------------------------------------------------------------
+    ' LÓGICA DE IMPRESIÓN Y PDF
+    ' -------------------------------------------------------------------------
     Friend Sub DescargarReportes(tabSeleccionada As TabPage)
         Dim printDoc As New Printing.PrintDocument()
 
@@ -93,7 +172,12 @@ Public Class ClaseContenidoTablas
                     .PrintFileName = sfd.FileName
                 End With
 
-                printDoc.Print()
+                Try
+                    printDoc.Print()
+                    MessageBox.Show("Reporte guardado exitosamente.")
+                Catch ex As Exception
+                    MessageBox.Show("Error al generar el PDF. Asegúrese de tener 'Microsoft Print to PDF' instalado. Detalle: " & ex.Message)
+                End Try
             End If
         End Using
     End Sub
@@ -115,7 +199,7 @@ Public Class ClaseContenidoTablas
         g.DrawString("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy"), fuenteSubtitulo, brocha, margenIzq, y)
         y += 40
 
-        ' --- Logo  ---
+        ' --- Logo (Opcional, envuelto en Try por si no existe el recurso) ---
         Try
             g.DrawImage(My.Resources.iconoLibro, e.MarginBounds.Right - 100, e.MarginBounds.Top, 80, 80)
         Catch
@@ -123,7 +207,7 @@ Public Class ClaseContenidoTablas
 
         Dim lapiz As New Pen(Color.Black, 1)
 
-        ' Función para dibujar una tabla
+        ' Función interna para dibujar una tabla dinámica
         Dim dibujarTabla As Action(Of DataGridView, String) =
         Sub(dgv As DataGridView, titulo As String)
             g.DrawString(titulo, fuenteTabla, brocha, margenIzq, y)
@@ -133,17 +217,23 @@ Public Class ClaseContenidoTablas
             Dim anchoPagina As Integer = e.MarginBounds.Width
             Dim anchoColumna As Integer = anchoPagina \ dgv.Columns.Count
 
+            ' Dibujar Encabezados
             Dim x As Integer = margenIzq
             For Each col As DataGridViewColumn In dgv.Columns
                 g.DrawRectangle(lapiz, x, y, anchoColumna, 25)
-                g.DrawString(col.HeaderText, fuenteTabla, brocha, x + 2, y + 5)
+                ' Recortar texto si es muy largo para el encabezado
+                Dim textoHeader As String = col.HeaderText
+                g.DrawString(textoHeader, fuenteTabla, brocha, x + 2, y + 5)
                 x += anchoColumna
             Next
             y += 25
 
+            ' Dibujar Filas
             For Each fila As DataGridViewRow In dgv.Rows
                 If Not fila.IsNewRow Then
                     Dim alturaFila As Integer = 25
+
+                    ' Calcular altura necesaria basada en el contenido
                     For Each celda As DataGridViewCell In fila.Cells
                         If celda.Value IsNot Nothing Then
                             Dim tamañoTexto As SizeF = g.MeasureString(celda.Value.ToString(), fuenteTabla, anchoColumna)
@@ -167,15 +257,15 @@ Public Class ClaseContenidoTablas
             y += 20
         End Sub
 
-        ' --- Seleccionar tabla según la pestaña ---
+        ' --- Seleccionar qué tabla dibujar según la pestaña activa ---
         If tabSeleccionada IsNot Nothing Then
             Select Case tabSeleccionada.Name
                 Case "tpActividadSemanal"
                     dibujarTabla(dgvActividad, "Tabla de Actividad Semanal")
                 Case "tpMultas"
-                    dibujarTabla(dgvMultas, "Tabla de Multas")
+                    dibujarTabla(dgvMultas, "Tabla de Multas Pendientes")
                 Case "tpLibros"
-                    dibujarTabla(dgvLibros, "Tabla de Libros")
+                    dibujarTabla(dgvLibros, "Listado de Libros")
             End Select
         End If
     End Sub
