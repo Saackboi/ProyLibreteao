@@ -1,122 +1,173 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Net.Http
+Imports System.Text
+Imports Newtonsoft.Json ' Para los controles
+Imports System.Configuration
 
 Public Class ClaseContenidoLibros
-    ' Referencias a los controles del formulario
     Private ReadOnly dgvCatalogo As DataGridView
 
-    ' Instancia de tu clase de base de datos
-    Private db As New Database()
+    ' CONFIGURACIÓN API
+    ' ---------------------------------------------------------
 
-    ' Constructor: Recibe el DataGridView donde se mostrarán los datos
+    Private ReadOnly BaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl") & "libros"
+
+    Private Shared client As HttpClient = CrearClienteInseguro()
+
+    Private Shared Function CrearClienteInseguro() As HttpClient
+        Dim handler As New HttpClientHandler()
+        handler.ServerCertificateCustomValidationCallback = Function(message, cert, chain, errors) True
+        Return New HttpClient(handler)
+    End Function
+
     Public Sub New(dgv As DataGridView)
         Me.dgvCatalogo = dgv
     End Sub
 
     ' ========================================================
-    ' MÉTODO: CARGAR/BUSCAR LIBROS
+    ' 1. MOSTRAR CATALOGO
     ' ========================================================
-    Public Sub MostrarCatalogo(Optional filtro As String = "")
+    Public Async Sub MostrarCatalogo(Optional filtro As String = "")
         If dgvCatalogo Is Nothing Then Return
 
-        ' 1. Configurar diseño del Grid
-        dgvCatalogo.Columns.Clear()
-        dgvCatalogo.Rows.Clear()
-        dgvCatalogo.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        dgvCatalogo.EnableHeadersVisualStyles = False
-        dgvCatalogo.DefaultCellStyle.Font = New Font("Segoe UI", 9)
-        dgvCatalogo.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 9, FontStyle.Bold)
-        dgvCatalogo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
-        ' 2. Definir Columnas
-        dgvCatalogo.Columns.Add("ID", "ID")
-        dgvCatalogo.Columns.Add("Titulo", "Título")
-        dgvCatalogo.Columns.Add("Autor", "Autor Principal") ' Mostramos el primer autor encontrado
-        dgvCatalogo.Columns.Add("Categoria", "Categoría")
-        dgvCatalogo.Columns.Add("Estado", "Disponibilidad")
-
-        ' 3. Consulta SQL Optimizada
-        ' Usamos una subconsulta para el Autor para evitar filas duplicadas si un libro tiene varios autores.
-        Dim query As String = "
-            SELECT 
-                l.id_libro, 
-                l.titulo, 
-                c.nombre_categoria, 
-                l.disponibilidad,
-                ISNULL((SELECT TOP 1 a.nombre_autor 
-                        FROM autores a 
-                        INNER JOIN libro_autor la ON a.id_autor = la.id_autor 
-                        WHERE la.id_libro = l.id_libro), 'Sin Autor') as AutorPrincipal
-            FROM libro l
-            INNER JOIN categorias c ON l.id_categoria = c.id_categoria
-            WHERE 
-                (@filtro = '' OR 
-                 l.titulo LIKE '%' + @filtro + '%' OR 
-                 c.nombre_categoria LIKE '%' + @filtro + '%')"
-
-        Dim parametros As New List(Of SqlParameter)
-        parametros.Add(New SqlParameter("@filtro", If(filtro, "")))
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, parametros)
+            ' 1. Pedimos TODOS los libros a la API
+            Dim respuestaJSON As String = Await client.GetStringAsync(BaseUrl)
+            Dim listaLibros = JsonConvert.DeserializeObject(Of List(Of Libro))(respuestaJSON)
 
-            For Each row As DataRow In dt.Rows
-                ' Convertir bit 1/0 a texto amigable
-                Dim estado As String = If(Convert.ToBoolean(row("disponibilidad")), "Disponible", "Prestado")
+            ' 2. Limpiamos tabla
+            dgvCatalogo.Rows.Clear()
+            If dgvCatalogo.Columns.Count = 0 Then ConfigurarColumnas()
 
-                dgvCatalogo.Rows.Add(
-                    row("id_libro"),
-                    row("titulo"),
-                    row("AutorPrincipal"),
-                    row("nombre_categoria"),
-                    estado
-                )
+            ' 3. Filtramos en memoria (Client-side filtering)
+            ' Si hay filtro, solo mostramos los que coincidan. Si no, mostramos todos.
+            For Each libro In listaLibros
+                Dim coincide As Boolean = True
+
+                If Not String.IsNullOrWhiteSpace(filtro) Then
+                    filtro = filtro.ToLower()
+                    ' Buscamos en Título, Autor o Categoría
+                    coincide = libro.titulo.ToLower().Contains(filtro) OrElse
+                               libro.nombreAutor.ToLower().Contains(filtro) OrElse
+                               libro.nombreCategoria.ToLower().Contains(filtro)
+                End If
+
+                If coincide Then
+                    dgvCatalogo.Rows.Add(
+                        libro.idLibro,
+                        libro.titulo,
+                        libro.nombreAutor,
+                        libro.nombreCategoria,
+                        libro.estadoTexto
+                    )
+                End If
             Next
+
         Catch ex As Exception
-            MessageBox.Show("Error al cargar el catálogo: " & ex.Message)
+            ' Evitamos spamear mensajes si falla cada vez que escribes una letra
+            Debug.WriteLine("Error API: " & ex.Message)
         End Try
     End Sub
 
     ' ========================================================
-    ' MÉTODO: ELIMINAR LIBRO
-    ' Cumple con la funcionalidad de "Eliminar" del RF7
+    ' 2. AGREGAR LIBRO (POST)
     ' ========================================================
-    Public Sub EliminarLibroSeleccionado()
-        ' Validar que haya una fila seleccionada
-        If dgvCatalogo.SelectedRows.Count = 0 Then
-            MessageBox.Show("Por favor, seleccione un libro para eliminar.")
-            Return
-        End If
+    Public Async Function AgregarLibro(titulo As String, idAutor As Integer, idCategoria As Integer, descripcion As String) As Task(Of Boolean)
+        Try
+            ' Creamos el objeto a enviar
+            Dim nuevoLibro As New Libro With {
+                .titulo = titulo,
+                .IdAutor = idAutor,
+                .IdCategoria = idCategoria,
+                .Descripcion = descripcion
+            }
 
-        ' Obtener el ID de la fila seleccionada (Asumiendo que ID es la columna 0)
-        Dim idLibro As Integer = Convert.ToInt32(dgvCatalogo.SelectedRows(0).Cells(0).Value)
+            ' Convertimos el objeto a JSON
+            Dim jsonEnviar As String = JsonConvert.SerializeObject(nuevoLibro)
+
+            Dim contenido = New StringContent(jsonEnviar, Encoding.UTF8, "application/json")
+
+            ' Enviamos el POST
+            Dim respuesta = Await client.PostAsync(BaseUrl, contenido)
+
+            If respuesta.IsSuccessStatusCode Then
+                MessageBox.Show("Libro guardado correctamente en la nube.")
+                Return True
+            Else
+                MessageBox.Show("Error en la API: " & Await respuesta.Content.ReadAsStringAsync())
+                Return False
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error de conexión: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    ' ========================================================
+    ' 3. ELIMINAR LIBRO (DELETE)
+    ' ========================================================
+    Public Async Function EliminarLibroSeleccionado() As Task
+        If dgvCatalogo.SelectedRows.Count = 0 Then Return
+
+        Dim id As Integer = Convert.ToInt32(dgvCatalogo.SelectedRows(0).Cells(0).Value)
         Dim titulo As String = dgvCatalogo.SelectedRows(0).Cells(1).Value.ToString()
 
-        ' Confirmación de seguridad
-        Dim confirmacion As DialogResult = MessageBox.Show(
-            $"¿Está seguro que desea eliminar el libro '{titulo}'? Esta acción no se puede deshacer.",
-            "Confirmar Eliminación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Warning)
-
-        If confirmacion = DialogResult.Yes Then
-            ' Consulta DELETE
-            Dim query As String = "DELETE FROM libro WHERE id_libro = @id"
-            Dim parametros As New List(Of SqlParameter)
-            parametros.Add(New SqlParameter("@id", idLibro))
-
+        If MessageBox.Show($"¿Eliminar '{titulo}'?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.Yes Then
             Try
-                Dim filasAfectadas As Integer = db.ExecuteNonQuery(query, parametros)
-                If filasAfectadas > 0 Then
-                    MessageBox.Show("Libro eliminado correctamente.")
-                    ' Recargar la tabla para reflejar cambios
-                    MostrarCatalogo()
+                Dim respuesta = Await client.DeleteAsync($"{BaseUrl}/{id}")
+
+                If respuesta.IsSuccessStatusCode Then
+                    MessageBox.Show("Eliminado correctamente.")
+                    MostrarCatalogo() ' Recargar lista
                 Else
-                    MessageBox.Show("No se pudo eliminar el libro.")
+                    MessageBox.Show("No se pudo eliminar. Verifique que no tenga préstamos activos.")
                 End If
             Catch ex As Exception
-                MessageBox.Show("Error al eliminar (Puede que tenga préstamos activos): " & ex.Message)
+                MessageBox.Show("Error al conectar con API.")
             End Try
         End If
+    End Function
+
+    ' ========================================================
+    ' 4. CARGAR COMBOS 
+    ' ========================================================
+    Public Async Sub LlenarCombos(cmbAutores As ComboBox, cmbCategorias As ComboBox)
+        Try
+            ' 1. Cargar Autores
+            Dim jsonAutores = Await client.GetStringAsync("https://localhost:44385/api/catalogos/autores")
+            Dim listaAutores = JsonConvert.DeserializeObject(Of List(Of Autor))(jsonAutores)
+
+            If listaAutores IsNot Nothing Then
+                cmbAutores.DataSource = listaAutores
+                cmbAutores.DisplayMember = "NombreAutor" ' Lo que se ve
+                cmbAutores.ValueMember = "IdAutor"       ' El valor oculto (ID)
+                cmbAutores.SelectedIndex = -1
+            End If
+
+            ' 2. Cargar Categorías
+            Dim jsonCategorias = Await client.GetStringAsync("https://localhost:44385/api/catalogos/categorias")
+            Dim listaCat = JsonConvert.DeserializeObject(Of List(Of Categoria))(jsonCategorias)
+
+            If listaCat IsNot Nothing Then
+                cmbCategorias.DataSource = listaCat
+                cmbCategorias.DisplayMember = "NombreCategoria"
+                cmbCategorias.ValueMember = "IdCategoria"
+                cmbCategorias.SelectedIndex = -1
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("No se pudieron cargar las listas desplegables. " & ex.Message)
+        End Try
+    End Sub
+
+    ' Ayuda visual
+    Private Sub ConfigurarColumnas()
+        dgvCatalogo.Columns.Clear()
+        dgvCatalogo.Columns.Add("ID", "ID")
+        dgvCatalogo.Columns.Add("Titulo", "Título")
+        dgvCatalogo.Columns.Add("Autor", "Autor")
+        dgvCatalogo.Columns.Add("Categoria", "Categoría")
+        dgvCatalogo.Columns.Add("Estado", "Estado")
     End Sub
 
 End Class

@@ -217,6 +217,114 @@ Partial Class FormLibros
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormLibros"
         Me.Text = "FormLibros"
+        ' 
+        ' --- PANEL MODAL: AGREGAR LIBRO ---
+        '
+        Me.pnlNuevoLibro = New System.Windows.Forms.Panel()
+        Me.lblNuevoTitulo = New System.Windows.Forms.Label()
+        Me.txtNuevoTitulo = New System.Windows.Forms.TextBox()
+        Me.lblNuevoAutor = New System.Windows.Forms.Label()
+        Me.cmbNuevoAutor = New System.Windows.Forms.ComboBox()
+        Me.lblNuevaCategoria = New System.Windows.Forms.Label()
+        Me.cmbNuevaCategoria = New System.Windows.Forms.ComboBox()
+        Me.lblDescripcion = New System.Windows.Forms.Label()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+
+        Me.pnlNuevoLibro.SuspendLayout()
+
+        ' Estilo del Panel (Flotante)
+        Me.pnlNuevoLibro.BackColor = System.Drawing.Color.White
+        Me.pnlNuevoLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlNuevoLibro.Location = New System.Drawing.Point(220, 60) ' Posición inicial temporal
+        Me.pnlNuevoLibro.Size = New System.Drawing.Size(450, 450)
+        Me.pnlNuevoLibro.Visible = False ' IMPORTANTE: Empieza oculto
+        Me.pnlNuevoLibro.TabIndex = 20
+
+        ' Etiqueta Título
+        Me.lblNuevoTitulo.Text = "Título del Libro:"
+        Me.lblNuevoTitulo.Location = New System.Drawing.Point(30, 30)
+        Me.lblNuevoTitulo.AutoSize = True
+        Me.lblNuevoTitulo.Font = New System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold)
+
+        ' Campo Título
+        Me.txtNuevoTitulo.Location = New System.Drawing.Point(30, 55)
+        Me.txtNuevoTitulo.Size = New System.Drawing.Size(380, 25)
+        Me.txtNuevoTitulo.BackColor = System.Drawing.Color.WhiteSmoke
+
+        ' Etiqueta Autor
+        Me.lblNuevoAutor.Text = "Autor:"
+        Me.lblNuevoAutor.Location = New System.Drawing.Point(30, 95)
+        Me.lblNuevoAutor.AutoSize = True
+        Me.lblNuevoAutor.Font = New System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold)
+
+        ' Combo Autor
+        Me.cmbNuevoAutor.Location = New System.Drawing.Point(30, 120)
+        Me.cmbNuevoAutor.Size = New System.Drawing.Size(380, 25)
+        Me.cmbNuevoAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbNuevoAutor.BackColor = System.Drawing.Color.WhiteSmoke
+
+        ' Etiqueta Categoría
+        Me.lblNuevaCategoria.Text = "Categoría:"
+        Me.lblNuevaCategoria.Location = New System.Drawing.Point(30, 160)
+        Me.lblNuevaCategoria.AutoSize = True
+        Me.lblNuevaCategoria.Font = New System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold)
+
+        ' Combo Categoría
+        Me.cmbNuevaCategoria.Location = New System.Drawing.Point(30, 185)
+        Me.cmbNuevaCategoria.Size = New System.Drawing.Size(380, 25)
+        Me.cmbNuevaCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbNuevaCategoria.BackColor = System.Drawing.Color.WhiteSmoke
+
+        ' Etiqueta Descripción
+        Me.lblDescripcion.Text = "Descripción:"
+        Me.lblDescripcion.Location = New System.Drawing.Point(30, 225)
+        Me.lblDescripcion.AutoSize = True
+        Me.lblDescripcion.Font = New System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold)
+
+        ' Campo Descripción
+        Me.txtDescripcion.Location = New System.Drawing.Point(30, 250)
+        Me.txtDescripcion.Size = New System.Drawing.Size(380, 80)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke
+
+        ' Botón GUARDAR
+        Me.btnGuardar.Text = "GUARDAR LIBRO"
+        Me.btnGuardar.Location = New System.Drawing.Point(30, 360)
+        Me.btnGuardar.Size = New System.Drawing.Size(180, 45)
+        Me.btnGuardar.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+
+        ' Botón CANCELAR
+        Me.btnCancelar.Text = "CANCELAR"
+        Me.btnCancelar.Location = New System.Drawing.Point(230, 360)
+        Me.btnCancelar.Size = New System.Drawing.Size(180, 45)
+        Me.btnCancelar.BackColor = System.Drawing.Color.Gray
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+
+        ' Añadir controles al Panel
+        Me.pnlNuevoLibro.Controls.Add(Me.lblNuevoTitulo)
+        Me.pnlNuevoLibro.Controls.Add(Me.txtNuevoTitulo)
+        Me.pnlNuevoLibro.Controls.Add(Me.lblNuevoAutor)
+        Me.pnlNuevoLibro.Controls.Add(Me.cmbNuevoAutor)
+        Me.pnlNuevoLibro.Controls.Add(Me.lblNuevaCategoria)
+        Me.pnlNuevoLibro.Controls.Add(Me.cmbNuevaCategoria)
+        Me.pnlNuevoLibro.Controls.Add(Me.lblDescripcion)
+        Me.pnlNuevoLibro.Controls.Add(Me.txtDescripcion)
+        Me.pnlNuevoLibro.Controls.Add(Me.btnGuardar)
+        Me.pnlNuevoLibro.Controls.Add(Me.btnCancelar)
+
+        ' Añadir Panel al Formulario (Y ponerlo al frente)
+        Me.pnlFondo.Controls.Add(Me.pnlNuevoLibro)
+        Me.pnlNuevoLibro.BringToFront()
+
+        Me.pnlNuevoLibro.ResumeLayout(False)
+        Me.pnlNuevoLibro.PerformLayout()
         Me.pnlFondo.ResumeLayout(False)
         Me.PanelContenedor.ResumeLayout(False)
         CType(Me.dgvLibros, System.ComponentModel.ISupportInitialize).EndInit()
@@ -237,4 +345,16 @@ Partial Class FormLibros
     Friend WithEvents btnActualizar As Button
     Friend WithEvents dgvLibros As DataGridView
     Friend WithEvents LabelTitulo As Label
+    ' Variables para el Modal
+    Friend WithEvents pnlNuevoLibro As Panel
+    Friend WithEvents lblNuevoTitulo As Label
+    Friend WithEvents txtNuevoTitulo As TextBox
+    Friend WithEvents lblNuevoAutor As Label
+    Friend WithEvents cmbNuevoAutor As ComboBox
+    Friend WithEvents lblNuevaCategoria As Label
+    Friend WithEvents cmbNuevaCategoria As ComboBox
+    Friend WithEvents lblDescripcion As Label
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCancelar As Button
 End Class

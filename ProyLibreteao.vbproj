@@ -53,6 +53,7 @@
       <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -114,19 +115,10 @@
     </Compile>
     <Compile Include="Bibliotecario\Contenido\Reportes\ClaseContenidoResumen.vb" />
     <Compile Include="ClaseContenidoTablas.vb" />
-    <Compile Include="DAL\Auth.vb" />
-    <Compile Include="DAL\Conexion-ejemplo.vb" />
-    <Compile Include="DAL\Database.vb" />
     <Compile Include="interfacesninos.Designer.vb">
       <DependentUpon>interfacesninos.vb</DependentUpon>
     </Compile>
     <Compile Include="interfacesninos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interface_invitados.Designer.vb">
-      <DependentUpon>Interface_invitados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Interface_invitados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="leerlibro.Designer.vb">
@@ -148,6 +140,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bibliotecario\ModuloNavegacion.vb" />
+    <Compile Include="Models\Catalogo.vb" />
+    <Compile Include="Models\Libro.vb" />
+    <Compile Include="Models\Reporte.vb" />
     <Compile Include="Models\Usuario.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -204,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="interfacesninos.resx">
       <DependentUpon>interfacesninos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interface_invitados.resx">
-      <DependentUpon>Interface_invitados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="leerlibro.resx">
       <DependentUpon>leerlibro.vb</DependentUpon>

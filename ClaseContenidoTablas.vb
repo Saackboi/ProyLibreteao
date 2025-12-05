@@ -1,17 +1,31 @@
-﻿Imports System.Drawing.Printing
+﻿Imports System.Configuration
 Imports System.Drawing
-Imports System.Data.SqlClient
+Imports System.Drawing.Printing
+Imports System.Net.Http
+Imports System.Threading.Tasks
+Imports Newtonsoft.Json
 
 Public Class ClaseContenidoTablas
     Private ReadOnly dgvActividad As DataGridView
     Private ReadOnly dgvLibros As DataGridView
     Private ReadOnly dgvMultas As DataGridView
 
-    ' Instancia de la clase de conexión para realizar consultas
-    Private db As New Database()
+    ' ==========================================
+    ' CONFIGURACIÓN API
+    ' ==========================================
+
+    Private ReadOnly BaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl")
+
+    Private Shared client As HttpClient = CrearClienteInseguro()
+
+    Private Shared Function CrearClienteInseguro() As HttpClient
+        Dim handler As New HttpClientHandler()
+        handler.ServerCertificateCustomValidationCallback = Function(message, cert, chain, errors) True
+        Return New HttpClient(handler)
+    End Function
 
     Public Sub New(dgvTablaActividadSemanal As DataGridView, dgvLibros As DataGridView, dgvMultas As DataGridView)
-        ' Validar dependencias recibidas para evitar NullReferenceException posteriores.
+        ' Validar dependencias
         If dgvTablaActividadSemanal Is Nothing Then Throw New ArgumentNullException(NameOf(dgvTablaActividadSemanal))
         If dgvLibros Is Nothing Then Throw New ArgumentNullException(NameOf(dgvLibros))
         If dgvMultas Is Nothing Then Throw New ArgumentNullException(NameOf(dgvMultas))
@@ -21,136 +35,118 @@ Public Class ClaseContenidoTablas
         Me.dgvMultas = dgvMultas
     End Sub
 
-    ' -------------------------------------------------------------------------
-    ' MÉTODO 1: CARGAR ACTIVIDAD SEMANAL (Estadísticas reales desde BD)
-    ' -------------------------------------------------------------------------
-    Friend Sub MostrarTablaActividadSemenal()
+    ' =========================================================================
+    ' 1. ACTIVIDAD SEMANAL (Tabla 1)
+    ' Endpoint: GET api/reportes/semanal
+    ' =========================================================================
+    Friend Async Sub MostrarTablaActividadSemenal()
         If dgvActividad Is Nothing Then Return
 
-        ' Limpiar y configurar columnas
-        dgvActividad.Columns.Clear()
-        dgvActividad.Rows.Clear()
-        dgvActividad.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-
-        dgvActividad.Columns.Add("Semana", "Semana (Año)")
-        dgvActividad.Columns.Add("Prestamos", "Préstamos")
-        dgvActividad.Columns.Add("Devoluciones", "Devoluciones")
-        dgvActividad.Columns.Add("Multas", "Total Multas ($)")
-
-        ' Consulta SQL: Agrupa préstamos, devoluciones y multas por semana
-        ' Se usa DATEPART(iso_week) para identificar el número de semana
-        Dim query As String = "
-            SELECT 
-                CONCAT('Semana ', DATEPART(iso_week, p.fecha_prestamo), ' - ', YEAR(p.fecha_prestamo)) as Semana,
-                COUNT(p.id_prestamo) as CantidadPrestamos,
-                (SELECT COUNT(*) FROM devolucion d WHERE DATEPART(iso_week, d.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)) as CantidadDevoluciones,
-                ISNULL((SELECT SUM(d2.multa) FROM devolucion d2 WHERE DATEPART(iso_week, d2.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)), 0) as TotalMultas
-            FROM prestamo p
-            GROUP BY DATEPART(iso_week, p.fecha_prestamo), YEAR(p.fecha_prestamo)
-            ORDER BY YEAR(p.fecha_prestamo) DESC, DATEPART(iso_week, p.fecha_prestamo) DESC"
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada API
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/reportes/semanal")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ActividadSemanal))(json)
 
-            For Each row As DataRow In dt.Rows
+            ' Configuración Visual
+            dgvActividad.Columns.Clear()
+            dgvActividad.Rows.Clear()
+            dgvActividad.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+
+            dgvActividad.Columns.Add("Semana", "Semana (Año)")
+            dgvActividad.Columns.Add("Prestamos", "Préstamos")
+            dgvActividad.Columns.Add("Devoluciones", "Devoluciones")
+            dgvActividad.Columns.Add("Multas", "Total Multas ($)")
+
+            ' Llenado
+            For Each item In lista
                 dgvActividad.Rows.Add(
-                    row("Semana"),
-                    row("CantidadPrestamos"),
-                    row("CantidadDevoluciones"),
-                    Convert.ToDecimal(row("TotalMultas")).ToString("N2") ' Formato de moneda
+                    item.Semana,
+                    item.CantidadPrestamos,
+                    item.CantidadDevoluciones,
+                    "$" & item.TotalMultas.ToString("N2")
                 )
             Next
         Catch ex As Exception
-            MessageBox.Show("Error al cargar la actividad semanal: " & ex.Message)
+            ' Manejo silencioso o MessageBox.Show("Error al cargar actividad: " & ex.Message)
         End Try
     End Sub
 
-    ' -------------------------------------------------------------------------
-    ' MÉTODO 2: CARGAR LIBROS (Catálogo desde BD con Categorías)
-    ' -------------------------------------------------------------------------
-    Friend Sub MostrarTablaLibros()
+    ' =========================================================================
+    ' 2. LISTA DE LIBROS (Tabla 2)
+    ' Endpoint: GET api/libros (Reusamos el del catálogo)
+    ' =========================================================================
+    Friend Async Sub MostrarTablaLibros()
         If dgvLibros Is Nothing Then Return
 
-        ' Limpiar y configurar columnas (Ajustadas a la realidad de la tabla Libro)
-        dgvLibros.Columns.Clear()
-        dgvLibros.Rows.Clear()
-        dgvLibros.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-
-        dgvLibros.Columns.Add("ID", "ID")
-        dgvLibros.Columns.Add("Titulo", "Título")
-        dgvLibros.Columns.Add("Categoria", "Categoría")
-        dgvLibros.Columns.Add("Estado", "Disponibilidad")
-
-        ' Consulta SQL: Une la tabla Libro con Categorias
-        Dim query As String = "
-            SELECT l.id_libro, l.titulo, c.nombre_categoria, l.disponibilidad 
-            FROM libro l
-            INNER JOIN categorias c ON l.id_categoria = c.id_categoria"
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada API
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/libros")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of Libro))(json)
 
-            For Each row As DataRow In dt.Rows
-                ' Interpretar el bit de disponibilidad (1 = Disponible, 0 = Prestado)
-                Dim estado As String = If(row("disponibilidad") IsNot DBNull.Value AndAlso Convert.ToBoolean(row("disponibilidad")), "Disponible", "Prestado")
+            ' Configuración Visual
+            dgvLibros.Columns.Clear()
+            dgvLibros.Rows.Clear()
+            dgvLibros.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
 
+            dgvLibros.Columns.Add("ID", "ID")
+            dgvLibros.Columns.Add("Titulo", "Título")
+            dgvLibros.Columns.Add("Categoria", "Categoría")
+            dgvLibros.Columns.Add("Estado", "Disponibilidad")
+
+            ' Llenado
+            For Each libro In lista
                 dgvLibros.Rows.Add(
-                    row("id_libro"),
-                    row("titulo"),
-                    row("nombre_categoria"),
-                    estado
+                    libro.idLibro,
+                    libro.titulo,
+                    libro.nombreCategoria,
+                    libro.estadoTexto
                 )
             Next
         Catch ex As Exception
-            MessageBox.Show("Error al cargar los libros: " & ex.Message)
+            ' Manejo silencioso
         End Try
     End Sub
 
-    ' -------------------------------------------------------------------------
-    ' MÉTODO 3: CARGAR MULTAS (Usuarios con deuda activa)
-    ' -------------------------------------------------------------------------
-    Friend Sub MostrarTablaMultas()
+    ' =========================================================================
+    ' 3. MULTAS DETALLADAS (Tabla 3)
+    ' Endpoint: GET api/reportes/multas (El que creamos hace poco)
+    ' =========================================================================
+    Friend Async Sub MostrarTablaMultas()
         If dgvMultas Is Nothing Then Return
 
-        ' Limpiar y configurar columnas (Ajustadas para mostrar quién debe qué)
-        dgvMultas.Columns.Clear()
-        dgvMultas.Rows.Clear()
-        dgvMultas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-
-        dgvMultas.Columns.Add("Usuario", "Usuario")
-        dgvMultas.Columns.Add("Libro", "Libro")
-        dgvMultas.Columns.Add("FechaDev", "Fecha Devolución")
-        dgvMultas.Columns.Add("Monto", "Monto Multa")
-
-        ' Consulta SQL: Une Devolucion, Prestamo, Usuario y Libro
-        ' Filtra solo aquellas devoluciones donde la multa sea mayor a 0
-        Dim query As String = "
-            SELECT u.nombre, l.titulo, d.fecha_real_devolucion, d.multa
-            FROM devolucion d
-            INNER JOIN prestamo p ON d.id_prestamo = p.id_prestamo
-            INNER JOIN usuario u ON p.id_usuario = u.id_usuario
-            INNER JOIN libro l ON p.id_libro = l.id_libro
-            WHERE d.multa > 0"
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada API
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/reportes/multas")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ReporteMulta))(json)
 
-            For Each row As DataRow In dt.Rows
+            ' Configuración Visual
+            dgvMultas.Columns.Clear()
+            dgvMultas.Rows.Clear()
+            dgvMultas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+
+            dgvMultas.Columns.Add("Usuario", "Usuario")
+            dgvMultas.Columns.Add("Libro", "Libro")
+            dgvMultas.Columns.Add("FechaDev", "Fecha Devolución")
+            dgvMultas.Columns.Add("Monto", "Monto Multa")
+
+            ' Llenado
+            For Each m In lista
                 dgvMultas.Rows.Add(
-                    row("nombre"),
-                    row("titulo"),
-                    Convert.ToDateTime(row("fecha_real_devolucion")).ToString("dd/MM/yyyy"),
-                    "$" & Convert.ToDecimal(row("multa")).ToString("N2")
+                    m.Usuario,
+                    m.Libro,
+                    m.FechaDev,
+                    "$" & m.Monto.ToString("N2")
                 )
             Next
         Catch ex As Exception
-            MessageBox.Show("Error al cargar las multas: " & ex.Message)
+            ' Manejo silencioso
         End Try
     End Sub
 
-    ' -------------------------------------------------------------------------
-    ' LÓGICA DE IMPRESIÓN Y PDF
-    ' -------------------------------------------------------------------------
+    ' =========================================================================
+    ' 4. LÓGICA DE IMPRESIÓN (PDF)
+    ' Esta parte NO CAMBIA, funciona sobre los datos visuales del Grid
+    ' =========================================================================
     Friend Sub DescargarReportes(tabSeleccionada As TabPage)
         Dim printDoc As New Printing.PrintDocument()
 
@@ -163,7 +159,7 @@ Public Class ClaseContenidoTablas
         Using sfd As New SaveFileDialog()
             sfd.Filter = "Archivo PDF|*.pdf"
             sfd.Title = "Guardar reporte como PDF"
-            sfd.FileName = $"Reporte_{DateTime.Now:yyyyMMdd}.pdf"
+            sfd.FileName = $"Reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
 
             If sfd.ShowDialog() = DialogResult.OK Then
                 With printDoc.PrinterSettings
@@ -174,9 +170,9 @@ Public Class ClaseContenidoTablas
 
                 Try
                     printDoc.Print()
-                    MessageBox.Show("Reporte guardado exitosamente.")
+                    MessageBox.Show("Reporte generado exitosamente.")
                 Catch ex As Exception
-                    MessageBox.Show("Error al generar el PDF. Asegúrese de tener 'Microsoft Print to PDF' instalado. Detalle: " & ex.Message)
+                    MessageBox.Show("Error al imprimir: Asegúrese de tener 'Microsoft Print to PDF' instalado.")
                 End Try
             End If
         End Using
@@ -199,15 +195,15 @@ Public Class ClaseContenidoTablas
         g.DrawString("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy"), fuenteSubtitulo, brocha, margenIzq, y)
         y += 40
 
-        ' --- Logo (Opcional, envuelto en Try por si no existe el recurso) ---
-        Try
-            g.DrawImage(My.Resources.iconoLibro, e.MarginBounds.Right - 100, e.MarginBounds.Top, 80, 80)
-        Catch
-        End Try
+        ' --- Logo (Opcional) ---
+        ' Try
+        '    g.DrawImage(My.Resources.iconoLibro, e.MarginBounds.Right - 100, e.MarginBounds.Top, 80, 80)
+        ' Catch
+        ' End Try
 
         Dim lapiz As New Pen(Color.Black, 1)
 
-        ' Función interna para dibujar una tabla dinámica
+        ' Función para dibujar una tabla
         Dim dibujarTabla As Action(Of DataGridView, String) =
         Sub(dgv As DataGridView, titulo As String)
             g.DrawString(titulo, fuenteTabla, brocha, margenIzq, y)
@@ -217,23 +213,17 @@ Public Class ClaseContenidoTablas
             Dim anchoPagina As Integer = e.MarginBounds.Width
             Dim anchoColumna As Integer = anchoPagina \ dgv.Columns.Count
 
-            ' Dibujar Encabezados
             Dim x As Integer = margenIzq
             For Each col As DataGridViewColumn In dgv.Columns
                 g.DrawRectangle(lapiz, x, y, anchoColumna, 25)
-                ' Recortar texto si es muy largo para el encabezado
-                Dim textoHeader As String = col.HeaderText
-                g.DrawString(textoHeader, fuenteTabla, brocha, x + 2, y + 5)
+                g.DrawString(col.HeaderText, fuenteTabla, brocha, x + 2, y + 5)
                 x += anchoColumna
             Next
             y += 25
 
-            ' Dibujar Filas
             For Each fila As DataGridViewRow In dgv.Rows
                 If Not fila.IsNewRow Then
                     Dim alturaFila As Integer = 25
-
-                    ' Calcular altura necesaria basada en el contenido
                     For Each celda As DataGridViewCell In fila.Cells
                         If celda.Value IsNot Nothing Then
                             Dim tamañoTexto As SizeF = g.MeasureString(celda.Value.ToString(), fuenteTabla, anchoColumna)
@@ -257,13 +247,13 @@ Public Class ClaseContenidoTablas
             y += 20
         End Sub
 
-        ' --- Seleccionar qué tabla dibujar según la pestaña activa ---
+        ' --- Seleccionar tabla según la pestaña ---
         If tabSeleccionada IsNot Nothing Then
             Select Case tabSeleccionada.Name
                 Case "tpActividadSemanal"
                     dibujarTabla(dgvActividad, "Tabla de Actividad Semanal")
                 Case "tpMultas"
-                    dibujarTabla(dgvMultas, "Tabla de Multas Pendientes")
+                    dibujarTabla(dgvMultas, "Tabla de Multas")
                 Case "tpLibros"
                     dibujarTabla(dgvLibros, "Listado de Libros")
             End Select

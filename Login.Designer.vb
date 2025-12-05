@@ -27,14 +27,12 @@ Partial Class Login
         Me.btnIniciarSesion = New System.Windows.Forms.Button()
         Me.btnRegistrarse = New System.Windows.Forms.Label()
         Me.btnEntrarInvitado = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.cbTipoUsuario = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,8 +55,6 @@ Partial Class Login
         Me.Panel2.Controls.Add(Me.btnIniciarSesion)
         Me.Panel2.Controls.Add(Me.btnRegistrarse)
         Me.Panel2.Controls.Add(Me.btnEntrarInvitado)
-        Me.Panel2.Controls.Add(Me.cbTipoUsuario)
-        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtContrasena)
         Me.Panel2.Controls.Add(Me.txtUsuario)
         Me.Panel2.Controls.Add(Me.Label2)
@@ -75,7 +71,7 @@ Partial Class Login
         '
         Me.btnIniciarSesion.BackColor = System.Drawing.Color.Gold
         Me.btnIniciarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIniciarSesion.Location = New System.Drawing.Point(56, 308)
+        Me.btnIniciarSesion.Location = New System.Drawing.Point(56, 295)
         Me.btnIniciarSesion.Name = "btnIniciarSesion"
         Me.btnIniciarSesion.Size = New System.Drawing.Size(300, 40)
         Me.btnIniciarSesion.TabIndex = 12
@@ -87,7 +83,7 @@ Partial Class Login
         Me.btnRegistrarse.AutoSize = True
         Me.btnRegistrarse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarse.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarse.Location = New System.Drawing.Point(53, 363)
+        Me.btnRegistrarse.Location = New System.Drawing.Point(53, 358)
         Me.btnRegistrarse.Name = "btnRegistrarse"
         Me.btnRegistrarse.Size = New System.Drawing.Size(70, 15)
         Me.btnRegistrarse.TabIndex = 11
@@ -98,35 +94,25 @@ Partial Class Login
         Me.btnEntrarInvitado.AutoSize = True
         Me.btnEntrarInvitado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEntrarInvitado.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrarInvitado.Location = New System.Drawing.Point(257, 363)
+        Me.btnEntrarInvitado.Location = New System.Drawing.Point(257, 358)
         Me.btnEntrarInvitado.Name = "btnEntrarInvitado"
         Me.btnEntrarInvitado.Size = New System.Drawing.Size(119, 15)
         Me.btnEntrarInvitado.TabIndex = 9
         Me.btnEntrarInvitado.Text = "Entrar como invitado"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(52, 246)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 20)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "TIPO DE USUARIO"
-        '
         'txtContrasena
         '
         Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContrasena.Location = New System.Drawing.Point(56, 212)
+        Me.txtContrasena.Location = New System.Drawing.Point(56, 250)
         Me.txtContrasena.Name = "txtContrasena"
+        Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasena.Size = New System.Drawing.Size(300, 22)
         Me.txtContrasena.TabIndex = 4
         '
         'txtUsuario
         '
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(56, 155)
+        Me.txtUsuario.Location = New System.Drawing.Point(56, 184)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(300, 22)
         Me.txtUsuario.TabIndex = 3
@@ -136,7 +122,7 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(52, 189)
+        Me.Label2.Location = New System.Drawing.Point(52, 218)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(119, 20)
         Me.Label2.TabIndex = 2
@@ -147,17 +133,17 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(52, 132)
+        Me.Label1.Location = New System.Drawing.Point(52, 151)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 20)
+        Me.Label1.Size = New System.Drawing.Size(197, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "USUARIO"
+        Me.Label1.Text = "CORREO ELECTRÓNICO"
         '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.ProyLibreteao.My.Resources.Resources.user
-        Me.PictureBox2.Location = New System.Drawing.Point(148, 12)
+        Me.PictureBox2.Location = New System.Drawing.Point(148, 23)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(115, 112)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -174,17 +160,6 @@ Partial Class Login
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'cbTipoUsuario
-        '
-        Me.cbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbTipoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTipoUsuario.FormattingEnabled = True
-        Me.cbTipoUsuario.Items.AddRange(New Object() {"cliente", "bibliotecario"})
-        Me.cbTipoUsuario.Location = New System.Drawing.Point(56, 269)
-        Me.cbTipoUsuario.Name = "cbTipoUsuario"
-        Me.cbTipoUsuario.Size = New System.Drawing.Size(300, 23)
-        Me.cbTipoUsuario.TabIndex = 6
         '
         'Login
         '
@@ -211,12 +186,10 @@ Partial Class Login
     Friend WithEvents btnIniciarSesion As Button
     Friend WithEvents btnRegistrarse As Label
     Friend WithEvents btnEntrarInvitado As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtContrasena As TextBox
     Friend WithEvents txtUsuario As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents cbTipoUsuario As ComboBox
 End Class

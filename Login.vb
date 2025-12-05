@@ -1,7 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Imports System.Net.Http ' Para tipos relacionados con las solicitudes web (si los usas directamente)
-Imports System.Threading.Tasks ' Esencial para la palabra clave Async/Await
-Imports Newtonsoft.Json ' Para poder usar ApiService.PostAsync
+﻿Imports System.Text.RegularExpressions ' Esencial para la palabra clave Async/Await
 Public Class Login
     '====================================== VARIABLES DE EJEMPLO PARA AUTENTICACIÓN=====================================================
     Private Const usuarioCorrecto As String = "user"
@@ -13,10 +10,32 @@ Public Class Login
         Me.Hide()
     End Sub
 
-    Private auth As New Auth()
-
     Private Async Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+
+        ' 1. CONTROL DE CAMPOS
+        If String.IsNullOrWhiteSpace(txtUsuario.Text) Then
+            MessageBox.Show("Por favor, ingrese su usuario o correo.", "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtUsuario.Focus()
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtContrasena.Text) Then
+            MessageBox.Show("Por favor, ingrese su contraseña.", "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtContrasena.Focus()
+            Return
+        End If
+
+        Dim patronEmail As String = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+
+        If Not Regex.IsMatch(txtUsuario.Text, patronEmail) Then
+            MessageBox.Show("El formato del correo no es válido. (Ejemplo: usuario@dominio.com)", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            txtUsuario.Focus()
+            Return
+        End If
+
         Try
+
+
             ' Construimos objeto para enviar al API
             Dim cred = New With {
             .correo = txtUsuario.Text,
@@ -24,7 +43,7 @@ Public Class Login
         }
 
             ' Llamada al API /usuario/login
-            Dim usuarioLogeado = Await ApiService.PostAsync(Of Usuario)("usuario/login", cred)
+            Dim usuarioLogeado = Await ApiService.PostAsync(Of Usuario)("usuarios/login", cred)
 
             If usuarioLogeado Is Nothing Then
                 MessageBox.Show("Usuario o contraseña incorrecto", "Error al iniciar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -32,10 +51,10 @@ Public Class Login
             End If
 
             ' Mostrar mensaje éxito
-            MessageBox.Show("Bienvenido " & usuarioLogeado.nombre, "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Bienvenido " & usuarioLogeado.Nombre, "Inicio Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' Redirección según tipo de usuario
-            Select Case usuarioLogeado.tipo_usuario.ToLower()
+            Select Case usuarioLogeado.TipoUsuario.Trim().ToLower()
                 Case "cliente"
                     interfacesninos.Show()
 
@@ -120,7 +139,7 @@ Public Class Login
     End Function
 
     Private Sub btnEntrarInvitado_Click(sender As Object, e As EventArgs) Handles btnEntrarInvitado.Click
-        Interface_invitados.Show()
+        'Interface_invitados.Show()
         Me.Hide()
     End Sub
     '======================== CENTRAR PANEL ===========================
@@ -129,8 +148,4 @@ Public Class Login
         Panel2.Top = (Me.ClientSize.Height - Panel2.Height) / 2
     End Sub
 
-    '======================== CARGAR EL COMBOBOX ===========================
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbTipoUsuario.SelectedIndex = 0
-    End Sub
 End Class

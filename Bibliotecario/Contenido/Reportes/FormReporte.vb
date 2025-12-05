@@ -1,5 +1,4 @@
-﻿Imports System.Drawing.Printing
-Imports ProyLibreteao.ProyLibreteao
+﻿Imports ProyLibreteao.ProyLibreteao
 
 Public Class FormReporte
     Private formFiltro As New FormFiltro()

@@ -1,9 +1,13 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Drawing
+
 Public Class NuevoUsuario
 
-    Private db As New Database()
-    Private Sub Label4_MouseHover(sender As Object, e As EventArgs) Handles btnYaTengo.MouseHover
+    ' =========================================================================
+    ' EVENTOS VISUALES (Botón "Ya tengo cuenta")
+    ' =========================================================================
+    Private Sub btnYaTengo_MouseHover(sender As Object, e As EventArgs) Handles btnYaTengo.MouseHover
         btnYaTengo.ForeColor = Color.Black
+        btnYaTengo.Cursor = Cursors.Hand
     End Sub
 
     Private Sub btnYaTengo_MouseLeave(sender As Object, e As EventArgs) Handles btnYaTengo.MouseLeave
@@ -16,43 +20,60 @@ Public Class NuevoUsuario
         Me.Hide()
     End Sub
 
+    ' =========================================================================
+    ' LÓGICA DE REGISTRO
+    ' =========================================================================
+    Private Async Sub btnRegistrarse_Click(sender As Object, e As EventArgs) Handles btnRegistrarse.Click
+        ' 1. Validaciones Locales
+        If Not ValidarEntrada(txtEmail, "Debe ingresar un correo.") Then Exit Sub
+        If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.") Then Exit Sub
+        If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.") Then Exit Sub
 
+        ' 2. Crear objeto para enviar
+        Dim nuevoUsuario As New UsuarioInput With {
+            .Correo = txtEmail.Text.Trim(),
+            .Nombre = txtUsuario.Text.Trim(),
+            .Contrasena = txtContrasena.Text.Trim(),
+            .TipoUsuario = "cliente" ' Por defecto, quien se registra solo es cliente
+        }
 
+        ' 3. Deshabilitar botón para evitar doble clic
+        btnRegistrarse.Enabled = False
+        btnRegistrarse.Text = "Registrando..."
 
-    Private auth As New Auth()
+        Try
+            ' 4. Llamada a la API (POST api/usuarios)
+            ' Usamos Object o String porque la API devuelve un mensaje de texto simple
+            Await ApiService.PostAsync(Of Object)("usuarios", nuevoUsuario)
 
-    Private Sub btnRegistrarse_Click(sender As Object, e As EventArgs) Handles btnRegistrarse.Click
-            If Not ValidarEntrada(txtEmail, "Debe ingresar un correo.") Then Exit Sub
-            If Not ValidarEntrada(txtUsuario, "Debe ingresar un usuario.") Then Exit Sub
-            If Not ValidarEntrada(txtContrasena, "Debe ingresar una contraseña.") Then Exit Sub
+            MessageBox.Show("Usuario registrado correctamente. Ahora puede iniciar sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Dim ok As Boolean = auth.Register(
-            txtEmail.Text,
-            txtUsuario.Text,
-            txtContrasena.Text
-        )
+            ' 5. Redirigir al Login
+            Dim login = New Login()
+            login.Show()
+            Me.Hide()
 
-            If ok Then
-                MsgBox("Usuario registrado correctamente")
+        Catch ex As Exception
+            ' Si el correo ya existe, la API devuelve error 400 y cae aquí
+            MessageBox.Show(ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ' Restaurar botón
+            btnRegistrarse.Enabled = True
+            btnRegistrarse.Text = "Registrarse"
+        End Try
+    End Sub
 
-                Dim login = New Login()
-                login.Show()
-                Me.Hide()
-            Else
-                MsgBox("No se pudo registrar el usuario.")
-            End If
-        End Sub
-
-        '============================== VALIDACIONES ==========================================
-        Private Function ValidarEntrada(txt As TextBox, msg As String)
-            If String.IsNullOrWhiteSpace(txt.Text) Then
-                MsgBox(msg)
-                txt.Focus()
-                Return False
-            Else
-                Return True
-            End If
-        End Function
-
+    ' =========================================================================
+    ' VALIDACIONES AUXILIARES
+    ' =========================================================================
+    Private Function ValidarEntrada(txt As TextBox, msg As String) As Boolean
+        If String.IsNullOrWhiteSpace(txt.Text) Then
+            MessageBox.Show(msg, "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txt.Focus()
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 
 End Class

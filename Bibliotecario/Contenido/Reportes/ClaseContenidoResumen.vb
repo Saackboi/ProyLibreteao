@@ -1,5 +1,8 @@
-﻿Imports System.Windows.Forms.DataVisualization.Charting
-Imports System.Data.SqlClient
+﻿Imports System.Configuration
+Imports System.Drawing
+Imports System.Net.Http
+Imports System.Windows.Forms.DataVisualization.Charting
+Imports Newtonsoft.Json
 
 Public Class ClaseContenidoResumen
 
@@ -14,8 +17,17 @@ Public Class ClaseContenidoResumen
     Private ReadOnly lblTotalPedidos As Label
     Private ReadOnly lblTotalDevoluciones As Label
 
-    ' Instancia de la clase de conexión
-    Private db As New Database()
+    ' URL Base de los Reportes (Asegúrate que el puerto coincida con tu API)
+    Private ReadOnly BaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl") & "reportes"
+
+    ' Cliente HTTP para la clase
+    Private Shared client As HttpClient = CrearClienteInseguro()
+
+    Private Shared Function CrearClienteInseguro() As HttpClient
+        Dim handler As New HttpClientHandler()
+        handler.ServerCertificateCustomValidationCallback = Function(message, cert, chain, errors) True
+        Return New HttpClient(handler)
+    End Function
 
     Public Sub New(dgv As DataGridView,
                    chP As Chart,
@@ -37,165 +49,140 @@ Public Class ClaseContenidoResumen
     End Sub
 
     ' =============================
-    ' NUEVO MÉTODO: CARGAR TARJETAS (LABELS)
+    ' 1. CARGAR TARJETAS (KPIs)
     ' =============================
-    Public Sub CargarDatosTarjetas()
+    Public Async Sub CargarDatosTarjetas()
         If lblTotalUsuarios Is Nothing Then Return
 
-        ' Calcula todos los totales en un solo viaje
-        Dim query As String = "
-            SELECT 
-                (SELECT COUNT(*) FROM usuario) AS TotalUsuarios,
-                (SELECT COUNT(*) FROM prestamo) AS TotalPrestamos,
-                (SELECT COUNT(*) FROM devolucion) AS TotalDevoluciones,
-                (SELECT COUNT(*) FROM categorias) AS TotalCategorias,
-                (SELECT COUNT(*) FROM devolucion WHERE multa > 0) AS TotalMultasCount"
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada al endpoint GET api/reportes/kpis
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/kpis")
+            Dim datos = JsonConvert.DeserializeObject(Of DashboardKpis)(json)
 
-            If dt.Rows.Count > 0 Then
-                Dim row As DataRow = dt.Rows(0)
-
-                ' Asignar valores a los labels
-                lblTotalUsuarios.Text = row("TotalUsuarios").ToString()
-                lblTotalPrestamos.Text = row("TotalPrestamos").ToString()
-                lblTotalDevoluciones.Text = row("TotalDevoluciones").ToString()
-
-                ' Pedidos = Solicitudes de libros pendientes
-                lblTotalPedidos.Text = row("TotalCategorias").ToString()
-
-                ' Multas = Número total de multas
-                lblTotalMultas.Text = row("TotalMultasCount").ToString()
+            If datos IsNot Nothing Then
+                lblTotalUsuarios.Text = datos.TotalUsuarios.ToString()
+                lblTotalPrestamos.Text = datos.TotalPrestamos.ToString()
+                lblTotalDevoluciones.Text = datos.TotalDevoluciones.ToString()
+                lblTotalPedidos.Text = datos.TotalCategorias.ToString() ' Reusamos Pedidos como Categorías
+                lblTotalMultas.Text = datos.TotalMultasCount.ToString()
             End If
+
         Catch ex As Exception
-            ' En caso de error, ponemos guiones para indicar fallo sin romper la UI
+            ' En caso de error, ponemos guiones
             lblTotalUsuarios.Text = "-"
             lblTotalMultas.Text = "-"
+
         End Try
     End Sub
 
     ' =============================
-    ' DATAGRIDVIEW DE RESUMEN (Actividad Semanal)
+    ' 2. DATAGRIDVIEW DE RESUMEN (Actividad Semanal)
     ' =============================
-    Public Sub CrearGraficoReporteCantidadUsuarios()
+    Public Async Sub CrearGraficoReporteCantidadUsuarios()
         If dgvClientes Is Nothing Then Return
 
-        dgvClientes.Columns.Clear()
-        dgvClientes.Rows.Clear()
-        dgvClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-
-        dgvClientes.Columns.Add("Semana", "Semana")
-        dgvClientes.Columns.Add("Prestamos", "Préstamos")
-        dgvClientes.Columns.Add("Devoluciones", "Devoluciones")
-        dgvClientes.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
-        dgvClientes.Columns.Add("Multas", "Multas")
-
-        Dim query As String = "
-            SELECT 
-                CONCAT('Semana ', DATEPART(iso_week, p.fecha_prestamo), ' - ', YEAR(p.fecha_prestamo)) as Semana,
-                COUNT(p.id_prestamo) as CantidadPrestamos,
-                (SELECT COUNT(*) FROM devolucion d WHERE DATEPART(iso_week, d.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)) as CantidadDevoluciones,
-                ISNULL((SELECT SUM(d2.multa) FROM devolucion d2 WHERE DATEPART(iso_week, d2.fecha_real_devolucion) = DATEPART(iso_week, p.fecha_prestamo)), 0) as TotalMultas
-            FROM prestamo p
-            GROUP BY DATEPART(iso_week, p.fecha_prestamo), YEAR(p.fecha_prestamo)
-            ORDER BY YEAR(p.fecha_prestamo) DESC, DATEPART(iso_week, p.fecha_prestamo) DESC"
-
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada al endpoint GET api/reportes/semanal
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/semanal")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ActividadSemanal))(json)
 
-            For Each row As DataRow In dt.Rows
+            dgvClientes.Columns.Clear()
+            dgvClientes.Rows.Clear()
+            dgvClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+
+            dgvClientes.Columns.Add("Semana", "Semana")
+            dgvClientes.Columns.Add("Prestamos", "Préstamos")
+            dgvClientes.Columns.Add("Devoluciones", "Devoluciones")
+            dgvClientes.Columns.Add("LibrosNoDevueltos", "Libros No Devueltos")
+            dgvClientes.Columns.Add("Multas", "Multas")
+
+            For Each item In lista
                 dgvClientes.Rows.Add(
-                    row("Semana"),
-                    row("CantidadPrestamos"),
-                    row("CantidadDevoluciones"),
-                    Convert.ToInt32(row("CantidadPrestamos")) - Convert.ToInt32(row("CantidadDevoluciones")),
-                    Convert.ToDecimal(row("TotalMultas")).ToString("N2")
+                    item.Semana,
+                    item.CantidadPrestamos,
+                    item.CantidadDevoluciones,
+                    item.Pendientes,
+                    item.TotalMultas.ToString("N2")
                 )
             Next
+
         Catch ex As Exception
+            ' Fallo silencioso o log
         End Try
     End Sub
 
     ' =============================
-    ' GRAFICA DE PRÉSTAMOS
+    ' 3. GRAFICA DE PRÉSTAMOS - MIGRADO A API
     ' =============================
-    Public Sub MostrarGraficaPrestamos()
-        Dim datosPrestamos As New Dictionary(Of String, Integer)()
-
-        Dim query As String = "
-            SELECT 
-                CONCAT('Sem ', DATEPART(iso_week, fecha_prestamo)) as SemanaLabel, 
-                COUNT(*) as Total 
-            FROM prestamo 
-            GROUP BY DATEPART(iso_week, fecha_prestamo), YEAR(fecha_prestamo)
-            ORDER BY YEAR(fecha_prestamo), DATEPART(iso_week, fecha_prestamo)"
-
+    Public Async Sub MostrarGraficaPrestamos()
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Reusamos el endpoint semanal que ya trae estos datos
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/semanal")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ActividadSemanal))(json)
 
-            For Each row As DataRow In dt.Rows
-                datosPrestamos.Add(row("SemanaLabel").ToString(), Convert.ToInt32(row("Total")))
+            Dim datosPrestamos As New Dictionary(Of String, Integer)()
+
+            For Each item In lista
+                ' Usamos la semana como etiqueta
+                datosPrestamos.Add(item.Semana, item.CantidadPrestamos)
             Next
+
+            chartP.Series.Clear()
+            chartP.Titles.Clear()
+
+            If datosPrestamos.Count > 0 Then
+                chartP.Series.Add(CrearSerie("Préstamos", SeriesChartType.Column, Color.MediumSlateBlue, datosPrestamos))
+                chartP.Titles.Add("Préstamos por Semana")
+            Else
+                chartP.Titles.Add("Sin datos recientes")
+            End If
+
         Catch ex As Exception
-            datosPrestamos.Add("Error BD", 0)
+            chartP.Titles.Add("Error al cargar gráfica")
         End Try
-
-        chartP.Series.Clear()
-        chartP.Titles.Clear()
-
-        If datosPrestamos.Count > 0 Then
-            chartP.Series.Add(CrearSerie("Préstamos", SeriesChartType.Column, Color.MediumSlateBlue, datosPrestamos))
-            chartP.Titles.Add("Préstamos por Semana")
-        Else
-            chartP.Titles.Add("Sin datos recientes")
-        End If
     End Sub
 
     ' =============================
-    ' GRAFICA DE LIBROS POPULARES
+    ' 4. GRAFICA DE LIBROS POPULARES - MIGRADO A API
     ' =============================
-    Friend Sub MostrarGraficaLibros()
-        Dim datosLibros As New Dictionary(Of String, Integer)()
-
-        Dim query As String = "
-            SELECT TOP 5 l.titulo, COUNT(p.id_prestamo) as VecesPrestado
-            FROM prestamo p
-            INNER JOIN libro l ON p.id_libro = l.id_libro
-            GROUP BY l.titulo
-            ORDER BY VecesPrestado DESC"
-
+    Friend Async Sub MostrarGraficaLibros()
         Try
-            Dim dt As DataTable = db.ExecuteQuery(query, Nothing)
+            ' Llamada al endpoint GET api/reportes/toplibros
+            Dim json As String = Await client.GetStringAsync(BaseUrl & "/toplibros")
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of LibroPopular))(json)
 
-            For Each row As DataRow In dt.Rows
-                Dim titulo As String = row("titulo").ToString()
+            Dim datosLibros As New Dictionary(Of String, Integer)()
+
+            For Each item In lista
+                Dim titulo As String = item.Titulo
                 If titulo.Length > 15 Then titulo = titulo.Substring(0, 12) & "..."
-                datosLibros.Add(titulo, Convert.ToInt32(row("VecesPrestado")))
+
+                datosLibros.Add(titulo, item.VecesPrestado)
             Next
+
+            chartLibros.Series.Clear()
+            chartLibros.Titles.Clear()
+
+            If datosLibros.Count > 0 Then
+                chartLibros.Series.Add(CrearSerie("Populares", SeriesChartType.Column, Color.Teal, datosLibros))
+                chartLibros.Titles.Add("Top 5 Libros")
+                chartLibros.ChartAreas(0).AxisX.Interval = 1
+            Else
+                chartLibros.Titles.Add("Sin datos de libros")
+            End If
+
         Catch ex As Exception
-            datosLibros.Add("Error", 0)
+            chartLibros.Titles.Add("Error al cargar gráfica")
         End Try
-
-        chartLibros.Series.Clear()
-        chartLibros.Titles.Clear()
-
-        If datosLibros.Count > 0 Then
-            chartLibros.Series.Add(CrearSerie("Populares", SeriesChartType.Column, Color.Teal, datosLibros))
-            chartLibros.Titles.Add("Top 5 Libros")
-            chartLibros.ChartAreas(0).AxisX.Interval = 1
-        Else
-            chartLibros.Titles.Add("Sin datos de libros")
-        End If
     End Sub
 
     ' =============================
-    ' HELPER PARA SERIES
+    ' MÉTODO AUXILIAR PARA CREAR SERIES (Se mantiene igual, es visual)
     ' =============================
     Private Function CrearSerie(nombre As String, tipo As SeriesChartType, color As Color, datos As Dictionary(Of String, Integer)) As Series
         Dim serie As New Series(nombre) With {
             .ChartType = tipo,
-            .color = color,
+            .Color = color,
             .IsValueShownAsLabel = True
         }
 

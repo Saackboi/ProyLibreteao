@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms.DataVisualization.Charting
-
-Namespace ProyLibreteao
+﻿Namespace ProyLibreteao
     Public Class ClaseDiseño
 
         Private ReadOnly tabControl As TabControl
