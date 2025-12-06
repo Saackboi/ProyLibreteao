@@ -28,12 +28,11 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.lblTituloMenuEncabezado = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.pb1MenuNav = New System.Windows.Forms.PictureBox()
+        Me.pb2Perfil = New System.Windows.Forms.PictureBox()
         Me.PanelNav = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.msMenuNavegacion = New System.Windows.Forms.MenuStrip()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.pb1MenuNav = New System.Windows.Forms.PictureBox()
-        Me.pb2Perfil = New System.Windows.Forms.PictureBox()
         Me.btn_NavInicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavLIBROSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavPRESTAMOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,14 +43,15 @@ Partial Class Interface_Administrador
         Me.btn_NavSOLICITUDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavCONSULTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PanelBase.SuspendLayout()
         Me.PanelEncabezado.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelNav.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.msMenuNavegacion.SuspendLayout()
-        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelBase
@@ -99,7 +99,7 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.44776!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.55224!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.lblTituloMenuEncabezado, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.pb1MenuNav, 0, 0)
@@ -133,12 +133,36 @@ Partial Class Interface_Administrador
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.Location = New System.Drawing.Point(741, 29)
+        Me.Label3.Location = New System.Drawing.Point(740, 29)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 21)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "BIBLIOTECARIO"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pb1MenuNav
+        '
+        Me.pb1MenuNav.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.pb1MenuNav.Image = Global.ProyLibreteao.My.Resources.Resources.iconoLibro
+        Me.pb1MenuNav.Location = New System.Drawing.Point(4, 19)
+        Me.pb1MenuNav.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb1MenuNav.Name = "pb1MenuNav"
+        Me.pb1MenuNav.Size = New System.Drawing.Size(54, 40)
+        Me.pb1MenuNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb1MenuNav.TabIndex = 0
+        Me.pb1MenuNav.TabStop = False
+        '
+        'pb2Perfil
+        '
+        Me.pb2Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
+        Me.pb2Perfil.Location = New System.Drawing.Point(888, 18)
+        Me.pb2Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb2Perfil.Name = "pb2Perfil"
+        Me.pb2Perfil.Size = New System.Drawing.Size(60, 43)
+        Me.pb2Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb2Perfil.TabIndex = 0
+        Me.pb2Perfil.TabStop = False
         '
         'PanelNav
         '
@@ -186,45 +210,6 @@ Partial Class Interface_Administrador
         Me.msMenuNavegacion.ShowItemToolTips = True
         Me.msMenuNavegacion.Size = New System.Drawing.Size(189, 348)
         Me.msMenuNavegacion.TabIndex = 4
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.btnSalir.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Location = New System.Drawing.Point(5, 629)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(208, 45)
-        Me.btnSalir.TabIndex = 5
-        Me.btnSalir.Text = "❌ Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'pb1MenuNav
-        '
-        Me.pb1MenuNav.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.pb1MenuNav.Image = Global.ProyLibreteao.My.Resources.Resources.iconoLibro
-        Me.pb1MenuNav.Location = New System.Drawing.Point(4, 19)
-        Me.pb1MenuNav.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.pb1MenuNav.Name = "pb1MenuNav"
-        Me.pb1MenuNav.Size = New System.Drawing.Size(54, 40)
-        Me.pb1MenuNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb1MenuNav.TabIndex = 0
-        Me.pb1MenuNav.TabStop = False
-        '
-        'pb2Perfil
-        '
-        Me.pb2Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
-        Me.pb2Perfil.Location = New System.Drawing.Point(888, 18)
-        Me.pb2Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.pb2Perfil.Name = "pb2Perfil"
-        Me.pb2Perfil.Size = New System.Drawing.Size(60, 43)
-        Me.pb2Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb2Perfil.TabIndex = 0
-        Me.pb2Perfil.TabStop = False
         '
         'btn_NavInicioToolStripMenuItem
         '
@@ -335,6 +320,21 @@ Partial Class Interface_Administrador
         Me.btn_NavCONSULTASToolStripMenuItem.Text = "CONSULTAS"
         Me.btn_NavCONSULTASToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSalir.ForeColor = System.Drawing.Color.White
+        Me.btnSalir.Location = New System.Drawing.Point(5, 629)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(208, 45)
+        Me.btnSalir.TabIndex = 5
+        Me.btnSalir.Text = "❌ Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
         'Interface_Administrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -344,20 +344,20 @@ Partial Class Interface_Administrador
         Me.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MinimumSize = New System.Drawing.Size(1194, 718)
         Me.Name = "Interface_Administrador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formulario  Administrativo"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelBase.ResumeLayout(False)
         Me.PanelEncabezado.ResumeLayout(False)
         Me.PanelEncabezado.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelNav.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.msMenuNavegacion.ResumeLayout(False)
         Me.msMenuNavegacion.PerformLayout()
-        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

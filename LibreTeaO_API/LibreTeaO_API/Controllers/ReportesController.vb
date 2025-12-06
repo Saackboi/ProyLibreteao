@@ -19,7 +19,8 @@ Public Class ReportesController
                     (SELECT COUNT(*) FROM prestamo) AS TotalPrestamos,
                     (SELECT COUNT(*) FROM devolucion) AS TotalDevoluciones,
                     (SELECT COUNT(*) FROM categorias) AS TotalCategorias,
-                    (SELECT COUNT(*) FROM devolucion WHERE multa > 0) AS TotalMultasCount"
+                    (SELECT COUNT(*) FROM devolucion WHERE multa > 0) AS TotalMultasCount,
+                    (SELECT COUNT(*) FROM libro) AS TotalLibros"
 
             cn.Open()
             Using cmd As New SqlCommand(query, cn)
@@ -30,6 +31,7 @@ Public Class ReportesController
                         kpis.TotalDevoluciones = Convert.ToInt32(reader("TotalDevoluciones"))
                         kpis.TotalCategorias = Convert.ToInt32(reader("TotalCategorias"))
                         kpis.TotalMultasCount = Convert.ToInt32(reader("TotalMultasCount"))
+                        kpis.TotalLibros = Convert.ToInt32(reader("TotalLibros"))
                     End If
                 End Using
             End Using

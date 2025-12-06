@@ -75,6 +75,8 @@ Public Class Interface_Administrador
         codigoEncabezado = New ClaseEncabezado(lblTituloMenuEncabezado, pb1MenuNav)
         codigoNavegacion = New ClaseNav()
 
+        ' Mostrar sección inicial
+        CambiarSeccion("INICIO", My.Resources.iconoInicio)
 
         ' Vincular evento del menú
         AddHandler codigoNavegacion.SeSeleccionoOpcion, AddressOf CambiarSeccion
@@ -93,7 +95,7 @@ Public Class Interface_Administrador
         Next
     End Sub
     ' Cambia la sección mostrada en el panel de contenido
-    Private Sub CambiarSeccion(titulo As String, icono As Image)
+    Public Sub CambiarSeccion(titulo As String, icono As Image)
         ' Actualizar encabezado
         codigoEncabezado.Actualizar(titulo, icono)
 
@@ -106,8 +108,12 @@ Public Class Interface_Administrador
         ' Abrir formulario según sección
         Select Case titulo.ToUpper()
             Case "INICIO"
-
-
+                Dim f As New Inicio()
+                f.TopLevel = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(f)
+                f.Show()
             Case "LIBROS"
                 Dim f As New FormLibros()
                 f.TopLevel = False

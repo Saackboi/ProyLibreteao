@@ -5,6 +5,7 @@ Public Class DashboardKpis
     Public Property TotalDevoluciones As Integer
     Public Property TotalCategorias As Integer
     Public Property TotalMultasCount As Integer
+    Public Property TotalLibros As Integer
 End Class
 
 Public Class ActividadSemanal
