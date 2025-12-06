@@ -1,8 +1,6 @@
-Imports System
 Imports System.Web.Http
-Imports System.Web.Mvc
-Imports LibreTeaO_API.Areas.HelpPage.Models
 Imports LibreTeaO_API.Areas.HelpPage.ModelDescriptions
+Imports LibreTeaO_API.Areas.HelpPage.Models
 
 Namespace Areas.HelpPage.Controllers
     ''' <summary>
