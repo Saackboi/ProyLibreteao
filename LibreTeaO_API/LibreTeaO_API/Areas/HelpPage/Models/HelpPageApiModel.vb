@@ -1,3 +1,4 @@
+Imports System.Collections.Generic
 Imports System.Collections.ObjectModel
 Imports System.Net.Http.Headers
 Imports System.Web.Http.Description

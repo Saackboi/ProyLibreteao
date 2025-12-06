@@ -1,4 +1,6 @@
+Imports System
 Imports System.Globalization
+Imports System.Linq
 Imports System.Reflection
 
 Namespace Areas.HelpPage.ModelDescriptions

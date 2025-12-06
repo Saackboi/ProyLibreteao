@@ -1,6 +1,11 @@
+Imports System
+Imports System.Collections
+Imports System.Collections.Generic
 Imports System.Diagnostics.CodeAnalysis
 Imports System.Globalization
+Imports System.Linq
 Imports System.Reflection
+Imports Microsoft.VisualBasic
 
 Namespace Areas.HelpPage
     ''' <summary>

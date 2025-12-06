@@ -1,3 +1,4 @@
+Imports System.Collections.Generic
 Imports System.Collections.ObjectModel
 
 Namespace Areas.HelpPage.ModelDescriptions

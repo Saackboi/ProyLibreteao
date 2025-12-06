@@ -1,3 +1,5 @@
+Imports System
+
 Namespace Areas.HelpPage.ModelDescriptions
     ''' <summary>
     ''' Describes a type model.
