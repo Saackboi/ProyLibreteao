@@ -55,6 +55,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -82,7 +83,21 @@
     <Compile Include="Bibliotecario\Contenido\FormConsultas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionAutores\ClaseContenidoAutores.vb" />
+    <Compile Include="Bibliotecario\Contenido\GestionCategorias\FormCategorias.Designer.vb">
+      <DependentUpon>FormCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionCategorias\FormCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionCategorias\ClaseContenidoCategorias.vb" />
     <Compile Include="Bibliotecario\Contenido\GestionLibros\ClaseContenidoLibros.vb" />
+    <Compile Include="Bibliotecario\Contenido\GestionAutores\FormAutores.Designer.vb">
+      <DependentUpon>FormAutores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bibliotecario\Contenido\GestionAutores\FormAutores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bibliotecario\Contenido\GestionLibros\FormLibros.Designer.vb">
       <DependentUpon>FormLibros.vb</DependentUpon>
     </Compile>
@@ -192,6 +207,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bibliotecario\Contenido\GestionCategorias\FormCategorias.resx">
+      <DependentUpon>FormCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bibliotecario\Contenido\GestionAutores\FormAutores.resx">
+      <DependentUpon>FormAutores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bibliotecario\Contenido\Inicio\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +274,9 @@
     <None Include="Resources\iconos\descargar.png" />
     <None Include="Resources\iconos\buscar.png" />
     <None Include="Resources\alis.jpg" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\iconocategoria.png" />
+    <None Include="Resources\iconoautor.png" />
     <Content Include="Resources\iconos\iconoFiltro.png" />
     <Content Include="Resources\iconos\iconoPerfil.png" />
     <Content Include="Resources\iconos\iconosNavegacion\iconoClientes.png" />

@@ -121,6 +121,20 @@ Public Class Interface_Administrador
                 f.Dock = DockStyle.Fill
                 PanelContenido.Controls.Add(f)
                 f.Show()
+            Case "CATEGORIAS"
+                Dim f As New FormCategorias()
+                f.TopLevel = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(f)
+                f.Show()
+            Case "AUTORES"
+                Dim f As New FormAutores()
+                f.TopLevel = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(f)
+                f.Show()
             Case "REPORTES"
                 Dim f As New FormReporte()
                 f.TopLevel = False
