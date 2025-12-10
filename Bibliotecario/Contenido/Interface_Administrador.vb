@@ -1,4 +1,5 @@
-﻿Imports ProyLibreteao.ProyLibreteao
+﻿Imports System.ComponentModel
+Imports ProyLibreteao.ProyLibreteao
 '//////////////////////////////////////////////////////////////
 ' ESQUEMA DEL CÓDIGO — FORMULARIO: FormAdministrador.vb
 '══════════════════════════════════════════════════════════
@@ -84,9 +85,12 @@ Public Class Interface_Administrador
         ' Agregar manejadores a todos los items del menú
         For Each item As ToolStripMenuItem In msMenuNavegacion.Items.OfType(Of ToolStripMenuItem)()
             AddHandler item.Click, AddressOf codigoNavegacion.ManejarClick
+
+            AddHandler item.MouseLeave, AddressOf codigoNavegacion.ManejarMouseLeave
             AgregarHandlerRecursivo(item)
         Next
     End Sub
+
     ' Agrega manejadores de eventos recursivamente a los subitems del menú
     Private Sub AgregarHandlerRecursivo(parent As ToolStripMenuItem)
         For Each subItem As ToolStripMenuItem In parent.DropDownItems.OfType(Of ToolStripMenuItem)()
@@ -108,31 +112,44 @@ Public Class Interface_Administrador
         ' Abrir formulario según sección
         Select Case titulo.ToUpper()
             Case "INICIO"
-                Dim f As New Inicio()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New Inicio With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "LIBROS"
-                Dim f As New FormLibros()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormLibros With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
+                PanelContenido.Controls.Add(f)
+                f.Show()
+
+            Case "PRÉSTAMOS"
+                Dim f As New FormPrestamos With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "REPORTES"
-                Dim f As New FormReporte()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormReporte With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "CONSULTAS"
-                Dim f As New FormConsultas()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormConsultas With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
 
@@ -148,12 +165,27 @@ Public Class Interface_Administrador
         seccionActual = titulo
     End Sub
 
-    Private Sub btn_NavCLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_NavCLIENTESToolStripMenuItem.Click
 
-    End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        btnSalir.ForeColor = Color.Red
+        btnSalir.BackColor = Color.White
         Login.Show()
         Me.Hide()
     End Sub
+
+    ' Evento cuando el cursor entra sobre el botón
+    Private Sub BtnSalir_MouseEnter(sender As Object, e As EventArgs) Handles btnSalir.MouseEnter
+        btnSalir.ForeColor = Color.Red
+        btnSalir.BackColor = Color.White
+    End Sub
+
+    ' Evento cuando el cursor sale del botón
+    Private Sub BtnSalir_MouseLeave(sender As Object, e As EventArgs) Handles btnSalir.MouseLeave
+        btnSalir.BackColor = Color.Transparent
+        btnSalir.ForeColor = Color.Black
+    End Sub
+
+
 End Class

@@ -19,8 +19,9 @@ Public Class ClaseContenidoTablas
     Private Shared client As HttpClient = CrearClienteInseguro()
 
     Private Shared Function CrearClienteInseguro() As HttpClient
-        Dim handler As New HttpClientHandler()
-        handler.ServerCertificateCustomValidationCallback = Function(message, cert, chain, errors) True
+        Dim handler As New HttpClientHandler With {
+            .ServerCertificateCustomValidationCallback = Function(message, cert, chain, errors) True
+        }
         Return New HttpClient(handler)
     End Function
 
@@ -169,6 +170,10 @@ Public Class ClaseContenidoTablas
                 End With
 
                 Try
+
+                    ' AÑADE ESTA LÍNEA para suprimir el diálogo de impresión de Windows/Progreso
+                    printDoc.PrintController = New System.Drawing.Printing.StandardPrintController()
+
                     printDoc.Print()
                     MessageBox.Show("Reporte generado exitosamente.")
                 Catch ex As Exception

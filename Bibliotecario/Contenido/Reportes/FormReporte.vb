@@ -40,34 +40,34 @@ Public Class FormReporte
         End Select
     End Sub
 
-    Private Sub btnFiltroAS_Click(sender As Object, e As EventArgs) Handles btnFiltroAS.Click
+    Private Sub BtnFiltroAS_Click(sender As Object, e As EventArgs) Handles BtnFiltroAS.Click
         formFiltro.ShowDialog()
 
     End Sub
 
-    Private Sub btnFiltrosAS_Click(sender As Object, e As EventArgs) Handles btnFiltrosAS.Click
+    Private Sub BtnFiltrosAS_Click(sender As Object, e As EventArgs) Handles BtnFiltrosAS.Click
         formFiltro.ShowDialog()
     End Sub
 
-    Private Sub btnFiltroM_Click(sender As Object, e As EventArgs) Handles btnFiltroM.Click
+    Private Sub BtnFiltroM_Click(sender As Object, e As EventArgs) Handles BtnFiltroM.Click
         formFiltro.ShowDialog()
     End Sub
 
-    Private Sub btnDescargaAS_Click(sender As Object, e As EventArgs) Handles btnDescargaAS.Click
+    Private Sub BtnDescargaAS_Click(sender As Object, e As EventArgs) Handles BtnDescargaAS.Click
         Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
 
         ' Llamar al método que genera el PDF según la pestaña seleccionada
         codigoContenidoTablas.DescargarReportes(tabSeleccionada)
     End Sub
 
-    Private Sub btnDescargaL_Click(sender As Object, e As EventArgs) Handles btnDescargaL.Click
+    Private Sub BtnDescargaL_Click(sender As Object, e As EventArgs) Handles BtnDescargaL.Click
         Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
 
         ' Llamar al método que genera el PDF según la pestaña seleccionada
         codigoContenidoTablas.DescargarReportes(tabSeleccionada)
     End Sub
 
-    Private Sub btnDescargaM_Click(sender As Object, e As EventArgs) Handles btnDescargaM.Click
+    Private Sub BtnDescargaM_Click(sender As Object, e As EventArgs) Handles BtnDescargaM.Click
         Dim tabSeleccionada As TabPage = Me.tcReportes.SelectedTab
 
         ' Llamar al método que genera el PDF según la pestaña seleccionada

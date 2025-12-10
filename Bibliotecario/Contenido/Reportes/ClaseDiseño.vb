@@ -18,7 +18,7 @@
             ' Configurar TabControl
             tabControl.DrawMode = TabDrawMode.OwnerDrawFixed
             tabControl.BackColor = Color.White
-            tabControl.ItemSize = New Size(130, 35)
+            tabControl.ItemSize = New Size(150, 35)
             tabControl.SizeMode = TabSizeMode.Fixed
 
             ' 🔹 Asignar manejadores de eventos
@@ -38,10 +38,10 @@
             Dim rect As Rectangle = e.Bounds
 
             ' Colores del tema
-            Dim colorLavanda As Color = Color.FromArgb(230, 230, 250)
-            Dim colorSubrayado As Color = Color.FromArgb(180, 160, 230)
+            Dim colorLavanda As Color = Color.FromArgb(244, 245, 255)
+            Dim colorSubrayado As Color = Color.Purple
             Dim colorTextoNormal As Color = Color.Black
-            Dim colorTextoActivo As Color = Color.FromArgb(50, 40, 120)
+            Dim colorTextoActivo As Color = Color.Purple
 
             ' Estado del tab
             Dim isSelected As Boolean = (e.Index = tabControl.SelectedIndex)

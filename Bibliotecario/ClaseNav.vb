@@ -6,6 +6,9 @@
 
         Private secciones As Dictionary(Of String, Tuple(Of String, Image))
 
+        ' Item actualmente seleccionado
+        Private itemSeleccionado As ToolStripMenuItem = Nothing
+
         Public Sub New()
             secciones = New Dictionary(Of String, Tuple(Of String, Image)) From {
                 {"btn_NavInicioToolStripMenuItem", Tuple.Create("INICIO", CType(My.Resources.iconoInicio, Image))},
@@ -21,21 +24,68 @@
             }
         End Sub
 
-        ' Maneja el click del menú
+
+        ' ================================
+        '      MANEJO DE CLICK DEL MENÚ
+        ' ================================
         Public Sub ManejarClick(sender As Object, e As EventArgs)
             Dim item As ToolStripMenuItem = TryCast(sender, ToolStripMenuItem)
             If item Is Nothing Then Return
 
+            ' Guardar ítem seleccionado
+            itemSeleccionado = item
+
+            ' Restaurar colores
+            RestaurarColores(item.Owner.Items)
+
+            ' Pintar seleccionado
+            item.ForeColor = Color.Purple
+
+
+            ' Lanzar evento (como ya lo tenías)
             If secciones.ContainsKey(item.Name) Then
                 Dim info = secciones(item.Name)
-                ' Solo levanta el evento con el título y el ícono
                 RaiseEvent SeSeleccionoOpcion(info.Item1, info.Item2)
             Else
                 RaiseEvent SeSeleccionoOpcion(item.Text, Nothing)
             End If
         End Sub
 
+
+
+        Public Sub ManejarMouseLeave(sender As Object, e As EventArgs)
+            Dim item As ToolStripMenuItem = TryCast(sender, ToolStripMenuItem)
+            If item Is Nothing Then Return
+
+            ' Si este item NO es el seleccionado, vuelve normal
+            If itemSeleccionado IsNot item Then
+                item.ForeColor = SystemColors.ControlText
+            End If
+        End Sub
+
+
+        ' ================================
+        '     Restaurar colores del menú
+        ' ================================
+        Private Sub RestaurarColores(items As ToolStripItemCollection)
+            For Each it As ToolStripItem In items
+                If TypeOf it Is ToolStripMenuItem Then
+                    Dim mi = DirectCast(it, ToolStripMenuItem)
+
+                    If mi IsNot itemSeleccionado Then
+                        mi.ForeColor = SystemColors.ControlText
+                    End If
+
+                    ' Submenús
+                    If mi.HasDropDownItems Then
+                        RestaurarColores(mi.DropDownItems)
+                    End If
+                End If
+            Next
+        End Sub
+
     End Class
 
 End Namespace
+
 
