@@ -136,14 +136,23 @@
   <data name="iconoVista" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconoVista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconoLibro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconoLibro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconoFiltro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icono_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconoPerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\iconoPerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconVerlibro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconVerlibro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +165,9 @@
   </data>
   <data name="iconomensajería" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos\iconosNavegacion\iconomensajería.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descargar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos\descargar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="biblioteca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\biblioteca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,19 +199,10 @@
   <data name="Principito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Principito.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconoExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoExcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconoCategoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconocategoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconoPdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoPdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoWord" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoWord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconoFiltro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos\iconoFiltro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconoAutor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconoautor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
