@@ -92,4 +92,29 @@ Public Class ApiService
         End Try
     End Function
 
+    ' =================================================================================
+    ' MÉTODO PUT (Para Actualizar)
+    ' =================================================================================
+    Public Shared Async Function PutAsync(Of T)(endpoint As String, data As Object) As Task(Of T)
+        Try
+            Dim json As String = JsonConvert.SerializeObject(data)
+            Dim content As New StringContent(json, Encoding.UTF8, "application/json")
+
+            Dim response = Await client.PutAsync(endpoint, content)
+
+            If Not response.IsSuccessStatusCode Then
+                Dim errorMsg = Await response.Content.ReadAsStringAsync()
+                If String.IsNullOrEmpty(errorMsg) Then errorMsg = response.ReasonPhrase
+                Throw New Exception(errorMsg)
+            End If
+
+            Dim resultJson = Await response.Content.ReadAsStringAsync()
+            Return JsonConvert.DeserializeObject(Of T)(resultJson)
+
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
+
 End Class
