@@ -648,7 +648,7 @@ Partial Class FormReporte
         'btnDescargaAS
         '
         Me.btnDescargaAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnDescargaAS.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        'Me.btnDescargaAS.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
         Me.btnDescargaAS.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnDescargaAS.Name = "btnDescargaAS"
         Me.btnDescargaAS.Size = New System.Drawing.Size(34, 32)
@@ -786,7 +786,7 @@ Partial Class FormReporte
         'btnDescargaL
         '
         Me.btnDescargaL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnDescargaL.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        'Me.btnDescargaL.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
         Me.btnDescargaL.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnDescargaL.Name = "btnDescargaL"
         Me.btnDescargaL.Size = New System.Drawing.Size(34, 32)
@@ -930,7 +930,7 @@ Partial Class FormReporte
         'btnDescargaM
         '
         Me.btnDescargaM.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnDescargaM.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        'Me.btnDescargaM.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
         Me.btnDescargaM.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnDescargaM.Margin = New System.Windows.Forms.Padding(0)
         Me.btnDescargaM.MergeAction = System.Windows.Forms.MergeAction.MatchOnly

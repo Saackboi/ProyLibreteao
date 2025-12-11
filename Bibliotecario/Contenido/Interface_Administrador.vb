@@ -149,6 +149,13 @@ Public Class Interface_Administrador
                 f.Dock = DockStyle.Fill
                 PanelContenido.Controls.Add(f)
                 f.Show()
+            Case "PRÉSTAMOS"
+                Dim f As New FormPrestamos()
+                f.TopLevel = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.Dock = DockStyle.Fill
+                PanelContenido.Controls.Add(f)
+                f.Show()
 
             Case Else ' Si no hay formulario definido, mostrar mensaje
                 PanelContenido.Controls.Add(New Label With {

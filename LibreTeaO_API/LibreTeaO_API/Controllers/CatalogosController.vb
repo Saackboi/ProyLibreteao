@@ -1,6 +1,5 @@
 ﻿Imports System.Web.Http
 Imports System.Data.SqlClient
-Imports LibreTeaO_API.Models
 
 Public Class CatalogosController
     Inherits ApiController
