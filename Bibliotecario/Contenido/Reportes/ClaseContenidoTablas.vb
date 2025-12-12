@@ -30,7 +30,6 @@ Public Class ClaseContenidoTablas
         If dgvTablaActividadSemanal Is Nothing Then Throw New ArgumentNullException(NameOf(dgvTablaActividadSemanal))
         If dgvLibros Is Nothing Then Throw New ArgumentNullException(NameOf(dgvLibros))
         If dgvMultas Is Nothing Then Throw New ArgumentNullException(NameOf(dgvMultas))
-        If dgvUsuarios Is Nothing Then Throw New ArgumentNullException(NameOf(dgvUsuarios))
 
         Me.dgvActividad = dgvTablaActividadSemanal
         Me.dgvLibros = dgvLibros
