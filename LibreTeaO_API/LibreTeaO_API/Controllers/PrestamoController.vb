@@ -26,14 +26,15 @@ Public Class PrestamosController
             Using cmd As New SqlCommand(query, cn)
                 Using reader = cmd.ExecuteReader()
                     While reader.Read()
-                        Dim p As New PrestamoVista()
-                        p.IdPrestamo = Convert.ToInt32(reader("id_prestamo"))
-                        p.NombreUsuario = reader("Usuario").ToString()
-                        p.TituloLibro = reader("Libro").ToString()
                         ' Formatear fechas para que se vean bien
-                        p.FechaPrestamo = Convert.ToDateTime(reader("fecha_prestamo")).ToString("dd/MM/yyyy")
-                        p.FechaDevolucion = Convert.ToDateTime(reader("fecha_devolucion")).ToString("dd/MM/yyyy")
-                        p.Estado = reader("estado").ToString()
+                        Dim p As New PrestamoVista With {
+                            .IdPrestamo = Convert.ToInt32(reader("id_prestamo")),
+                            .NombreUsuario = reader("Usuario").ToString(),
+                            .TituloLibro = reader("Libro").ToString(),
+                            .FechaPrestamo = Convert.ToDateTime(reader("fecha_prestamo")).ToString("dd/MM/yyyy"),
+                            .FechaDevolucion = Convert.ToDateTime(reader("fecha_devolucion")).ToString("dd/MM/yyyy"),
+                            .Estado = reader("estado").ToString()
+                        }
 
                         lista.Add(p)
                     End While
@@ -105,5 +106,61 @@ Public Class PrestamosController
 
         Return Ok("Libro devuelto")
     End Function
+    <HttpGet>
+    <Route("api/prestamos/buscar")>
+    Public Function BuscarPrestamos(<FromUri> buscar As String) As IHttpActionResult
+        Dim lista As New List(Of PrestamoVista)
+
+        Using cn = GetConnection()
+            Dim query As String
+
+            If String.IsNullOrWhiteSpace(buscar) Then
+                ' Si no hay búsqueda, traemos todos los préstamos
+                query = "
+                SELECT p.id_prestamo, u.nombre AS Usuario, l.titulo AS Libro, 
+                       p.fecha_prestamo, p.fecha_devolucion, p.estado
+                FROM prestamo p
+                INNER JOIN usuario u ON p.id_usuario = u.id_usuario
+                INNER JOIN libro l ON p.id_libro = l.id_libro
+                ORDER BY p.estado ASC, p.fecha_prestamo DESC"
+            Else
+                ' Si hay búsqueda, filtramos
+                query = "
+                SELECT p.id_prestamo, u.nombre AS Usuario, l.titulo AS Libro, 
+                       p.fecha_prestamo, p.fecha_devolucion, p.estado
+                FROM prestamo p
+                INNER JOIN usuario u ON p.id_usuario = u.id_usuario
+                INNER JOIN libro l ON p.id_libro = l.id_libro
+                WHERE u.nombre LIKE '%' + @buscar + '%'
+                   OR l.titulo LIKE '%' + @buscar + '%'
+                   OR CAST(p.id_prestamo AS VARCHAR(20)) LIKE '%' + @buscar + '%'
+                ORDER BY p.estado ASC, p.fecha_prestamo DESC"
+            End If
+
+            cn.Open()
+            Using cmd As New SqlCommand(query, cn)
+                If Not String.IsNullOrWhiteSpace(buscar) Then
+                    cmd.Parameters.AddWithValue("@buscar", buscar)
+                End If
+
+                Using reader = cmd.ExecuteReader()
+                    While reader.Read()
+                        Dim p As New PrestamoVista With {
+                        .IdPrestamo = reader("id_prestamo"),
+                        .NombreUsuario = reader("Usuario").ToString(),
+                        .TituloLibro = reader("Libro").ToString(),
+                        .FechaPrestamo = Convert.ToDateTime(reader("fecha_prestamo")).ToString("dd/MM/yyyy"),
+                        .FechaDevolucion = Convert.ToDateTime(reader("fecha_devolucion")).ToString("dd/MM/yyyy"),
+                        .Estado = reader("estado").ToString()
+                    }
+                        lista.Add(p)
+                    End While
+                End Using
+            End Using
+        End Using
+
+        Return Ok(lista)
+    End Function
+
 
 End Class
