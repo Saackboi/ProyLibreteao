@@ -18,18 +18,26 @@ Public Class FormReporte
 
         codigoDiseñoReporte = New ClaseDiseño(tcReportes, lblTituloTabControl)
         codigoContenidoResumen = New ClaseContenidoResumen(dtgCantidadUsuario, ChartPrestamo, ChartLibros, Label6, Label2, Label7, Label11, Label12)
+<<<<<<< Updated upstream
         codigoContenidoTablas = New ClaseContenidoTablas(dgvTablaActividadSemanal, dgvLibros, dgvMultas)
         codigoReportes = New ClaseContenidoTablas(dgvTablaActividadSemanal, dgvLibros, dgvMultas)
+=======
+        codigoContenidoTablas = New ClaseContenidoTablas(dgvTablaActividadSemanal, dgvLibros, dgvMultas, dgvUsuarios)
+>>>>>>> Stashed changes
         codigoContenidoTablas.MostrarTablaActividadSemenal() '
         codigoContenidoTablas.MostrarTablaLibros()
         codigoContenidoTablas.MostrarTablaMultas()
+        codigoContenidoTablas.MostrarTablaUsuarios()
         codigoContenidoResumen.CargarDatosTarjetas()
         codigoContenidoResumen.CrearGraficoReporteCantidadUsuarios()
         codigoContenidoResumen.MostrarGraficaPrestamos()
         codigoContenidoResumen.MostrarGraficaLibros()
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     End Sub
 
 
