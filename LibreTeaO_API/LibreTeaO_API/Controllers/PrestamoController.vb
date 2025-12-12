@@ -161,6 +161,51 @@ Public Class PrestamosController
 
         Return Ok(lista)
     End Function
+    ' ==========================================
+    ' PUT: Editar préstamo (cambiar usuario o libro)
+    ' ==========================================
+    <HttpPut>
+    <Route("api/prestamos/editar/{id}")>
+    Public Function EditarPrestamo(id As Integer, <FromBody> datos As PrestamoInput) As IHttpActionResult
+        Using cn = GetConnection()
+            cn.Open()
+
+            Dim query As String = "
+            UPDATE prestamo 
+            SET id_usuario = @user,
+                id_libro = @libro
+            WHERE id_prestamo = @id"
+
+            Using cmd As New SqlCommand(query, cn)
+                cmd.Parameters.AddWithValue("@user", datos.IdUsuario)
+                cmd.Parameters.AddWithValue("@libro", datos.IdLibro)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+            End Using
+        End Using
+
+        Return Ok("Préstamo actualizado")
+    End Function
+    ' ==========================================
+    ' DELETE: Eliminar préstamo
+    ' ==========================================
+    <HttpDelete>
+    <Route("api/prestamos/eliminar/{id}")>
+    Public Function EliminarPrestamo(id As Integer) As IHttpActionResult
+
+        Using cn = GetConnection()
+            cn.Open()
+
+            Dim query As String = "DELETE FROM prestamo WHERE id_prestamo = @id"
+
+            Using cmd As New SqlCommand(query, cn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.ExecuteNonQuery()
+            End Using
+        End Using
+
+        Return Ok("Préstamo eliminado")
+    End Function
 
 
 End Class

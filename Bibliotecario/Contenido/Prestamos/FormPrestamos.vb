@@ -92,17 +92,68 @@ Public Class FormPrestamos
     ' ===============================================
     ' BOTÓN EDITAR (vacío porque tu API no tiene PUT EDITAR)
     ' ===============================================
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Async Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+        If dgvPrestamos.CurrentRow Is Nothing Then
+            MessageBox.Show("Seleccione un préstamo para editar.")
+            Return
+        End If
 
+        Dim idPrestamo = CInt(dgvPrestamos.CurrentRow.Cells("IdPrestamo").Value)
+
+        Dim f As New FrmInputs()
+        f.Label1.Text = "Editar préstamo"
+        f.lbl1.Text = "Nuevo ID Usuario:"
+        f.lbl2.Text = "Nuevo ID Libro:"
+        f.ShowDialog()
+
+        If Not f.Confirmado Then Exit Sub
+
+        Dim idUsuario As Integer
+        Dim idLibro As Integer
+
+        If Not Integer.TryParse(f.Valor1, idUsuario) Then
+            MessageBox.Show("ID usuario inválido")
+            Exit Sub
+        End If
+
+        If Not Integer.TryParse(f.Valor2, idLibro) Then
+            MessageBox.Show("ID libro inválido")
+            Exit Sub
+        End If
+
+        Dim ok = Await manejador.EditarPrestamo(idPrestamo, idUsuario, idLibro)
+
+        If ok Then
+            MessageBox.Show("Préstamo editado correctamente.")
+            Await manejador.CargarPrestamos()
+        End If
     End Sub
+
 
 
     ' ===============================================
     ' BOTÓN ELIMINAR (vacío porque tu API no tiene DELETE)
     ' ===============================================
-    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+    Private Async Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+        If dgvPrestamos.CurrentRow Is Nothing Then
+            MessageBox.Show("Seleccione un préstamo para eliminar.")
+            Return
+        End If
 
+        Dim idPrestamo = CInt(dgvPrestamos.CurrentRow.Cells("IdPrestamo").Value)
+
+        If MessageBox.Show("¿Seguro que desea eliminar este préstamo?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+            Return
+        End If
+
+        Dim ok = Await manejador.EliminarPrestamo(idPrestamo)
+
+        If ok Then
+            MessageBox.Show("Préstamo eliminado.")
+            Await manejador.CargarPrestamos()
+        End If
     End Sub
+
 
 
     ' ===============================================
