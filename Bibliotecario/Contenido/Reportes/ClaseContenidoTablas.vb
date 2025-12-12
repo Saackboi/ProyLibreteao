@@ -151,35 +151,31 @@ Public Class ClaseContenidoTablas
     Friend Sub DescargarReportes(tabSeleccionada As TabPage)
         Dim printDoc As New Printing.PrintDocument()
 
-        ' Suscribir el evento PrintPage para dibujar la página
+        ' Suscribir el evento PrintPage
         AddHandler printDoc.PrintPage, Sub(sender As Object, e As PrintPageEventArgs)
                                            PrintPageHandler(sender, e, tabSeleccionada)
                                        End Sub
 
-        ' --- Configurar el guardado en PDF ---
-        Using sfd As New SaveFileDialog()
-            sfd.Filter = "Archivo PDF|*.pdf"
-            sfd.Title = "Guardar reporte como PDF"
-            sfd.FileName = $"Reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
+        Try
+            ' --- Configurar impresión silenciosa a PDF ---
+            Dim nombreArchivo As String = $"Reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
+            printDoc.PrinterSettings.PrinterName = "Microsoft Print to PDF"
+            printDoc.PrinterSettings.PrintToFile = True
+            printDoc.PrinterSettings.PrintFileName = nombreArchivo
 
-            If sfd.ShowDialog() = DialogResult.OK Then
-                With printDoc.PrinterSettings
-                    .PrinterName = "Microsoft Print to PDF"
-                    .PrintToFile = True
-                    .PrintFileName = sfd.FileName
-                End With
+            ' Imprimir directamente
+            printDoc.Print()
 
-                Try
-                    printDoc.Print()
-                    MessageBox.Show("Reporte generado exitosamente.")
-                Catch ex As Exception
-                    MessageBox.Show("Error al imprimir: Asegúrese de tener 'Microsoft Print to PDF' instalado.")
-                End Try
-            End If
-        End Using
+            ' Mensaje de éxito
+            MessageBox.Show("Reporte generado exitosamente en PDF: " & nombreArchivo, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            ' Mensaje de error
+            MessageBox.Show("Error al imprimir: " & ex.Message & vbCrLf &
+                            "Asegúrese de tener 'Microsoft Print to PDF' instalado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
-    ' Modificar PrintPageHandler para recibir la pestaña seleccionada
+    ' Mantener el PrintPageHandler tal como lo tienes
     Private Sub PrintPageHandler(sender As Object, e As PrintPageEventArgs, tabSeleccionada As TabPage)
         Dim g As Graphics = e.Graphics
         Dim fuenteTitulo As New Font("Segoe UI", 16, FontStyle.Bold)
@@ -195,12 +191,6 @@ Public Class ClaseContenidoTablas
         y += 30
         g.DrawString("Fecha: " & DateTime.Now.ToString("dd/MM/yyyy"), fuenteSubtitulo, brocha, margenIzq, y)
         y += 40
-
-        ' --- Logo (Opcional) ---
-        ' Try
-        '    g.DrawImage(My.Resources.iconoLibro, e.MarginBounds.Right - 100, e.MarginBounds.Top, 80, 80)
-        ' Catch
-        ' End Try
 
         Dim lapiz As New Pen(Color.Black, 1)
 
@@ -248,6 +238,8 @@ Public Class ClaseContenidoTablas
             y += 20
         End Sub
 
+
+
         ' --- Seleccionar tabla según la pestaña ---
         If tabSeleccionada IsNot Nothing Then
             Select Case tabSeleccionada.Name
@@ -259,8 +251,8 @@ Public Class ClaseContenidoTablas
                     dibujarTabla(dgvLibros, "Listado de Libros")
             End Select
         End If
-    End Sub
 
+    End Sub
     ' =============================================================
     '   FILTRO – ACTIVIDAD
     ' =============================================================
