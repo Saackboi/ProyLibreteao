@@ -142,13 +142,7 @@ Public Class Interface_Administrador
                 f.Dock = DockStyle.Fill
                 PanelContenido.Controls.Add(f)
                 f.Show()
-            Case "CONSULTAS"
-                Dim f As New FormConsultas()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
-                PanelContenido.Controls.Add(f)
-                f.Show()
+
             Case "PRÉSTAMOS"
                 Dim f As New FormPrestamos()
                 f.TopLevel = False
@@ -169,9 +163,6 @@ Public Class Interface_Administrador
         seccionActual = titulo
     End Sub
 
-    Private Sub btn_NavCLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_NavCLIENTESToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Login.Show()
