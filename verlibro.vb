@@ -1,109 +1,139 @@
-﻿Public Class verlibro
-    Private Sub verlibro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AdjustLayout()
+﻿Imports System.Net.Http
+Imports Newtonsoft.Json.Linq
+
+Public Class verlibro
+
+    Private _idLibro As Integer
+    Private _libroLocal As CatalogoLibros.Libro ' <-- datos locales opcionales
+
+    ' ===========================
+    ' CONSTRUCTORES
+    ' ===========================
+    ' Constructor original con idLibro
+    Public Sub New(idLibro As Integer)
+        InitializeComponent()
+        _idLibro = idLibro
+    End Sub
+
+    ' Constructor que recibe datos locales
+    Public Sub New(libro As CatalogoLibros.Libro)
+        InitializeComponent()
+        _libroLocal = libro
+        _idLibro = libro.IdLibro
+    End Sub
+
+    ' ===========================
+    ' AJUSTE DE LAYOUT
+    ' ===========================
+    Private Sub AdjustLayout()
+        ' Vacío por ahora
     End Sub
 
     Private Sub verlibro_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         AdjustLayout()
     End Sub
 
-    Private Sub AdjustLayout()
-        If Me.IsHandleCreated = False Then Return
+    ' ===========================
+    ' LOAD DEL FORMULARIO
+    ' ===========================
+    Private Async Sub verlibro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AdjustLayout()
 
-        Dim cw As Integer = Me.ClientSize.Width
-        Dim ch As Integer = Me.ClientSize.Height
-        Dim margin As Integer = 12
+        ' Limpiar controles primero para evitar valores del diseñador
+        txtDescripcion.Clear()
+        lstComentarios.Items.Clear()
+        picPortada.Image = Nothing
 
-        ' Barra superior (ya con Dock = Top)
-        If pnlMenuSuperior IsNot Nothing Then
-            Dim topH As Integer = pnlMenuSuperior.Height
+        If _libroLocal IsNot Nothing Then
+            ' Usar datos locales directamente
+            lblTitulo.Text = _libroLocal.Titulo
+            lblAutor.Text = "Autor: " & _libroLocal.NombreAutor
+            txtDescripcion.Text = _libroLocal.Descripcion
+            lblISBN.Text = "ISBN: N/A"
+            lblCalificacion.Text = "Calificación: " & _libroLocal.ValoracionPromedio.ToString()
+            lblDisponibles.Text = "Disponibles: N/A"
 
-            If picLogo IsNot Nothing Then
-                picLogo.Location = New Point(margin, (topH - picLogo.Height) \ 2)
-            End If
+            ' Cargar portada local si existe
+            Try
+                Dim rutaPortada As String = IO.Path.Combine(Application.StartupPath, "..\..\Resources\Portadas", _libroLocal.IdLibro & ".jpg")
+                If IO.File.Exists(rutaPortada) Then
+                    picPortada.Image = Image.FromFile(rutaPortada)
+                End If
+            Catch
+                ' ignorar error si no hay imagen
+            End Try
 
-            If picUsuario IsNot Nothing Then
-                picUsuario.Location = New Point(Math.Max(margin, cw - picUsuario.Width - margin), (topH - picUsuario.Height) \ 2)
-            End If
 
-            If btnBuscar IsNot Nothing Then
-                btnBuscar.Location = New Point(Math.Max(margin, cw - btnBuscar.Width - picUsuario.Width - margin * 3), (topH - btnBuscar.Height) \ 2)
-            End If
 
-            If txtBuscar IsNot Nothing Then
-                Dim leftX As Integer = margin + If(picLogo IsNot Nothing, picLogo.Width, 0) + margin
-                Dim rightLimit As Integer = If(btnBuscar IsNot Nothing, btnBuscar.Location.X - margin, cw - margin)
-                txtBuscar.Location = New Point(leftX, (topH - txtBuscar.Height) \ 2)
-                txtBuscar.Width = Math.Max(100, rightLimit - txtBuscar.Location.X)
-            End If
-        End If
-
-        ' Área de contenido: columna izquierda (portada) y derecha (detalle)
-        Dim contentTop As Integer = If(pnlMenuInferior IsNot Nothing, pnlMenuInferior.Bottom + 16, 70)
-        Dim leftXMain As Integer = 20
-        Dim leftW As Integer = CInt(Math.Min(Math.Max(180, cw * 0.25), 380)) ' ancho portada: 25% o entre 180 y 380
-
-        If picPortada IsNot Nothing Then
-            picPortada.Location = New Point(leftXMain, contentTop)
-            picPortada.Size = New Size(leftW, Math.Max(180, CInt(ch * 0.45)))
-        End If
-
-        Dim rightX As Integer = leftXMain + leftW + 20
-        Dim rightW As Integer = Math.Max(220, cw - rightX - 20)
-
-        If lblTitulo IsNot Nothing Then
-            lblTitulo.Location = New Point(rightX, contentTop)
-            lblTitulo.Width = rightW
-        End If
-
-        If lblAutor IsNot Nothing Then
-            lblAutor.Location = New Point(rightX, If(lblTitulo IsNot Nothing, lblTitulo.Bottom + 6, contentTop + 30))
-        End If
-
-        If txtDescripcion IsNot Nothing Then
-            Dim descTop As Integer = If(lblAutor IsNot Nothing, lblAutor.Bottom + 8, contentTop + 60)
-            txtDescripcion.Location = New Point(rightX, descTop)
-            txtDescripcion.Width = rightW
-            txtDescripcion.Height = Math.Max(80, CInt(ch * 0.18))
-        End If
-
-        ' Colocación de ISBN y calificación (evita solapamiento con la portada)
-        If lblISBN IsNot Nothing Then
-            Dim isbnTop As Integer = If(txtDescripcion IsNot Nothing, txtDescripcion.Bottom + 8, If(lblAutor IsNot Nothing, lblAutor.Bottom + 8, contentTop + 120))
-            lblISBN.Location = New Point(rightX, isbnTop)
-            lblISBN.Width = Math.Min(220, rightW) ' limitar anchura para que no se solape
-        End If
-
-        If lblCalificacion IsNot Nothing Then
-            Dim calTop As Integer = If(lblISBN IsNot Nothing, lblISBN.Bottom + 6, If(txtDescripcion IsNot Nothing, txtDescripcion.Bottom + 32, contentTop + 140))
-            lblCalificacion.Location = New Point(rightX, calTop)
-            lblCalificacion.Width = Math.Min(220, rightW)
-        End If
-
-        If btnHacerPedido IsNot Nothing Then
-            btnHacerPedido.Location = New Point(rightX + rightW - btnHacerPedido.Width, If(txtDescripcion IsNot Nothing, txtDescripcion.Bottom + 12, contentTop + 160))
-        End If
-
-        If lblDisponibles IsNot Nothing Then
-            Dim lblLeft As Integer = If(btnHacerPedido IsNot Nothing, Math.Max(rightX, btnHacerPedido.Left - lblDisponibles.Width - 10), rightX)
-            lblDisponibles.Location = New Point(lblLeft, If(btnHacerPedido IsNot Nothing, btnHacerPedido.Top + Math.Max(0, (btnHacerPedido.Height - lblDisponibles.Height) \ 2), contentTop + 180))
-        End If
-
-        ' Comentarios en la parte inferior, estirando el ancho
-        If lstComentarios IsNot Nothing Then
-            Dim listH As Integer = Math.Max(80, CInt(ch * 0.18))
-            lstComentarios.Size = New Size(Math.Max(200, cw - leftXMain * 2), listH)
-            lstComentarios.Location = New Point(leftXMain, ch - listH - 20)
+        Else
+            ' Intentar cargar desde la API
+            Await CargarDatosLibro()
         End If
     End Sub
 
-    Private Sub lblISBN_Click(sender As Object, e As EventArgs) Handles lblISBN.Click
+    ' ===========================
+    ' CARGA DE DATOS DESDE API
+    ' ===========================
+    Private Async Function CargarDatosLibro() As Task
+        Try
+            Using client As New HttpClient()
+                Dim url = $"http://localhost:44385/api/libros/{_idLibro}"
+                Dim respuesta = Await client.GetAsync(url)
 
+                If Not respuesta.IsSuccessStatusCode Then
+                    MessageBox.Show("No se pudo obtener la información del libro desde la API.")
+                    Return
+                End If
+
+                Dim contenido As String = Await respuesta.Content.ReadAsStringAsync()
+                Dim datos As JObject = JObject.Parse(contenido)
+
+                ' Limpiar controles antes de asignar
+                txtDescripcion.Clear()
+                lstComentarios.Items.Clear()
+                picPortada.Image = Nothing
+
+                ' Asignar datos
+                lblTitulo.Text = datos("titulo")?.ToString()
+                lblAutor.Text = "Autor: " & datos("autorNombre")?.ToString()
+                txtDescripcion.Text = datos("descripcion")?.ToString()
+                lblISBN.Text = "ISBN: " & datos("isbn")?.ToString()
+                lblCalificacion.Text = "Calificación: " & datos("calificacion")?.ToString()
+                lblDisponibles.Text = "Disponibles: " & datos("cantidadDisponible")?.ToString()
+
+                ' Portada
+                If datos("portadaBase64") IsNot Nothing AndAlso datos("portadaBase64").ToString().Length > 0 Then
+                    Dim base64 As String = datos("portadaBase64").ToString()
+                    Dim bytes() As Byte = Convert.FromBase64String(base64)
+                    Using ms As New IO.MemoryStream(bytes)
+                        picPortada.Image = Image.FromStream(ms)
+                    End Using
+                End If
+
+                ' Comentarios
+                If datos("comentarios") IsNot Nothing Then
+                    For Each c In datos("comentarios")
+                        lstComentarios.Items.Add(c.ToString())
+                    Next
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los datos del libro: " & ex.Message)
+        End Try
+    End Function
+
+    ' ===========================
+    ' EVENTOS
+    ' ===========================
+    Private Sub lblISBN_Click(sender As Object, e As EventArgs) Handles lblISBN.Click
+        ' Sin funcionalidad por ahora
     End Sub
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
-        'Interface_invitados.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

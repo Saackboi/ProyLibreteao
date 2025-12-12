@@ -19,8 +19,8 @@ Partial Class verlibro
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlMenuSuperior = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.picUsuario = New System.Windows.Forms.PictureBox()
         Me.pnlMenuInferior = New System.Windows.Forms.Panel()
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -32,21 +32,17 @@ Partial Class verlibro
         Me.btnHacerPedido = New System.Windows.Forms.Button()
         Me.lstComentarios = New System.Windows.Forms.ListBox()
         Me.picPortada = New System.Windows.Forms.PictureBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
-        Me.picUsuario = New System.Windows.Forms.PictureBox()
         Me.pnlMenuSuperior.SuspendLayout()
-        Me.pnlMenuInferior.SuspendLayout()
-        CType(Me.picPortada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlMenuInferior.SuspendLayout()
+        CType(Me.picPortada, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenuSuperior
         '
         Me.pnlMenuSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.pnlMenuSuperior.Controls.Add(Me.picLogo)
-        Me.pnlMenuSuperior.Controls.Add(Me.txtBuscar)
-        Me.pnlMenuSuperior.Controls.Add(Me.btnBuscar)
         Me.pnlMenuSuperior.Controls.Add(Me.picUsuario)
         Me.pnlMenuSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlMenuSuperior.Location = New System.Drawing.Point(0, 0)
@@ -55,32 +51,27 @@ Partial Class verlibro
         Me.pnlMenuSuperior.Size = New System.Drawing.Size(690, 45)
         Me.pnlMenuSuperior.TabIndex = 9
         '
-        'txtBuscar
+        'picLogo
         '
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Gray
-        Me.txtBuscar.Location = New System.Drawing.Point(158, 11)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(338, 26)
-        Me.txtBuscar.TabIndex = 1
+        Me.picLogo.Image = Global.ProyLibreteao.My.Resources.Resources.iconVerlibro
+        Me.picLogo.Location = New System.Drawing.Point(11, 6)
+        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(32, 34)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
         '
-        'btnBuscar
+        'picUsuario
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(502, 11)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(80, 26)
-        Me.btnBuscar.TabIndex = 2
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.picUsuario.Image = Global.ProyLibreteao.My.Resources.Resources.usuario
+        Me.picUsuario.Location = New System.Drawing.Point(645, 6)
+        Me.picUsuario.Margin = New System.Windows.Forms.Padding(2)
+        Me.picUsuario.Name = "picUsuario"
+        Me.picUsuario.Size = New System.Drawing.Size(32, 34)
+        Me.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picUsuario.TabIndex = 3
+        Me.picUsuario.TabStop = False
         '
         'pnlMenuInferior
         '
@@ -125,7 +116,7 @@ Partial Class verlibro
         Me.lblAutor.Location = New System.Drawing.Point(234, 130)
         Me.lblAutor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAutor.Name = "lblAutor"
-        Me.lblAutor.Size = New System.Drawing.Size(120, 19)
+        Me.lblAutor.Size = New System.Drawing.Size(190, 19)
         Me.lblAutor.TabIndex = 6
         Me.lblAutor.TabStop = True
         Me.lblAutor.Text = "Paul Parsons"
@@ -221,28 +212,6 @@ Partial Class verlibro
         Me.picPortada.TabIndex = 8
         Me.picPortada.TabStop = False
         '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.ProyLibreteao.My.Resources.Resources.iconVerlibro
-        Me.picLogo.Location = New System.Drawing.Point(11, 6)
-        Me.picLogo.Margin = New System.Windows.Forms.Padding(2)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(32, 34)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
-        '
-        'picUsuario
-        '
-        Me.picUsuario.Image = Global.ProyLibreteao.My.Resources.Resources.usuario
-        Me.picUsuario.Location = New System.Drawing.Point(645, 6)
-        Me.picUsuario.Margin = New System.Windows.Forms.Padding(2)
-        Me.picUsuario.Name = "picUsuario"
-        Me.picUsuario.Size = New System.Drawing.Size(32, 34)
-        Me.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picUsuario.TabIndex = 3
-        Me.picUsuario.TabStop = False
-        '
         'verlibro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -266,11 +235,10 @@ Partial Class verlibro
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "📖 Ver Libro"
         Me.pnlMenuSuperior.ResumeLayout(False)
-        Me.pnlMenuSuperior.PerformLayout()
-        Me.pnlMenuInferior.ResumeLayout(False)
-        CType(Me.picPortada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlMenuInferior.ResumeLayout(False)
+        CType(Me.picPortada, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -278,8 +246,6 @@ Partial Class verlibro
 
     Friend WithEvents pnlMenuSuperior As Panel
     Friend WithEvents picLogo As PictureBox
-    Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents picUsuario As PictureBox
     Friend WithEvents pnlMenuInferior As Panel
     Friend WithEvents btnInicio As Button

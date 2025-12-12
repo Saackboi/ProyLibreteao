@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Public Class LibroCard
+    Public Event LibroSeleccionado(idLibro As Integer)
 
     Public Property LibroData As Object  ' Guarda todo el objeto Libro
 
@@ -86,11 +87,9 @@ Public Class LibroCard
     End Sub
 
     Private Sub LibroCard_Click(sender As Object, e As EventArgs) Handles MyBase.Click, pbxPortada.Click, lblTitulo.Click, lblAutor.Click
-        'If LibroData IsNot Nothing Then
-        'Dim detalles As New VistaDetalles(LibroData)
-        'detalles.Show()
-        'End If
+        RaiseEvent LibroSeleccionado(IdLibro)
     End Sub
+
 
 
 End Class
