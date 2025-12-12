@@ -181,10 +181,10 @@ Partial Class FormReporte
         'tlpResumenSemanal
         '
         Me.tlpResumenSemanal.ColumnCount = 4
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.84536!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.15464!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271.0!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 378.0!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.47161!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.52839!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297.0!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 379.0!))
         Me.tlpResumenSemanal.Controls.Add(Me.ChartLibros, 3, 1)
         Me.tlpResumenSemanal.Controls.Add(Me.Panel1, 0, 1)
         Me.tlpResumenSemanal.Controls.Add(Me.dtgCantidadUsuario, 3, 3)
@@ -218,7 +218,7 @@ Partial Class FormReporte
         Me.ChartLibros.BorderlineColor = System.Drawing.Color.Black
         ChartArea1.Name = "ChartArea1"
         Me.ChartLibros.ChartAreas.Add(ChartArea1)
-        Me.ChartLibros.Location = New System.Drawing.Point(740, 120)
+        Me.ChartLibros.Location = New System.Drawing.Point(739, 120)
         Me.ChartLibros.Margin = New System.Windows.Forms.Padding(5)
         Me.ChartLibros.Name = "ChartLibros"
         Me.ChartLibros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
@@ -236,7 +236,7 @@ Partial Class FormReporte
         Me.Panel1.ForeColor = System.Drawing.Color.Black
         Me.Panel1.Location = New System.Drawing.Point(8, 118)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(246, 177)
+        Me.Panel1.Size = New System.Drawing.Size(203, 177)
         Me.Panel1.TabIndex = 3
         '
         'TableLayoutPanel3
@@ -252,7 +252,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(246, 177)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(203, 177)
         Me.TableLayoutPanel3.TabIndex = 1
         '
         'Label6
@@ -260,7 +260,7 @@ Partial Class FormReporte
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(88, 34)
+        Me.Label6.Location = New System.Drawing.Point(67, 34)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 54)
         Me.Label6.TabIndex = 0
@@ -273,9 +273,9 @@ Partial Class FormReporte
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(16, 88)
+        Me.Label9.Location = New System.Drawing.Point(38, 88)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(214, 25)
+        Me.Label9.Size = New System.Drawing.Size(127, 50)
         Me.Label9.TabIndex = 0
         Me.Label9.Text = "CANTIDAD DE USUARIOS"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -311,7 +311,7 @@ Partial Class FormReporte
         Me.dtgCantidadUsuario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtgCantidadUsuario.EnableHeadersVisualStyles = False
         Me.dtgCantidadUsuario.GridColor = System.Drawing.Color.White
-        Me.dtgCantidadUsuario.Location = New System.Drawing.Point(740, 338)
+        Me.dtgCantidadUsuario.Location = New System.Drawing.Point(739, 338)
         Me.dtgCantidadUsuario.Margin = New System.Windows.Forms.Padding(5)
         Me.dtgCantidadUsuario.Name = "dtgCantidadUsuario"
         Me.dtgCantidadUsuario.ReadOnly = True
@@ -328,7 +328,7 @@ Partial Class FormReporte
         Me.dtgCantidadUsuario.RowHeadersWidth = 62
         Me.dtgCantidadUsuario.RowTemplate.Height = 28
         Me.dtgCantidadUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgCantidadUsuario.Size = New System.Drawing.Size(369, 196)
+        Me.dtgCantidadUsuario.Size = New System.Drawing.Size(370, 196)
         Me.dtgCantidadUsuario.TabIndex = 0
         '
         'Panel2
@@ -337,9 +337,9 @@ Partial Class FormReporte
         Me.Panel2.Controls.Add(Me.TableLayoutPanel5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.ForeColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(260, 336)
+        Me.Panel2.Location = New System.Drawing.Point(217, 336)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(201, 200)
+        Me.Panel2.Size = New System.Drawing.Size(217, 200)
         Me.Panel2.TabIndex = 6
         '
         'TableLayoutPanel5
@@ -355,7 +355,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(201, 200)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(217, 200)
         Me.TableLayoutPanel5.TabIndex = 1
         '
         'Label8
@@ -364,7 +364,7 @@ Partial Class FormReporte
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(40, 100)
+        Me.Label8.Location = New System.Drawing.Point(48, 100)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(121, 56)
         Me.Label8.TabIndex = 0
@@ -377,7 +377,7 @@ Partial Class FormReporte
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 28.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(52, 26)
+        Me.Label7.Location = New System.Drawing.Point(60, 26)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(96, 74)
         Me.Label7.TabIndex = 0
@@ -387,7 +387,7 @@ Partial Class FormReporte
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(260, 298)
+        Me.Label4.Location = New System.Drawing.Point(217, 298)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(0, 25)
         Me.Label4.TabIndex = 13
@@ -397,10 +397,10 @@ Partial Class FormReporte
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources.romeoUlieta
-        Me.PictureBox1.Location = New System.Drawing.Point(467, 336)
+        Me.PictureBox1.Location = New System.Drawing.Point(440, 336)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Padding = New System.Windows.Forms.Padding(5)
-        Me.PictureBox1.Size = New System.Drawing.Size(265, 200)
+        Me.PictureBox1.Size = New System.Drawing.Size(291, 200)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -409,9 +409,9 @@ Partial Class FormReporte
         '
         Me.Panel3.Controls.Add(Me.TableLayoutPanel6)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(260, 118)
+        Me.Panel3.Location = New System.Drawing.Point(217, 118)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(201, 177)
+        Me.Panel3.Size = New System.Drawing.Size(217, 177)
         Me.Panel3.TabIndex = 20
         '
         'TableLayoutPanel6
@@ -429,7 +429,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(201, 177)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(217, 177)
         Me.TableLayoutPanel6.TabIndex = 2
         '
         'Label2
@@ -438,7 +438,7 @@ Partial Class FormReporte
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(59, 40)
+        Me.Label2.Location = New System.Drawing.Point(67, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 48)
         Me.Label2.TabIndex = 0
@@ -451,7 +451,7 @@ Partial Class FormReporte
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(34, 88)
+        Me.Label10.Location = New System.Drawing.Point(42, 88)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(132, 50)
         Me.Label10.TabIndex = 1
@@ -462,7 +462,7 @@ Partial Class FormReporte
         Me.ChartPrestamo.BackColor = System.Drawing.Color.Transparent
         ChartArea2.Name = "ChartArea1"
         Me.ChartPrestamo.ChartAreas.Add(ChartArea2)
-        Me.ChartPrestamo.Location = New System.Drawing.Point(467, 118)
+        Me.ChartPrestamo.Location = New System.Drawing.Point(440, 118)
         Me.ChartPrestamo.Name = "ChartPrestamo"
         Me.ChartPrestamo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate
         Series2.ChartArea = "ChartArea1"
@@ -477,7 +477,7 @@ Partial Class FormReporte
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(8, 336)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(246, 200)
+        Me.Panel4.Size = New System.Drawing.Size(203, 200)
         Me.Panel4.TabIndex = 21
         '
         'TableLayoutPanel7
@@ -495,7 +495,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel7.RowCount = 2
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(246, 200)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(203, 200)
         Me.TableLayoutPanel7.TabIndex = 0
         '
         'Label11
@@ -503,7 +503,7 @@ Partial Class FormReporte
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(92, 52)
+        Me.Label11.Location = New System.Drawing.Point(70, 52)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(62, 48)
         Me.Label11.TabIndex = 0
@@ -515,9 +515,9 @@ Partial Class FormReporte
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(21, 100)
+        Me.Label13.Location = New System.Drawing.Point(47, 100)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(203, 21)
+        Me.Label13.Size = New System.Drawing.Size(109, 42)
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "CANTIDAD DE CATEGORÍAS"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -528,9 +528,9 @@ Partial Class FormReporte
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(738, 298)
+        Me.Label3.Location = New System.Drawing.Point(737, 298)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(373, 21)
+        Me.Label3.Size = New System.Drawing.Size(374, 21)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "CANTIDAD TIPO DE USUARIO"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -540,9 +540,9 @@ Partial Class FormReporte
         Me.Label5.AutoSize = True
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(467, 298)
+        Me.Label5.Location = New System.Drawing.Point(440, 298)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(265, 21)
+        Me.Label5.Size = New System.Drawing.Size(291, 21)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "LIBRO MÁS SOLICITADO"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -566,11 +566,11 @@ Partial Class FormReporte
         Me.TableLayoutPanel1.Controls.Add(Me.Label12, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label14, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(467, 8)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(440, 8)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(265, 104)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(291, 104)
         Me.TableLayoutPanel1.TabIndex = 22
         '
         'Label12
@@ -578,9 +578,9 @@ Partial Class FormReporte
         Me.Label12.AutoSize = True
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(135, 0)
+        Me.Label12.Location = New System.Drawing.Point(148, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(127, 104)
+        Me.Label12.Size = New System.Drawing.Size(140, 104)
         Me.Label12.TabIndex = 1
         Me.Label12.Text = "40"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -592,7 +592,7 @@ Partial Class FormReporte
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(3, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(126, 104)
+        Me.Label14.Size = New System.Drawing.Size(139, 104)
         Me.Label14.TabIndex = 3
         Me.Label14.Text = "CANTIDAD DE DEVOLUCIONES"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -976,8 +976,8 @@ Partial Class FormReporte
         Me.dgvMultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Purple
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle14.Padding = New System.Windows.Forms.Padding(5)
         DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black

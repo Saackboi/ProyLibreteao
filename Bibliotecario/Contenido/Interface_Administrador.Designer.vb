@@ -100,7 +100,7 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.44776!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.55224!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.lblTituloMenuEncabezado, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.pb1MenuNav, 0, 0)
@@ -134,7 +134,7 @@ Partial Class Interface_Administrador
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.Location = New System.Drawing.Point(665, 23)
+        Me.Label3.Location = New System.Drawing.Point(664, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(190, 32)
         Me.Label3.TabIndex = 0
@@ -156,7 +156,7 @@ Partial Class Interface_Administrador
         'pb2Perfil
         '
         Me.pb2Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
+        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.user
         Me.pb2Perfil.Location = New System.Drawing.Point(888, 18)
         Me.pb2Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.pb2Perfil.Name = "pb2Perfil"
@@ -347,6 +347,7 @@ Partial Class Interface_Administrador
         Me.Name = "Interface_Administrador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formulario  Administrativo"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelBase.ResumeLayout(False)
         Me.PanelEncabezado.ResumeLayout(False)
         Me.PanelEncabezado.PerformLayout()

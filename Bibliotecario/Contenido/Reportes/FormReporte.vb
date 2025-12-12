@@ -163,17 +163,36 @@ Public Class FormReporte
 
     Private Sub BarraBusquedaAS_TextChanged(sender As Object, e As EventArgs) Handles BarraBusquedaAS.TextChanged
         If codigoReportes Is Nothing Then Exit Sub
-        codigoReportes.BuscarActividad(BarraBusquedaAS.Text)
+
+        Dim texto As String = BarraBusquedaAS.Text.Trim()
+        ' Si está vacío o es el placeholder, recarga todos los datos
+        If String.IsNullOrWhiteSpace(texto) OrElse texto = "Buscar Actividad Semanal 🔎" Then
+            codigoReportes.MostrarTablaActividadSemenal()
+        Else
+            codigoReportes.BuscarActividad(texto)
+        End If
     End Sub
 
     Private Sub BarraBuequedaL_TextChanged(sender As Object, e As EventArgs) Handles BarraBuequedaL.TextChanged
         If codigoReportes Is Nothing Then Exit Sub
-        codigoReportes.BuscarLibros(BarraBuequedaL.Text)
+
+        Dim texto As String = BarraBuequedaL.Text.Trim()
+        If String.IsNullOrWhiteSpace(texto) OrElse texto = "Buscar Libros 🔎" Then
+            codigoReportes.MostrarTablaLibros()
+        Else
+            codigoReportes.BuscarLibros(texto)
+        End If
     End Sub
 
     Private Sub BarraBusquedaM_TextChanged(sender As Object, e As EventArgs) Handles BarraBusquedaM.TextChanged
         If codigoReportes Is Nothing Then Exit Sub
-        codigoReportes.BuscarMultas(BarraBusquedaM.Text)
+
+        Dim texto As String = BarraBusquedaM.Text.Trim()
+        If String.IsNullOrWhiteSpace(texto) OrElse texto = "Buscar Multas🔎" Then
+            codigoReportes.MostrarTablaMultas()
+        Else
+            codigoReportes.BuscarMultas(texto)
+        End If
     End Sub
 
 
