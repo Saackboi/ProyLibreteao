@@ -68,35 +68,33 @@ Partial Class FormReporte
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.tpActividadSemanal = New System.Windows.Forms.TabPage()
         Me.tlpActividad = New System.Windows.Forms.TableLayoutPanel()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
-        Me.btnFiltroAS = New System.Windows.Forms.ToolStripButton()
-        Me.btnDescargaAS = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox6 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
+        Me.BtnFiltroAS = New System.Windows.Forms.ToolStripButton()
+        Me.BtnDescargaAS = New System.Windows.Forms.ToolStripButton()
+        Me.BarraBusquedaAS = New System.Windows.Forms.ToolStripTextBox()
         Me.dgvTablaActividadSemanal = New System.Windows.Forms.DataGridView()
         Me.tpLibros = New System.Windows.Forms.TabPage()
         Me.tlpLibro = New System.Windows.Forms.TableLayoutPanel()
-        Me.ToolStripAS = New System.Windows.Forms.ToolStrip()
-        Me.btnFiltrosAS = New System.Windows.Forms.ToolStripButton()
-        Me.btnDescargaL = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox5 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton10 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripL = New System.Windows.Forms.ToolStrip()
+        Me.BtnFiltrosL = New System.Windows.Forms.ToolStripButton()
+        Me.BtnDescargaL = New System.Windows.Forms.ToolStripButton()
+        Me.BarraBuequedaL = New System.Windows.Forms.ToolStripTextBox()
         Me.dgvLibros = New System.Windows.Forms.DataGridView()
         Me.tpMultas = New System.Windows.Forms.TabPage()
         Me.tlpMultas = New System.Windows.Forms.TableLayoutPanel()
         Me.ToolStripM = New System.Windows.Forms.ToolStrip()
-        Me.btnFiltroM = New System.Windows.Forms.ToolStripButton()
-        Me.btnDescargaM = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox4 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton9 = New System.Windows.Forms.ToolStripButton()
+        Me.BtnFiltroM = New System.Windows.Forms.ToolStripButton()
+        Me.BtnDescargaM = New System.Windows.Forms.ToolStripButton()
+        Me.BarraBusquedaM = New System.Windows.Forms.ToolStripTextBox()
         Me.dgvMultas = New System.Windows.Forms.DataGridView()
         Me.lblTituloTabControl = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -116,13 +114,14 @@ Partial Class FormReporte
         CType(Me.ChartPrestamo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.tpActividadSemanal.SuspendLayout()
         Me.tlpActividad.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         CType(Me.dgvTablaActividadSemanal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpLibros.SuspendLayout()
         Me.tlpLibro.SuspendLayout()
-        Me.ToolStripAS.SuspendLayout()
+        Me.ToolStripL.SuspendLayout()
         CType(Me.dgvLibros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpMultas.SuspendLayout()
         Me.tlpMultas.SuspendLayout()
@@ -144,7 +143,7 @@ Partial Class FormReporte
         Me.tlpReporte.RowCount = 2
         Me.tlpReporte.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.03086!))
         Me.tlpReporte.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.96914!))
-        Me.tlpReporte.Size = New System.Drawing.Size(1140, 651)
+        Me.tlpReporte.Size = New System.Drawing.Size(1147, 669)
         Me.tlpReporte.TabIndex = 3
         '
         'tcReportes
@@ -157,11 +156,11 @@ Partial Class FormReporte
         Me.tcReportes.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.tcReportes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tcReportes.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.tcReportes.Location = New System.Drawing.Point(0, 65)
+        Me.tcReportes.Location = New System.Drawing.Point(0, 67)
         Me.tcReportes.Margin = New System.Windows.Forms.Padding(0)
         Me.tcReportes.Name = "tcReportes"
         Me.tcReportes.SelectedIndex = 0
-        Me.tcReportes.Size = New System.Drawing.Size(1140, 586)
+        Me.tcReportes.Size = New System.Drawing.Size(1147, 602)
         Me.tcReportes.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.tcReportes.TabIndex = 0
         '
@@ -175,17 +174,17 @@ Partial Class FormReporte
         Me.tpResumen.Margin = New System.Windows.Forms.Padding(5)
         Me.tpResumen.Name = "tpResumen"
         Me.tpResumen.Padding = New System.Windows.Forms.Padding(10)
-        Me.tpResumen.Size = New System.Drawing.Size(1132, 548)
+        Me.tpResumen.Size = New System.Drawing.Size(1139, 564)
         Me.tpResumen.TabIndex = 0
         Me.tpResumen.Text = "Resumen De Informe "
         '
         'tlpResumenSemanal
         '
         Me.tlpResumenSemanal.ColumnCount = 4
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.81087!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.18913!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 288.0!))
-        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 326.0!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.84536!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.15464!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271.0!))
+        Me.tlpResumenSemanal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 378.0!))
         Me.tlpResumenSemanal.Controls.Add(Me.ChartLibros, 3, 1)
         Me.tlpResumenSemanal.Controls.Add(Me.Panel1, 0, 1)
         Me.tlpResumenSemanal.Controls.Add(Me.dtgCantidadUsuario, 3, 3)
@@ -198,6 +197,7 @@ Partial Class FormReporte
         Me.tlpResumenSemanal.Controls.Add(Me.Label3, 3, 2)
         Me.tlpResumenSemanal.Controls.Add(Me.Label5, 2, 2)
         Me.tlpResumenSemanal.Controls.Add(Me.Label1, 0, 0)
+        Me.tlpResumenSemanal.Controls.Add(Me.TableLayoutPanel1, 2, 0)
         Me.tlpResumenSemanal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpResumenSemanal.ForeColor = System.Drawing.Color.Black
         Me.tlpResumenSemanal.Location = New System.Drawing.Point(10, 10)
@@ -209,7 +209,7 @@ Partial Class FormReporte
         Me.tlpResumenSemanal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.3494!))
         Me.tlpResumenSemanal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.tlpResumenSemanal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 205.0!))
-        Me.tlpResumenSemanal.Size = New System.Drawing.Size(1112, 528)
+        Me.tlpResumenSemanal.Size = New System.Drawing.Size(1119, 544)
         Me.tlpResumenSemanal.TabIndex = 0
         '
         'ChartLibros
@@ -218,7 +218,7 @@ Partial Class FormReporte
         Me.ChartLibros.BorderlineColor = System.Drawing.Color.Black
         ChartArea1.Name = "ChartArea1"
         Me.ChartLibros.ChartAreas.Add(ChartArea1)
-        Me.ChartLibros.Location = New System.Drawing.Point(785, 114)
+        Me.ChartLibros.Location = New System.Drawing.Point(740, 120)
         Me.ChartLibros.Margin = New System.Windows.Forms.Padding(5)
         Me.ChartLibros.Name = "ChartLibros"
         Me.ChartLibros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
@@ -234,9 +234,9 @@ Partial Class FormReporte
         Me.Panel1.Controls.Add(Me.TableLayoutPanel3)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.ForeColor = System.Drawing.Color.Black
-        Me.Panel1.Location = New System.Drawing.Point(8, 112)
+        Me.Panel1.Location = New System.Drawing.Point(8, 118)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(285, 167)
+        Me.Panel1.Size = New System.Drawing.Size(246, 177)
         Me.Panel1.TabIndex = 3
         '
         'TableLayoutPanel3
@@ -252,7 +252,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(285, 167)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(246, 177)
         Me.TableLayoutPanel3.TabIndex = 1
         '
         'Label6
@@ -260,7 +260,7 @@ Partial Class FormReporte
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(108, 29)
+        Me.Label6.Location = New System.Drawing.Point(88, 34)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 54)
         Me.Label6.TabIndex = 0
@@ -273,7 +273,7 @@ Partial Class FormReporte
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(35, 83)
+        Me.Label9.Location = New System.Drawing.Point(16, 88)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(214, 25)
         Me.Label9.TabIndex = 0
@@ -311,7 +311,7 @@ Partial Class FormReporte
         Me.dtgCantidadUsuario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtgCantidadUsuario.EnableHeadersVisualStyles = False
         Me.dtgCantidadUsuario.GridColor = System.Drawing.Color.White
-        Me.dtgCantidadUsuario.Location = New System.Drawing.Point(785, 322)
+        Me.dtgCantidadUsuario.Location = New System.Drawing.Point(740, 338)
         Me.dtgCantidadUsuario.Margin = New System.Windows.Forms.Padding(5)
         Me.dtgCantidadUsuario.Name = "dtgCantidadUsuario"
         Me.dtgCantidadUsuario.ReadOnly = True
@@ -328,7 +328,7 @@ Partial Class FormReporte
         Me.dtgCantidadUsuario.RowHeadersWidth = 62
         Me.dtgCantidadUsuario.RowTemplate.Height = 28
         Me.dtgCantidadUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgCantidadUsuario.Size = New System.Drawing.Size(317, 196)
+        Me.dtgCantidadUsuario.Size = New System.Drawing.Size(369, 196)
         Me.dtgCantidadUsuario.TabIndex = 0
         '
         'Panel2
@@ -337,9 +337,9 @@ Partial Class FormReporte
         Me.Panel2.Controls.Add(Me.TableLayoutPanel5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.ForeColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(299, 320)
+        Me.Panel2.Location = New System.Drawing.Point(260, 336)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(190, 200)
+        Me.Panel2.Size = New System.Drawing.Size(201, 200)
         Me.Panel2.TabIndex = 6
         '
         'TableLayoutPanel5
@@ -355,7 +355,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(190, 200)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(201, 200)
         Me.TableLayoutPanel5.TabIndex = 1
         '
         'Label8
@@ -364,7 +364,7 @@ Partial Class FormReporte
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(34, 100)
+        Me.Label8.Location = New System.Drawing.Point(40, 100)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(121, 56)
         Me.Label8.TabIndex = 0
@@ -377,7 +377,7 @@ Partial Class FormReporte
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 28.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(47, 26)
+        Me.Label7.Location = New System.Drawing.Point(52, 26)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(96, 74)
         Me.Label7.TabIndex = 0
@@ -387,7 +387,7 @@ Partial Class FormReporte
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(299, 282)
+        Me.Label4.Location = New System.Drawing.Point(260, 298)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(0, 25)
         Me.Label4.TabIndex = 13
@@ -397,10 +397,10 @@ Partial Class FormReporte
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources.romeoUlieta
-        Me.PictureBox1.Location = New System.Drawing.Point(495, 320)
+        Me.PictureBox1.Location = New System.Drawing.Point(467, 336)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Padding = New System.Windows.Forms.Padding(5)
-        Me.PictureBox1.Size = New System.Drawing.Size(282, 200)
+        Me.PictureBox1.Size = New System.Drawing.Size(265, 200)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -409,9 +409,9 @@ Partial Class FormReporte
         '
         Me.Panel3.Controls.Add(Me.TableLayoutPanel6)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(299, 112)
+        Me.Panel3.Location = New System.Drawing.Point(260, 118)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(190, 167)
+        Me.Panel3.Size = New System.Drawing.Size(201, 177)
         Me.Panel3.TabIndex = 20
         '
         'TableLayoutPanel6
@@ -429,7 +429,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(190, 167)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(201, 177)
         Me.TableLayoutPanel6.TabIndex = 2
         '
         'Label2
@@ -438,7 +438,7 @@ Partial Class FormReporte
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(53, 35)
+        Me.Label2.Location = New System.Drawing.Point(59, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 48)
         Me.Label2.TabIndex = 0
@@ -451,7 +451,7 @@ Partial Class FormReporte
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(29, 83)
+        Me.Label10.Location = New System.Drawing.Point(34, 88)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(132, 50)
         Me.Label10.TabIndex = 1
@@ -462,35 +462,32 @@ Partial Class FormReporte
         Me.ChartPrestamo.BackColor = System.Drawing.Color.Transparent
         ChartArea2.Name = "ChartArea1"
         Me.ChartPrestamo.ChartAreas.Add(ChartArea2)
-        Me.ChartPrestamo.Location = New System.Drawing.Point(495, 112)
+        Me.ChartPrestamo.Location = New System.Drawing.Point(467, 118)
         Me.ChartPrestamo.Name = "ChartPrestamo"
         Me.ChartPrestamo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate
         Series2.ChartArea = "ChartArea1"
         Series2.Name = "Series1"
         Me.ChartPrestamo.Series.Add(Series2)
-        Me.ChartPrestamo.Size = New System.Drawing.Size(282, 160)
+        Me.ChartPrestamo.Size = New System.Drawing.Size(265, 160)
         Me.ChartPrestamo.TabIndex = 10
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.TableLayoutPanel7)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(8, 320)
+        Me.Panel4.Location = New System.Drawing.Point(8, 336)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(285, 200)
+        Me.Panel4.Size = New System.Drawing.Size(246, 200)
         Me.Panel4.TabIndex = 21
         '
         'TableLayoutPanel7
         '
         Me.TableLayoutPanel7.BackColor = System.Drawing.Color.Ivory
         Me.TableLayoutPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TableLayoutPanel7.ColumnCount = 2
+        Me.TableLayoutPanel7.ColumnCount = 1
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.34848!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.65152!))
         Me.TableLayoutPanel7.Controls.Add(Me.Label11, 0, 0)
-        Me.TableLayoutPanel7.Controls.Add(Me.Label12, 1, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.Label13, 0, 1)
-        Me.TableLayoutPanel7.Controls.Add(Me.Label14, 1, 1)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.ForeColor = System.Drawing.Color.Black
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
@@ -498,7 +495,7 @@ Partial Class FormReporte
         Me.TableLayoutPanel7.RowCount = 2
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(285, 200)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(246, 200)
         Me.TableLayoutPanel7.TabIndex = 0
         '
         'Label11
@@ -506,48 +503,24 @@ Partial Class FormReporte
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(36, 52)
+        Me.Label11.Location = New System.Drawing.Point(92, 52)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(62, 48)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "30"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label12
-        '
-        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(178, 52)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(62, 48)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "40"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Label13
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(12, 100)
+        Me.Label13.Location = New System.Drawing.Point(21, 100)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(109, 42)
+        Me.Label13.Size = New System.Drawing.Size(203, 21)
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "CANTIDAD DE CATEGORÍAS"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(148, 100)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(123, 42)
-        Me.Label14.TabIndex = 3
-        Me.Label14.Text = "CANTIDAD DE DEVOLUCIONES"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
@@ -555,9 +528,9 @@ Partial Class FormReporte
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(783, 282)
+        Me.Label3.Location = New System.Drawing.Point(738, 298)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(321, 21)
+        Me.Label3.Size = New System.Drawing.Size(373, 21)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "CANTIDAD TIPO DE USUARIO"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -567,9 +540,9 @@ Partial Class FormReporte
         Me.Label5.AutoSize = True
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(495, 282)
+        Me.Label5.Location = New System.Drawing.Point(467, 298)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(282, 21)
+        Me.Label5.Size = New System.Drawing.Size(265, 21)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "LIBRO MÁS SOLICITADO"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -584,6 +557,46 @@ Partial Class FormReporte
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "RESUMEN DE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "INFORMES"
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Snow
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Label12, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label14, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(467, 8)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(265, 104)
+        Me.TableLayoutPanel1.TabIndex = 22
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(135, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(127, 104)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "40"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(3, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(126, 104)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "CANTIDAD DE DEVOLUCIONES"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'tpActividadSemanal
         '
         Me.tpActividadSemanal.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -594,7 +607,7 @@ Partial Class FormReporte
         Me.tpActividadSemanal.Margin = New System.Windows.Forms.Padding(5)
         Me.tpActividadSemanal.Name = "tpActividadSemanal"
         Me.tpActividadSemanal.Padding = New System.Windows.Forms.Padding(10)
-        Me.tpActividadSemanal.Size = New System.Drawing.Size(1132, 548)
+        Me.tpActividadSemanal.Size = New System.Drawing.Size(1139, 564)
         Me.tpActividadSemanal.TabIndex = 1
         Me.tpActividadSemanal.Text = "Actividad Semanal"
         '
@@ -615,7 +628,7 @@ Partial Class FormReporte
         Me.tlpActividad.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpActividad.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 505.0!))
         Me.tlpActividad.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpActividad.Size = New System.Drawing.Size(1112, 565)
+        Me.tlpActividad.Size = New System.Drawing.Size(1119, 565)
         Me.tlpActividad.TabIndex = 1
         '
         'ToolStrip2
@@ -627,48 +640,43 @@ Partial Class FormReporte
         Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip2.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnFiltroAS, Me.btnDescargaAS, Me.ToolStripTextBox6, Me.ToolStripButton6})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnFiltroAS, Me.BtnDescargaAS, Me.BarraBusquedaAS})
         Me.ToolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 23)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
         Me.ToolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip2.Size = New System.Drawing.Size(949, 37)
+        Me.ToolStrip2.Size = New System.Drawing.Size(955, 37)
         Me.ToolStrip2.TabIndex = 6
         '
-        'btnFiltroAS
+        'BtnFiltroAS
         '
-        Me.btnFiltroAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnFiltroAS.Image = CType(resources.GetObject("btnFiltroAS.Image"), System.Drawing.Image)
-        Me.btnFiltroAS.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnFiltroAS.Name = "btnFiltroAS"
-        Me.btnFiltroAS.Size = New System.Drawing.Size(34, 32)
-        Me.btnFiltroAS.Text = "ToolStripButton2"
+        Me.BtnFiltroAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnFiltroAS.Image = CType(resources.GetObject("BtnFiltroAS.Image"), System.Drawing.Image)
+        Me.BtnFiltroAS.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnFiltroAS.Name = "BtnFiltroAS"
+        Me.BtnFiltroAS.Size = New System.Drawing.Size(34, 32)
+        Me.BtnFiltroAS.Text = "ToolStripButton2"
+        Me.BtnFiltroAS.ToolTipText = "Filtrar Reporte por Dia,Mes y Año "
         '
-        'btnDescargaAS
+        'BtnDescargaAS
         '
-        Me.btnDescargaAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        'Me.btnDescargaAS.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
-        Me.btnDescargaAS.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnDescargaAS.Name = "btnDescargaAS"
-        Me.btnDescargaAS.Size = New System.Drawing.Size(34, 32)
-        Me.btnDescargaAS.Text = "ToolStripButton3"
+        Me.BtnDescargaAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnDescargaAS.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        Me.BtnDescargaAS.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDescargaAS.Name = "BtnDescargaAS"
+        Me.BtnDescargaAS.Size = New System.Drawing.Size(34, 32)
+        Me.BtnDescargaAS.Text = "ToolStripButton3"
+        Me.BtnDescargaAS.ToolTipText = "Descarcar Reporte en PDF "
         '
-        'ToolStripTextBox6
+        'BarraBusquedaAS
         '
-        Me.ToolStripTextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox6.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.ToolStripTextBox6.Name = "ToolStripTextBox6"
-        Me.ToolStripTextBox6.Size = New System.Drawing.Size(300, 37)
-        '
-        'ToolStripButton6
-        '
-        Me.ToolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
-        Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(34, 32)
-        Me.ToolStripButton6.Text = "ToolStripButton8"
+        Me.BarraBusquedaAS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BarraBusquedaAS.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.BarraBusquedaAS.Name = "BarraBusquedaAS"
+        Me.BarraBusquedaAS.Size = New System.Drawing.Size(300, 37)
+        Me.BarraBusquedaAS.Text = "Buscar Actividad Semanal 🔎"
+        Me.BarraBusquedaAS.ToolTipText = "Buscar Actividad Semenal "
         '
         'dgvTablaActividadSemanal
         '
@@ -692,8 +700,8 @@ Partial Class FormReporte
         Me.dgvTablaActividadSemanal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Purple
         DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5)
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -732,7 +740,7 @@ Partial Class FormReporte
         Me.tpLibros.Margin = New System.Windows.Forms.Padding(5)
         Me.tpLibros.Name = "tpLibros"
         Me.tpLibros.Padding = New System.Windows.Forms.Padding(10)
-        Me.tpLibros.Size = New System.Drawing.Size(1132, 548)
+        Me.tpLibros.Size = New System.Drawing.Size(1139, 564)
         Me.tpLibros.TabIndex = 2
         Me.tpLibros.Text = "Libros Más Solicitados "
         '
@@ -743,7 +751,7 @@ Partial Class FormReporte
         Me.tlpLibro.ColumnCount = 2
         Me.tlpLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.37653!))
         Me.tlpLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.62347!))
-        Me.tlpLibro.Controls.Add(Me.ToolStripAS, 0, 0)
+        Me.tlpLibro.Controls.Add(Me.ToolStripL, 0, 0)
         Me.tlpLibro.Controls.Add(Me.dgvLibros, 0, 1)
         Me.tlpLibro.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlpLibro.Location = New System.Drawing.Point(10, 10)
@@ -752,61 +760,56 @@ Partial Class FormReporte
         Me.tlpLibro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpLibro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 505.0!))
         Me.tlpLibro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpLibro.Size = New System.Drawing.Size(1112, 565)
+        Me.tlpLibro.Size = New System.Drawing.Size(1119, 565)
         Me.tlpLibro.TabIndex = 3
         '
-        'ToolStripAS
+        'ToolStripL
         '
-        Me.ToolStripAS.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.ToolStripL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ToolStripAS.AutoSize = False
-        Me.ToolStripAS.BackColor = System.Drawing.Color.Purple
-        Me.ToolStripAS.Dock = System.Windows.Forms.DockStyle.None
-        Me.ToolStripAS.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStripAS.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStripAS.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnFiltrosAS, Me.btnDescargaL, Me.ToolStripTextBox5, Me.ToolStripButton10})
-        Me.ToolStripAS.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        Me.ToolStripAS.Location = New System.Drawing.Point(0, 23)
-        Me.ToolStripAS.Name = "ToolStripAS"
-        Me.ToolStripAS.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
-        Me.ToolStripAS.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStripAS.Size = New System.Drawing.Size(949, 37)
-        Me.ToolStripAS.TabIndex = 6
-        Me.ToolStripAS.Text = "ToolStrip2"
+        Me.ToolStripL.AutoSize = False
+        Me.ToolStripL.BackColor = System.Drawing.Color.Purple
+        Me.ToolStripL.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStripL.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStripL.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ToolStripL.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnFiltrosL, Me.BtnDescargaL, Me.BarraBuequedaL})
+        Me.ToolStripL.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
+        Me.ToolStripL.Location = New System.Drawing.Point(0, 23)
+        Me.ToolStripL.Name = "ToolStripL"
+        Me.ToolStripL.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
+        Me.ToolStripL.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.ToolStripL.Size = New System.Drawing.Size(955, 37)
+        Me.ToolStripL.TabIndex = 6
+        Me.ToolStripL.Text = "ToolStrip2"
         '
-        'btnFiltrosAS
+        'BtnFiltrosL
         '
-        Me.btnFiltrosAS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnFiltrosAS.Image = CType(resources.GetObject("btnFiltrosAS.Image"), System.Drawing.Image)
-        Me.btnFiltrosAS.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnFiltrosAS.Name = "btnFiltrosAS"
-        Me.btnFiltrosAS.Size = New System.Drawing.Size(34, 32)
-        Me.btnFiltrosAS.Text = "ToolStripButton2"
+        Me.BtnFiltrosL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnFiltrosL.Image = CType(resources.GetObject("BtnFiltrosL.Image"), System.Drawing.Image)
+        Me.BtnFiltrosL.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnFiltrosL.Name = "BtnFiltrosL"
+        Me.BtnFiltrosL.Size = New System.Drawing.Size(34, 32)
+        Me.BtnFiltrosL.Text = "ToolStripButton2"
+        Me.BtnFiltrosL.ToolTipText = "Filtrar Reporte por Dia,Mes y Año"
         '
-        'btnDescargaL
+        'BtnDescargaL
         '
-        Me.btnDescargaL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        'Me.btnDescargaL.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
-        Me.btnDescargaL.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnDescargaL.Name = "btnDescargaL"
-        Me.btnDescargaL.Size = New System.Drawing.Size(34, 32)
-        Me.btnDescargaL.Text = "ToolStripButton3"
+        Me.BtnDescargaL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnDescargaL.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        Me.BtnDescargaL.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDescargaL.Name = "BtnDescargaL"
+        Me.BtnDescargaL.Size = New System.Drawing.Size(34, 32)
+        Me.BtnDescargaL.Text = "ToolStripButton3"
+        Me.BtnDescargaL.ToolTipText = "Descarcar Reporte en PDF "
         '
-        'ToolStripTextBox5
+        'BarraBuequedaL
         '
-        Me.ToolStripTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox5.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.ToolStripTextBox5.Name = "ToolStripTextBox5"
-        Me.ToolStripTextBox5.Size = New System.Drawing.Size(300, 37)
-        '
-        'ToolStripButton10
-        '
-        Me.ToolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton10.Image = CType(resources.GetObject("ToolStripButton10.Image"), System.Drawing.Image)
-        Me.ToolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton10.Name = "ToolStripButton10"
-        Me.ToolStripButton10.Size = New System.Drawing.Size(34, 32)
-        Me.ToolStripButton10.Text = "ToolStripButton8"
+        Me.BarraBuequedaL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BarraBuequedaL.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.BarraBuequedaL.Name = "BarraBuequedaL"
+        Me.BarraBuequedaL.Size = New System.Drawing.Size(300, 37)
+        Me.BarraBuequedaL.Text = "Buscar Libros 🔎"
+        Me.BarraBuequedaL.ToolTipText = "Buscar Libro "
         '
         'dgvLibros
         '
@@ -863,7 +866,7 @@ Partial Class FormReporte
         Me.dgvLibros.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvLibros.RowTemplate.Height = 28
         Me.dgvLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLibros.Size = New System.Drawing.Size(939, 495)
+        Me.dgvLibros.Size = New System.Drawing.Size(945, 495)
         Me.dgvLibros.TabIndex = 0
         '
         'tpMultas
@@ -876,7 +879,7 @@ Partial Class FormReporte
         Me.tpMultas.Margin = New System.Windows.Forms.Padding(5)
         Me.tpMultas.Name = "tpMultas"
         Me.tpMultas.Padding = New System.Windows.Forms.Padding(10)
-        Me.tpMultas.Size = New System.Drawing.Size(1132, 548)
+        Me.tpMultas.Size = New System.Drawing.Size(1139, 564)
         Me.tpMultas.TabIndex = 3
         Me.tpMultas.Text = "Multas Por Usuario"
         '
@@ -896,7 +899,7 @@ Partial Class FormReporte
         Me.tlpMultas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpMultas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 505.0!))
         Me.tlpMultas.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpMultas.Size = New System.Drawing.Size(1112, 565)
+        Me.tlpMultas.Size = New System.Drawing.Size(1119, 565)
         Me.tlpMultas.TabIndex = 4
         '
         'ToolStripM
@@ -908,53 +911,45 @@ Partial Class FormReporte
         Me.ToolStripM.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStripM.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripM.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStripM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnFiltroM, Me.btnDescargaM, Me.ToolStripTextBox4, Me.ToolStripButton9})
+        Me.ToolStripM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnFiltroM, Me.BtnDescargaM, Me.BarraBusquedaM})
         Me.ToolStripM.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.ToolStripM.Location = New System.Drawing.Point(0, 23)
         Me.ToolStripM.Name = "ToolStripM"
         Me.ToolStripM.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
         Me.ToolStripM.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStripM.Size = New System.Drawing.Size(949, 37)
+        Me.ToolStripM.Size = New System.Drawing.Size(955, 37)
         Me.ToolStripM.TabIndex = 5
         Me.ToolStripM.Text = "ToolStrip2"
         '
-        'btnFiltroM
+        'BtnFiltroM
         '
-        Me.btnFiltroM.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnFiltroM.Image = CType(resources.GetObject("btnFiltroM.Image"), System.Drawing.Image)
-        Me.btnFiltroM.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnFiltroM.Name = "btnFiltroM"
-        Me.btnFiltroM.Size = New System.Drawing.Size(34, 32)
-        Me.btnFiltroM.Text = "ToolStripButton2"
+        Me.BtnFiltroM.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnFiltroM.Image = CType(resources.GetObject("BtnFiltroM.Image"), System.Drawing.Image)
+        Me.BtnFiltroM.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnFiltroM.Name = "BtnFiltroM"
+        Me.BtnFiltroM.Size = New System.Drawing.Size(34, 32)
+        Me.BtnFiltroM.Text = "ToolStripButton2"
         '
-        'btnDescargaM
+        'BtnDescargaM
         '
-        Me.btnDescargaM.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        'Me.btnDescargaM.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
-        Me.btnDescargaM.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnDescargaM.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnDescargaM.MergeAction = System.Windows.Forms.MergeAction.MatchOnly
-        Me.btnDescargaM.Name = "btnDescargaM"
-        Me.btnDescargaM.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
-        Me.btnDescargaM.Size = New System.Drawing.Size(34, 37)
-        Me.btnDescargaM.ToolTipText = "Descar En PDF"
+        Me.BtnDescargaM.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnDescargaM.Image = Global.ProyLibreteao.My.Resources.Resources.iconoPdf
+        Me.BtnDescargaM.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDescargaM.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnDescargaM.MergeAction = System.Windows.Forms.MergeAction.MatchOnly
+        Me.BtnDescargaM.Name = "BtnDescargaM"
+        Me.BtnDescargaM.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
+        Me.BtnDescargaM.Size = New System.Drawing.Size(34, 37)
+        Me.BtnDescargaM.ToolTipText = "Descar En PDF"
         '
-        'ToolStripTextBox4
+        'BarraBusquedaM
         '
-        Me.ToolStripTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox4.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.ToolStripTextBox4.Name = "ToolStripTextBox4"
-        Me.ToolStripTextBox4.Size = New System.Drawing.Size(300, 37)
-        '
-        'ToolStripButton9
-        '
-        Me.ToolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton9.Image = CType(resources.GetObject("ToolStripButton9.Image"), System.Drawing.Image)
-        Me.ToolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton9.Name = "ToolStripButton9"
-        Me.ToolStripButton9.Size = New System.Drawing.Size(34, 32)
-        Me.ToolStripButton9.Text = "ToolStripButton8"
-        Me.ToolStripButton9.ToolTipText = "Buscar Info"
+        Me.BarraBusquedaM.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BarraBusquedaM.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.BarraBusquedaM.Name = "BarraBusquedaM"
+        Me.BarraBusquedaM.Size = New System.Drawing.Size(300, 37)
+        Me.BarraBusquedaM.Text = "Buscar Multas🔎"
+        Me.BarraBusquedaM.ToolTipText = "Buscar Multa "
         '
         'dgvMultas
         '
@@ -1011,7 +1006,7 @@ Partial Class FormReporte
         Me.dgvMultas.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvMultas.RowTemplate.Height = 28
         Me.dgvMultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMultas.Size = New System.Drawing.Size(939, 495)
+        Me.dgvMultas.Size = New System.Drawing.Size(945, 495)
         Me.dgvMultas.TabIndex = 0
         '
         'lblTituloTabControl
@@ -1020,10 +1015,10 @@ Partial Class FormReporte
         Me.lblTituloTabControl.AutoSize = True
         Me.lblTituloTabControl.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloTabControl.ForeColor = System.Drawing.Color.Black
-        Me.lblTituloTabControl.Location = New System.Drawing.Point(426, 0)
+        Me.lblTituloTabControl.Location = New System.Drawing.Point(430, 0)
         Me.lblTituloTabControl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTituloTabControl.Name = "lblTituloTabControl"
-        Me.lblTituloTabControl.Size = New System.Drawing.Size(287, 65)
+        Me.lblTituloTabControl.Size = New System.Drawing.Size(287, 67)
         Me.lblTituloTabControl.TabIndex = 0
         Me.lblTituloTabControl.Text = "REPORTES DE LA LIBRERÍA"
         Me.lblTituloTabControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1038,7 +1033,7 @@ Partial Class FormReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1140, 651)
+        Me.ClientSize = New System.Drawing.Size(1147, 669)
         Me.Controls.Add(Me.tlpReporte)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "FormReporte"
@@ -1065,6 +1060,8 @@ Partial Class FormReporte
         Me.Panel4.ResumeLayout(False)
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.tpActividadSemanal.ResumeLayout(False)
         Me.tlpActividad.ResumeLayout(False)
         Me.ToolStrip2.ResumeLayout(False)
@@ -1072,8 +1069,8 @@ Partial Class FormReporte
         CType(Me.dgvTablaActividadSemanal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpLibros.ResumeLayout(False)
         Me.tlpLibro.ResumeLayout(False)
-        Me.ToolStripAS.ResumeLayout(False)
-        Me.ToolStripAS.PerformLayout()
+        Me.ToolStripL.ResumeLayout(False)
+        Me.ToolStripL.PerformLayout()
         CType(Me.dgvLibros, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpMultas.ResumeLayout(False)
         Me.tlpMultas.ResumeLayout(False)
@@ -1122,22 +1119,20 @@ Partial Class FormReporte
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents ToolStripM As ToolStrip
-    Friend WithEvents btnFiltroM As ToolStripButton
-    Friend WithEvents btnDescargaM As ToolStripButton
-    Friend WithEvents ToolStripButton9 As ToolStripButton
+    Friend WithEvents BtnFiltroM As ToolStripButton
+    Friend WithEvents BtnDescargaM As ToolStripButton
     Friend WithEvents ToolStrip2 As ToolStrip
-    Friend WithEvents btnFiltroAS As ToolStripButton
-    Friend WithEvents btnDescargaAS As ToolStripButton
-    Friend WithEvents ToolStripButton6 As ToolStripButton
-    Friend WithEvents ToolStripAS As ToolStrip
-    Friend WithEvents btnFiltrosAS As ToolStripButton
-    Friend WithEvents btnDescargaL As ToolStripButton
-    Friend WithEvents ToolStripButton10 As ToolStripButton
+    Friend WithEvents BtnFiltroAS As ToolStripButton
+    Friend WithEvents BtnDescargaAS As ToolStripButton
+    Friend WithEvents ToolStripL As ToolStrip
+    Friend WithEvents BtnFiltrosL As ToolStripButton
+    Friend WithEvents BtnDescargaL As ToolStripButton
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents ToolStripTextBox4 As ToolStripTextBox
-    Friend WithEvents ToolStripTextBox5 As ToolStripTextBox
-    Friend WithEvents ToolStripTextBox6 As ToolStripTextBox
+    Friend WithEvents BarraBusquedaM As ToolStripTextBox
+    Friend WithEvents BarraBuequedaL As ToolStripTextBox
+    Friend WithEvents BarraBusquedaAS As ToolStripTextBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

@@ -120,5 +120,19 @@ Public Class FormPrestamos
         Exportador.ExportarWord(dgvPrestamos)
     End Sub
 
+    Private Sub ToolStripTextBoxBuscar_Enter(sender As Object, e As EventArgs) Handles ToolStripTextBoxBuscar.Enter
+        If ToolStripTextBoxBuscar.Text = "Buscar Préstamo 🔎" Then
+            ToolStripTextBoxBuscar.Clear()
+            ToolStripTextBoxBuscar.ForeColor = Color.Black
+        End If
 
+    End Sub
+
+    Private Sub ToolStripTextBoxBuscar_Leave(sender As Object, e As EventArgs) Handles ToolStripTextBoxBuscar.Leave
+        If ToolStripTextBoxBuscar.Text.Trim() = "" Then
+            ToolStripTextBoxBuscar.ForeColor = SystemColors.WindowFrame
+            ToolStripTextBoxBuscar.Text = "Buscar Préstamo 🔎"
+        End If
+
+    End Sub
 End Class

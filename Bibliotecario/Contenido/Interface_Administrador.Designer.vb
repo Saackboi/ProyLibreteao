@@ -29,12 +29,11 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.lblTituloMenuEncabezado = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.pb1MenuNav = New System.Windows.Forms.PictureBox()
+        Me.pb2Perfil = New System.Windows.Forms.PictureBox()
         Me.PanelNav = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.msMenuNavegacion = New System.Windows.Forms.MenuStrip()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.pb1MenuNav = New System.Windows.Forms.PictureBox()
-        Me.pb2Perfil = New System.Windows.Forms.PictureBox()
         Me.btn_NavInicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavLIBROSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavPRESTAMOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,14 +44,15 @@ Partial Class Interface_Administrador
         Me.btn_NavSOLICITUDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_NavCONSULTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BtnSalir = New System.Windows.Forms.Button()
         Me.PanelBase.SuspendLayout()
         Me.PanelEncabezado.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelNav.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.msMenuNavegacion.SuspendLayout()
-        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelBase
@@ -100,7 +100,7 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.44776!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.55224!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.lblTituloMenuEncabezado, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.pb1MenuNav, 0, 0)
@@ -134,12 +134,36 @@ Partial Class Interface_Administrador
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.Location = New System.Drawing.Point(731, 29)
+        Me.Label3.Location = New System.Drawing.Point(665, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(125, 21)
+        Me.Label3.Size = New System.Drawing.Size(190, 32)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "BIBLIOTECARIO"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pb1MenuNav
+        '
+        Me.pb1MenuNav.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.pb1MenuNav.Image = Global.ProyLibreteao.My.Resources.Resources.iconoLibro
+        Me.pb1MenuNav.Location = New System.Drawing.Point(4, 19)
+        Me.pb1MenuNav.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb1MenuNav.Name = "pb1MenuNav"
+        Me.pb1MenuNav.Size = New System.Drawing.Size(54, 40)
+        Me.pb1MenuNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb1MenuNav.TabIndex = 0
+        Me.pb1MenuNav.TabStop = False
+        '
+        'pb2Perfil
+        '
+        Me.pb2Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
+        Me.pb2Perfil.Location = New System.Drawing.Point(888, 18)
+        Me.pb2Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.pb2Perfil.Name = "pb2Perfil"
+        Me.pb2Perfil.Size = New System.Drawing.Size(60, 43)
+        Me.pb2Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb2Perfil.TabIndex = 0
+        Me.pb2Perfil.TabStop = False
         '
         'PanelNav
         '
@@ -157,7 +181,7 @@ Partial Class Interface_Administrador
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.msMenuNavegacion, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnSalir, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.BtnSalir, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -185,47 +209,8 @@ Partial Class Interface_Administrador
         Me.msMenuNavegacion.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.msMenuNavegacion.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.msMenuNavegacion.ShowItemToolTips = True
-        Me.msMenuNavegacion.Size = New System.Drawing.Size(189, 348)
+        Me.msMenuNavegacion.Size = New System.Drawing.Size(202, 358)
         Me.msMenuNavegacion.TabIndex = 4
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.btnSalir.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Location = New System.Drawing.Point(5, 629)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(208, 45)
-        Me.btnSalir.TabIndex = 5
-        Me.btnSalir.Text = "❌ Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'pb1MenuNav
-        '
-        Me.pb1MenuNav.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.pb1MenuNav.Image = Global.ProyLibreteao.My.Resources.Resources.iconoLibro
-        Me.pb1MenuNav.Location = New System.Drawing.Point(4, 19)
-        Me.pb1MenuNav.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.pb1MenuNav.Name = "pb1MenuNav"
-        Me.pb1MenuNav.Size = New System.Drawing.Size(54, 40)
-        Me.pb1MenuNav.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb1MenuNav.TabIndex = 0
-        Me.pb1MenuNav.TabStop = False
-        '
-        'pb2Perfil
-        '
-        Me.pb2Perfil.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.pb2Perfil.Image = Global.ProyLibreteao.My.Resources.Resources.icono_user
-        Me.pb2Perfil.Location = New System.Drawing.Point(888, 18)
-        Me.pb2Perfil.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.pb2Perfil.Name = "pb2Perfil"
-        Me.pb2Perfil.Size = New System.Drawing.Size(60, 43)
-        Me.pb2Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb2Perfil.TabIndex = 0
-        Me.pb2Perfil.TabStop = False
         '
         'btn_NavInicioToolStripMenuItem
         '
@@ -234,7 +219,7 @@ Partial Class Interface_Administrador
         Me.btn_NavInicioToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavInicioToolStripMenuItem.Name = "btn_NavInicioToolStripMenuItem"
         Me.btn_NavInicioToolStripMenuItem.Padding = New System.Windows.Forms.Padding(6, 3, 6, 3)
-        Me.btn_NavInicioToolStripMenuItem.Size = New System.Drawing.Size(182, 34)
+        Me.btn_NavInicioToolStripMenuItem.Size = New System.Drawing.Size(195, 35)
         Me.btn_NavInicioToolStripMenuItem.Text = "INICIO"
         Me.btn_NavInicioToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavInicioToolStripMenuItem.ToolTipText = "Ir a inicio de página " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
@@ -245,7 +230,7 @@ Partial Class Interface_Administrador
         Me.btn_NavLIBROSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavLIBROSToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavLIBROSToolStripMenuItem.Name = "btn_NavLIBROSToolStripMenuItem"
-        Me.btn_NavLIBROSToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavLIBROSToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavLIBROSToolStripMenuItem.Text = "LIBROS "
         Me.btn_NavLIBROSToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavLIBROSToolStripMenuItem.ToolTipText = "Ver Libros disponibles "
@@ -257,7 +242,7 @@ Partial Class Interface_Administrador
         Me.btn_NavPRESTAMOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavPRESTAMOSToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavPRESTAMOSToolStripMenuItem.Name = "btn_NavPRESTAMOSToolStripMenuItem"
-        Me.btn_NavPRESTAMOSToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavPRESTAMOSToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavPRESTAMOSToolStripMenuItem.Text = "PRESTAMOS "
         Me.btn_NavPRESTAMOSToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavPRESTAMOSToolStripMenuItem.ToolTipText = "Ver préstamos realizados "
@@ -268,7 +253,7 @@ Partial Class Interface_Administrador
         Me.btn_NavCATEGORIASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavCATEGORIASToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavCATEGORIASToolStripMenuItem.Name = "btn_NavCATEGORIASToolStripMenuItem"
-        Me.btn_NavCATEGORIASToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavCATEGORIASToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavCATEGORIASToolStripMenuItem.Text = "CATEGORIAS"
         Me.btn_NavCATEGORIASToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -278,7 +263,7 @@ Partial Class Interface_Administrador
         Me.NavAUTORESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.NavAUTORESToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.NavAUTORESToolStripMenuItem.Name = "NavAUTORESToolStripMenuItem"
-        Me.NavAUTORESToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.NavAUTORESToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.NavAUTORESToolStripMenuItem.Text = "AUTORES"
         Me.NavAUTORESToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.NavAUTORESToolStripMenuItem.ToolTipText = "Ver mensajes "
@@ -289,7 +274,7 @@ Partial Class Interface_Administrador
         Me.btn_NavCLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavCLIENTESToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavCLIENTESToolStripMenuItem.Name = "btn_NavCLIENTESToolStripMenuItem"
-        Me.btn_NavCLIENTESToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavCLIENTESToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavCLIENTESToolStripMenuItem.Text = "CLIENTES"
         Me.btn_NavCLIENTESToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavCLIENTESToolStripMenuItem.ToolTipText = "Ver Clientes "
@@ -300,7 +285,7 @@ Partial Class Interface_Administrador
         Me.btn_NavREPORTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavREPORTESToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavREPORTESToolStripMenuItem.Name = "btn_NavREPORTESToolStripMenuItem"
-        Me.btn_NavREPORTESToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavREPORTESToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavREPORTESToolStripMenuItem.Text = "REPORTES"
         Me.btn_NavREPORTESToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -310,7 +295,7 @@ Partial Class Interface_Administrador
         Me.btn_NavSOLICITUDToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavSOLICITUDToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavSOLICITUDToolStripMenuItem.Name = "btn_NavSOLICITUDToolStripMenuItem"
-        Me.btn_NavSOLICITUDToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavSOLICITUDToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavSOLICITUDToolStripMenuItem.Text = "SOLICITUD DE LIBROS "
         Me.btn_NavSOLICITUDToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavSOLICITUDToolStripMenuItem.ToolTipText = "Ver Solicitudes de los Clientes"
@@ -321,7 +306,7 @@ Partial Class Interface_Administrador
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Name = "btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem"
-        Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.Text = "GESTIÓN DE CATÁLOGOS"
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem.ToolTipText = "Ver Catálogos disponibles"
@@ -332,13 +317,28 @@ Partial Class Interface_Administrador
         Me.btn_NavCONSULTASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_NavCONSULTASToolStripMenuItem.Margin = New System.Windows.Forms.Padding(3)
         Me.btn_NavCONSULTASToolStripMenuItem.Name = "btn_NavCONSULTASToolStripMenuItem"
-        Me.btn_NavCONSULTASToolStripMenuItem.Size = New System.Drawing.Size(182, 28)
+        Me.btn_NavCONSULTASToolStripMenuItem.Size = New System.Drawing.Size(195, 29)
         Me.btn_NavCONSULTASToolStripMenuItem.Text = "CONSULTAS"
         Me.btn_NavCONSULTASToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'BtnSalir
+        '
+        Me.BtnSalir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.BtnSalir.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalir.ForeColor = System.Drawing.Color.White
+        Me.BtnSalir.Location = New System.Drawing.Point(5, 629)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.Size = New System.Drawing.Size(208, 45)
+        Me.BtnSalir.TabIndex = 5
+        Me.BtnSalir.Text = "❌ Salir"
+        Me.BtnSalir.UseVisualStyleBackColor = False
+        '
         'Interface_Administrador
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1178, 679)
         Me.Controls.Add(Me.PanelBase)
@@ -352,13 +352,13 @@ Partial Class Interface_Administrador
         Me.PanelEncabezado.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelNav.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.msMenuNavegacion.ResumeLayout(False)
         Me.msMenuNavegacion.PerformLayout()
-        CType(Me.pb1MenuNav, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb2Perfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -383,5 +383,5 @@ Partial Class Interface_Administrador
     Friend WithEvents btn_NavCONSULTASToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PanelNav As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents btnSalir As Button
+    Friend WithEvents BtnSalir As Button
 End Class

@@ -260,4 +260,216 @@ Public Class ClaseContenidoTablas
         End If
     End Sub
 
+    ' =============================================================
+    '   FILTRO – ACTIVIDAD
+    ' =============================================================
+    Public Async Sub FiltrarActividadSemanal(filtro As String)
+        Try
+            Dim url = $"{BaseUrl}/reportes/semanal/filtrar?filtro={filtro}"
+            Dim json = Await client.GetStringAsync(url)
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ActividadSemanal))(json)
+
+            dgvActividad.Rows.Clear()
+
+            For Each item In lista
+                dgvActividad.Rows.Add(
+                item.Semana,
+                item.CantidadPrestamos,
+                item.CantidadDevoluciones,
+                item.Pendientes,
+                item.TotalMultas
+            )
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error filtrando actividad semanal: " & ex.Message)
+        End Try
+    End Sub
+
+
+
+    ' =============================================================
+    '   FILTRO – LIBROS
+    ' =============================================================
+    Public Async Sub FiltrarLibros(filtro As String)
+        Try
+            Dim url = $"{BaseUrl}/reportes/libros/filtrar?filtro={filtro}"
+            Dim json = Await client.GetStringAsync(url)
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of LibroPopular))(json)
+
+            dgvLibros.Rows.Clear()
+
+            For Each item In lista
+                dgvLibros.Rows.Add(
+                item.Titulo,
+                item.VecesPrestado
+            )
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error filtrando libros: " & ex.Message)
+        End Try
+    End Sub
+
+
+
+
+    ' =============================================================
+    '   FILTRO – MULTAS
+    ' =============================================================
+    Public Async Sub FiltrarMultas(filtro As String)
+        Try
+            filtro = SanitizarTexto(filtro)
+
+            Dim url = $"{BaseUrl}/reportes/multas/filtrar?filtro={Uri.EscapeDataString(filtro)}"
+
+            Dim json = Await client.GetStringAsync(url)
+
+            If String.IsNullOrWhiteSpace(json) OrElse json = "null" Then
+                dgvMultas.Rows.Clear()
+                Exit Sub
+            End If
+
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ReporteMulta))(json)
+
+            dgvMultas.Rows.Clear()
+
+            If lista Is Nothing Then Exit Sub
+
+            For Each item In lista
+                dgvMultas.Rows.Add(
+                item.Usuario,
+                item.Libro,
+                item.FechaDev,
+                "$" & item.Monto.ToString("N2")
+            )
+            Next
+
+        Catch ex As TaskCanceledException
+            MessageBox.Show("Tiempo de espera agotado al cargar multas.")
+        Catch ex As Exception
+            MessageBox.Show("Error filtrando multas: " & ex.Message)
+        End Try
+    End Sub
+
+    ' ================================================================
+    ' 🔍 MÉTODO GENERAL PARA VALIDAR TEXTO ANTES DE ENVIAR AL API
+    ' ================================================================
+    Private Function SanitizarTexto(texto As String) As String
+        If texto Is Nothing Then Return ""
+        texto = texto.Trim()
+
+        ' Evitar caracteres peligrosos para URLs o SQL
+        Dim invalido As Char() = {"'", """", ";", "|", "\", "/", "<", ">"}
+
+        For Each c In invalido
+            texto = texto.Replace(c, "")
+        Next
+
+        Return texto
+    End Function
+
+
+    Public Async Sub BuscarMultas(texto As String)
+        Try
+
+            If String.IsNullOrWhiteSpace(texto) Then
+                MostrarTablaMultas()      '  <<--- ESTE MÉTODO DEBE CARGAR TODAS LAS MULTAS NORMALES
+                Exit Sub
+            End If
+            texto = SanitizarTexto(texto)
+
+            Dim url = $"{BaseUrl}/reportes/multas/buscar?texto={Uri.EscapeDataString(texto)}"
+            Dim json = Await client.GetStringAsync(url)
+
+            If String.IsNullOrWhiteSpace(json) OrElse json = "null" Then
+                dgvMultas.Rows.Clear()
+                Exit Sub
+            End If
+
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ReporteMulta))(json)
+
+            dgvMultas.Rows.Clear()
+
+            If lista Is Nothing Then Exit Sub
+
+            For Each item In lista
+                dgvMultas.Rows.Add(item.Usuario, item.Libro, item.FechaDev, "$" & item.Monto.ToString("N2"))
+            Next
+
+        Catch
+            dgvMultas.Rows.Clear()
+        End Try
+    End Sub
+
+
+    Public Async Sub BuscarLibros(texto As String)
+        Try
+            If String.IsNullOrWhiteSpace(texto) Then
+                MostrarTablaLibros()      '  <<--- ESTE MÉTODO DEBE CARGAR TODAS LAS MULTAS NORMALES
+                Exit Sub
+            End If
+            texto = SanitizarTexto(texto)
+
+            Dim url = $"{BaseUrl}/reportes/libros/buscar?texto={Uri.EscapeDataString(texto)}"
+            Dim json = Await client.GetStringAsync(url)
+
+            If String.IsNullOrWhiteSpace(json) Then
+                dgvLibros.Rows.Clear()
+                Exit Sub
+            End If
+
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of LibroPopular))(json)
+
+            dgvLibros.Rows.Clear()
+
+            If lista Is Nothing Then Exit Sub
+
+            For Each item In lista
+                dgvLibros.Rows.Add(item.Titulo, item.VecesPrestado)
+            Next
+
+        Catch
+            dgvLibros.Rows.Clear()
+        End Try
+    End Sub
+
+    Public Async Sub BuscarActividad(texto As String)
+        Try
+            If String.IsNullOrWhiteSpace(texto) Then
+                MostrarTablaActividadSemenal()      '  <<--- ESTE MÉTODO DEBE CARGAR TODAS LAS MULTAS NORMALES
+                Exit Sub
+            End If
+            texto = SanitizarTexto(texto)
+
+            Dim url = $"{BaseUrl}/reportes/semanal/buscar?texto={Uri.EscapeDataString(texto)}"
+            Dim json = Await client.GetStringAsync(url)
+
+            If String.IsNullOrWhiteSpace(json) OrElse json = "null" Then
+                dgvActividad.Rows.Clear()
+                Exit Sub
+            End If
+
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of ActividadSemanal))(json)
+
+            dgvActividad.Rows.Clear()
+
+            If lista Is Nothing Then Exit Sub
+
+            For Each item In lista
+                dgvActividad.Rows.Add(
+                    item.Semana,
+                    item.CantidadPrestamos,
+                    item.CantidadDevoluciones,
+                    item.Pendientes,
+                    item.TotalMultas
+                )
+            Next
+
+        Catch
+            dgvActividad.Rows.Clear()
+        End Try
+    End Sub
+
+
 End Class

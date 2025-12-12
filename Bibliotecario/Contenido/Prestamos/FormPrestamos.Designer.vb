@@ -161,7 +161,7 @@ Partial Class FormPrestamos
         Me.ToolStripTextBoxBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.ToolStripTextBoxBuscar.Name = "ToolStripTextBoxBuscar"
         Me.ToolStripTextBoxBuscar.Size = New System.Drawing.Size(300, 38)
-        Me.ToolStripTextBoxBuscar.Text = "   Buscar Prestamo🔎"
+        Me.ToolStripTextBoxBuscar.Text = "Buscar Préstamo 🔎"
         Me.ToolStripTextBoxBuscar.ToolTipText = "Búsqueda de Pedido"
         '
         'dgvPrestamos
