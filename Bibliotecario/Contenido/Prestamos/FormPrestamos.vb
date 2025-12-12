@@ -135,4 +135,14 @@ Public Class FormPrestamos
         End If
 
     End Sub
+
+    Private Sub ToolStripTextBoxBuscar_TextChanged(sender As Object, e As EventArgs) _
+    Handles ToolStripTextBoxBuscar.TextChanged
+
+        If manejador Is Nothing Then Exit Sub
+        manejador.BuscarPrestamos(ToolStripTextBoxBuscar.Text)
+
+
+    End Sub
+
 End Class
