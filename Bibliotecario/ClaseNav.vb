@@ -14,7 +14,10 @@
                 {"btn_NavAUTORESToolStripMenuItem", Tuple.Create("AUTORES", CType(My.Resources.iconoAutor, Image))},
                 {"btn_NavCLIENTESToolStripMenuItem", Tuple.Create("CLIENTES", CType(My.Resources.iconoClientes, Image))},
                 {"btn_NavCATEGORIASToolStripMenuItem", Tuple.Create("CATEGORIAS", CType(My.Resources.iconoCategoria, Image))},
-                {"btn_NavREPORTESToolStripMenuItem", Tuple.Create("REPORTES", CType(My.Resources.iconoReportes, Image))}
+                {"btn_NavREPORTESToolStripMenuItem", Tuple.Create("REPORTES", CType(My.Resources.iconoReportes, Image))},
+                {"btn_NavSOLICITUDToolStripMenuItem", Tuple.Create("SOLICITUD DE LIBROS", CType(My.Resources.iconoSolicitud, Image))},
+                {"btn_NavGESTIÓNDECATÁLOGOSToolStripMenuItem", Tuple.Create("GESTIÓN DE CATÁLOGOS", CType(My.Resources.iconoGestionarCatálogo, Image))},
+                {"btn_NavCONSULTASToolStripMenuItem", Tuple.Create("CONSULTAS", CType(My.Resources.iconoPreguntas, Image))}
             }
         End Sub
 

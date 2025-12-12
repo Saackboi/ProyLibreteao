@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Public Class LibroCard
+    Public Event LibroSeleccionado(idLibro As Integer)
 
     Public Property LibroData As Object  ' Guarda todo el objeto Libro
 
@@ -95,6 +96,7 @@ Public Class LibroCard
         leerlibro.Show()
 
     End Sub
+
 
 
 End Class

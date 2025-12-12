@@ -181,6 +181,4 @@ Public Class Interface_Administrador
         Login.Show()
         Me.Hide()
     End Sub
-
-
 End Class
