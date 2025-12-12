@@ -221,6 +221,40 @@ Public Class ClasePrestamos
         End Try
     End Sub
 
+    Public Async Function EditarPrestamo(idPrestamo As Integer, idUsuario As Integer, idLibro As Integer) As Task(Of Boolean)
+        Try
+            Dim datos As New PrestamoInput With {
+            .IdUsuario = idUsuario,
+            .IdLibro = idLibro
+        }
+
+            Dim json = JsonConvert.SerializeObject(datos)
+            Dim contenido = New StringContent(json, Text.Encoding.UTF8, "application/json")
+
+            Dim url As String = $"{BaseUrl}/editar/{idPrestamo}"
+
+            Dim resp = Await client.PutAsync(url, contenido)
+
+            Return resp.IsSuccessStatusCode
+
+        Catch ex As Exception
+            MessageBox.Show("Error al editar préstamo: " & ex.Message)
+            Return False
+        End Try
+    End Function
+    Public Async Function EliminarPrestamo(idPrestamo As Integer) As Task(Of Boolean)
+        Try
+            Dim url As String = $"{BaseUrl}/eliminar/{idPrestamo}"
+
+            Dim resp = Await client.DeleteAsync(url)
+
+            Return resp.IsSuccessStatusCode
+
+        Catch ex As Exception
+            MessageBox.Show("Error al eliminar préstamo: " & ex.Message)
+            Return False
+        End Try
+    End Function
 
     ' ===================================================
     '   MODELOS
