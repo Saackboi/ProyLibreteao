@@ -117,6 +117,74 @@ Public Class UsuariosController
     End Function
 
     ' ==========================================
+    ' 4. MODIFICAR USUARIO
+    ' PUT: api/usuarios/{id}
+    ' ==========================================
+    <HttpPut>
+    <Route("api/usuarios/{id}")>
+    Public Function PutUsuario(id As Integer, <FromBody> datos As UsuarioInput) As IHttpActionResult
+        If datos Is Nothing Then
+            Return BadRequest("Datos inválidos.")
+        End If
+
+        Using cn = GetConnection()
+            cn.Open()
+
+            ' 1. Verificar si existe
+            Dim checkQuery As String = "SELECT COUNT(*) FROM usuario WHERE id_usuario = @id"
+            Using cmdCheck As New SqlCommand(checkQuery, cn)
+                cmdCheck.Parameters.AddWithValue("@id", id)
+                Dim existe = Convert.ToInt32(cmdCheck.ExecuteScalar())
+
+                If existe = 0 Then
+                    Return NotFound()
+                End If
+            End Using
+
+            ' 2. Construir SQL seguro
+            Dim query As String
+
+            If String.IsNullOrWhiteSpace(datos.Contrasena) Then
+                ' Sin contraseña
+                query = "
+                UPDATE usuario 
+                SET nombre = @nombre,
+                    correo = @correo,
+                    tipo_usuario = @tipo
+                WHERE id_usuario = @id
+            "
+            Else
+                ' Con contraseña
+                query = "
+                UPDATE usuario 
+                SET nombre = @nombre,
+                    correo = @correo,
+                    tipo_usuario = @tipo,
+                    contraseña = @pass
+                WHERE id_usuario = @id
+            "
+            End If
+
+            ' 3. Ejecutar
+            Using cmd As New SqlCommand(query, cn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.Parameters.AddWithValue("@nombre", datos.Nombre)
+                cmd.Parameters.AddWithValue("@correo", datos.Correo)
+                cmd.Parameters.AddWithValue("@tipo", datos.TipoUsuario)
+
+                If Not String.IsNullOrWhiteSpace(datos.Contrasena) Then
+                    cmd.Parameters.AddWithValue("@pass", datos.Contrasena)
+                End If
+
+                cmd.ExecuteNonQuery()
+            End Using
+        End Using
+
+        Return Ok("Usuario actualizado correctamente.")
+    End Function
+
+
+    ' ==========================================
     ' EXTRA: LOGIN
     ' POST: api/usuarios/login
     ' ==========================================
