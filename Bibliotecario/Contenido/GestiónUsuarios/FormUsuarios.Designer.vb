@@ -17,11 +17,21 @@ Partial Class FormUsuarios
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlFondo = New System.Windows.Forms.Panel()
         Me.PanelContenedor = New System.Windows.Forms.Panel()
+        Me.pnlInput = New System.Windows.Forms.Panel()
+        Me.txtContraUsuario = New System.Windows.Forms.TextBox()
+        Me.txtCorreoUsuario = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblPanelInput = New System.Windows.Forms.Label()
+        Me.txtInputNombreUsuario = New System.Windows.Forms.TextBox()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.PanelBottom = New System.Windows.Forms.Panel()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -31,22 +41,12 @@ Partial Class FormUsuarios
         Me.LabelTitulo = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.pnlInput = New System.Windows.Forms.Panel()
-        Me.lblPanelInput = New System.Windows.Forms.Label()
-        Me.txtInputNombreUsuario = New System.Windows.Forms.TextBox()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.label3 = New System.Windows.Forms.Label()
-        Me.txtCorreoUsuario = New System.Windows.Forms.TextBox()
-        Me.txtContraUsuario = New System.Windows.Forms.TextBox()
         Me.pnlFondo.SuspendLayout()
         Me.PanelContenedor.SuspendLayout()
+        Me.pnlInput.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
         Me.PanelTop.SuspendLayout()
-        Me.pnlInput.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlFondo
@@ -76,6 +76,115 @@ Partial Class FormUsuarios
         Me.PanelContenedor.Size = New System.Drawing.Size(1213, 688)
         Me.PanelContenedor.TabIndex = 0
         '
+        'pnlInput
+        '
+        Me.pnlInput.BackColor = System.Drawing.Color.White
+        Me.pnlInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlInput.Controls.Add(Me.txtContraUsuario)
+        Me.pnlInput.Controls.Add(Me.txtCorreoUsuario)
+        Me.pnlInput.Controls.Add(Me.label3)
+        Me.pnlInput.Controls.Add(Me.Label2)
+        Me.pnlInput.Controls.Add(Me.Label1)
+        Me.pnlInput.Controls.Add(Me.lblPanelInput)
+        Me.pnlInput.Controls.Add(Me.txtInputNombreUsuario)
+        Me.pnlInput.Controls.Add(Me.btnGuardar)
+        Me.pnlInput.Controls.Add(Me.btnCancelar)
+        Me.pnlInput.Location = New System.Drawing.Point(330, 136)
+        Me.pnlInput.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlInput.Name = "pnlInput"
+        Me.pnlInput.Size = New System.Drawing.Size(599, 340)
+        Me.pnlInput.TabIndex = 20
+        Me.pnlInput.Visible = False
+        '
+        'txtContraUsuario
+        '
+        Me.txtContraUsuario.Location = New System.Drawing.Point(138, 188)
+        Me.txtContraUsuario.Name = "txtContraUsuario"
+        Me.txtContraUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtContraUsuario.Size = New System.Drawing.Size(413, 22)
+        Me.txtContraUsuario.TabIndex = 14
+        '
+        'txtCorreoUsuario
+        '
+        Me.txtCorreoUsuario.Location = New System.Drawing.Point(138, 139)
+        Me.txtCorreoUsuario.Name = "txtCorreoUsuario"
+        Me.txtCorreoUsuario.Size = New System.Drawing.Size(413, 22)
+        Me.txtCorreoUsuario.TabIndex = 13
+        '
+        'label3
+        '
+        Me.label3.AutoSize = True
+        Me.label3.Location = New System.Drawing.Point(47, 188)
+        Me.label3.Name = "label3"
+        Me.label3.Size = New System.Drawing.Size(79, 16)
+        Me.label3.TabIndex = 12
+        Me.label3.Text = "Contraseña:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(47, 139)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 16)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Correo:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(47, 95)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 16)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Nombre:"
+        '
+        'lblPanelInput
+        '
+        Me.lblPanelInput.AutoSize = True
+        Me.lblPanelInput.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPanelInput.Location = New System.Drawing.Point(46, 45)
+        Me.lblPanelInput.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPanelInput.Name = "lblPanelInput"
+        Me.lblPanelInput.Size = New System.Drawing.Size(0, 23)
+        Me.lblPanelInput.TabIndex = 0
+        '
+        'txtInputNombreUsuario
+        '
+        Me.txtInputNombreUsuario.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtInputNombreUsuario.Location = New System.Drawing.Point(138, 89)
+        Me.txtInputNombreUsuario.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtInputNombreUsuario.Name = "txtInputNombreUsuario"
+        Me.txtInputNombreUsuario.Size = New System.Drawing.Size(413, 22)
+        Me.txtInputNombreUsuario.TabIndex = 1
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(50, 242)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(240, 55)
+        Me.btnGuardar.TabIndex = 8
+        Me.btnGuardar.Text = "GUARDAR USUARIO"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.Gray
+        Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Location = New System.Drawing.Point(311, 242)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(240, 55)
+        Me.btnCancelar.TabIndex = 9
+        Me.btnCancelar.Text = "CANCELAR"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
         'dgvUsuarios
         '
         Me.dgvUsuarios.AllowUserToAddRows = False
@@ -86,24 +195,24 @@ Partial Class FormUsuarios
         Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Purple
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Purple
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Purple
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Purple
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvUsuarios.ColumnHeadersHeight = 40
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Lavender
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvUsuarios.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lavender
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvUsuarios.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvUsuarios.EnableHeadersVisualStyles = False
         Me.dgvUsuarios.GridColor = System.Drawing.Color.WhiteSmoke
@@ -113,14 +222,14 @@ Partial Class FormUsuarios
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvUsuarios.RowHeadersVisible = False
         Me.dgvUsuarios.RowHeadersWidth = 51
         Me.dgvUsuarios.RowTemplate.Height = 35
@@ -221,10 +330,10 @@ Partial Class FormUsuarios
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(953, 25)
+        Me.btnAgregar.Location = New System.Drawing.Point(864, 25)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(220, 43)
+        Me.btnAgregar.Size = New System.Drawing.Size(309, 43)
         Me.btnAgregar.TabIndex = 1
         Me.btnAgregar.Text = "+ AÑADIR NUEVO USUARIO"
         Me.btnAgregar.UseVisualStyleBackColor = False
@@ -242,115 +351,6 @@ Partial Class FormUsuarios
         Me.txtBusqueda.Size = New System.Drawing.Size(400, 31)
         Me.txtBusqueda.TabIndex = 0
         '
-        'pnlInput
-        '
-        Me.pnlInput.BackColor = System.Drawing.Color.White
-        Me.pnlInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlInput.Controls.Add(Me.txtContraUsuario)
-        Me.pnlInput.Controls.Add(Me.txtCorreoUsuario)
-        Me.pnlInput.Controls.Add(Me.label3)
-        Me.pnlInput.Controls.Add(Me.Label2)
-        Me.pnlInput.Controls.Add(Me.Label1)
-        Me.pnlInput.Controls.Add(Me.lblPanelInput)
-        Me.pnlInput.Controls.Add(Me.txtInputNombreUsuario)
-        Me.pnlInput.Controls.Add(Me.btnGuardar)
-        Me.pnlInput.Controls.Add(Me.btnCancelar)
-        Me.pnlInput.Location = New System.Drawing.Point(330, 136)
-        Me.pnlInput.Margin = New System.Windows.Forms.Padding(4)
-        Me.pnlInput.Name = "pnlInput"
-        Me.pnlInput.Size = New System.Drawing.Size(599, 340)
-        Me.pnlInput.TabIndex = 20
-        Me.pnlInput.Visible = False
-        '
-        'lblPanelInput
-        '
-        Me.lblPanelInput.AutoSize = True
-        Me.lblPanelInput.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPanelInput.Location = New System.Drawing.Point(46, 45)
-        Me.lblPanelInput.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblPanelInput.Name = "lblPanelInput"
-        Me.lblPanelInput.Size = New System.Drawing.Size(0, 23)
-        Me.lblPanelInput.TabIndex = 0
-        '
-        'txtInputNombreUsuario
-        '
-        Me.txtInputNombreUsuario.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtInputNombreUsuario.Location = New System.Drawing.Point(138, 89)
-        Me.txtInputNombreUsuario.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtInputNombreUsuario.Name = "txtInputNombreUsuario"
-        Me.txtInputNombreUsuario.Size = New System.Drawing.Size(413, 22)
-        Me.txtInputNombreUsuario.TabIndex = 1
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(50, 242)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(240, 55)
-        Me.btnGuardar.TabIndex = 8
-        Me.btnGuardar.Text = "GUARDAR USUARIO"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Gray
-        Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Location = New System.Drawing.Point(311, 242)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(240, 55)
-        Me.btnCancelar.TabIndex = 9
-        Me.btnCancelar.Text = "CANCELAR"
-        Me.btnCancelar.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 95)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 16)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Nombre:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(47, 139)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 16)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Correo:"
-        '
-        'label3
-        '
-        Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(47, 188)
-        Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(79, 16)
-        Me.label3.TabIndex = 12
-        Me.label3.Text = "Contraseña:"
-        '
-        'txtCorreoUsuario
-        '
-        Me.txtCorreoUsuario.Location = New System.Drawing.Point(138, 139)
-        Me.txtCorreoUsuario.Name = "txtCorreoUsuario"
-        Me.txtCorreoUsuario.Size = New System.Drawing.Size(413, 22)
-        Me.txtCorreoUsuario.TabIndex = 13
-        '
-        'txtContraUsuario
-        '
-        Me.txtContraUsuario.Location = New System.Drawing.Point(138, 188)
-        Me.txtContraUsuario.Name = "txtContraUsuario"
-        Me.txtContraUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraUsuario.Size = New System.Drawing.Size(413, 22)
-        Me.txtContraUsuario.TabIndex = 14
-        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -364,12 +364,12 @@ Partial Class FormUsuarios
         Me.Text = "FormUsuarios"
         Me.pnlFondo.ResumeLayout(False)
         Me.PanelContenedor.ResumeLayout(False)
+        Me.pnlInput.ResumeLayout(False)
+        Me.pnlInput.PerformLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBottom.ResumeLayout(False)
         Me.PanelTop.ResumeLayout(False)
         Me.PanelTop.PerformLayout()
-        Me.pnlInput.ResumeLayout(False)
-        Me.pnlInput.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

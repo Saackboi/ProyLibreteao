@@ -1,4 +1,6 @@
-﻿Public Class FormUsuarios
+﻿Imports System.Text.RegularExpressions
+
+Public Class FormUsuarios
 
     ' Instancia de la lógica conectada a la API
     Private gestorUsuarios As ClaseContenidoUsuarios
@@ -58,6 +60,18 @@
         Await gestorUsuarios.EliminarUsuarioSeleccionado()
     End Sub
 
+    ' ============================================================
+    ' VALIDAR CORREO
+    ' ============================================================
+    Public Function EsCorreoValido(correo As String) As Boolean
+        If String.IsNullOrWhiteSpace(correo) Then Return False
+
+        ' Patrón razonable y común: letras, números, puntos, guiones, +, % y dominio con TLD >=2
+        Dim patron As String = "^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
+        Dim rgx As New Regex(patron, RegexOptions.Compiled Or RegexOptions.IgnoreCase)
+
+        Return rgx.IsMatch(correo)
+    End Function
 
     ' ============================================================
     ' PANEL DE INPUT
@@ -65,6 +79,9 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         txtInputNombreUsuario.Clear()
+        txtCorreoUsuario.Clear()
+        txtContraUsuario.Clear()
+
         modoAccion = "agregar"
 
         pnlInput.Location = New Point(
@@ -86,6 +103,8 @@
 
         modoAccion = "modificar"
         txtInputNombreUsuario.Clear()
+        txtCorreoUsuario.Clear()
+        txtContraUsuario.Clear()
 
         pnlInput.Location = New Point(
             (Me.Width - pnlInput.Width) \ 2,
@@ -96,6 +115,8 @@
 
         txtInputNombreUsuario.Text =
             dgvUsuarios.SelectedRows(0).Cells(1).Value.ToString()
+        txtCorreoUsuario.Text = dgvUsuarios.SelectedRows(0).Cells(2).Value.ToString()
+        txtContraUsuario.Text = ""
 
         pnlInput.Visible = True
         pnlInput.BringToFront()
@@ -113,6 +134,21 @@
 
         If String.IsNullOrWhiteSpace(txtInputNombreUsuario.Text) Then
             MessageBox.Show("El nombre del usuario es obligatorio.")
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtCorreoUsuario.Text) Then
+            MessageBox.Show("El correo del usuario es obligatorio.")
+            Return
+        End If
+
+        If Not EsCorreoValido(txtCorreoUsuario.Text.Trim()) Then
+            MessageBox.Show("El correo electrónico no es válido.")
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtContraUsuario.Text) Then
+            MessageBox.Show("La contraseña del usuario es obligatoria.")
             Return
         End If
 
