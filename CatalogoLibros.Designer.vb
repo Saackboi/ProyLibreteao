@@ -61,10 +61,10 @@ Partial Class CatalogoLibros
         Me.PanelLateral.Controls.Add(Me.Panel1)
         Me.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelLateral.ForeColor = System.Drawing.Color.Gray
-        Me.PanelLateral.Location = New System.Drawing.Point(0, 70)
-        Me.PanelLateral.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelLateral.Location = New System.Drawing.Point(0, 57)
+        Me.PanelLateral.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PanelLateral.Name = "PanelLateral"
-        Me.PanelLateral.Size = New System.Drawing.Size(221, 555)
+        Me.PanelLateral.Size = New System.Drawing.Size(166, 451)
         Me.PanelLateral.TabIndex = 0
         '
         'btnRegistrarse
@@ -74,10 +74,10 @@ Partial Class CatalogoLibros
         Me.btnRegistrarse.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btnRegistrarse.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnRegistrarse.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnRegistrarse.Location = New System.Drawing.Point(17, 411)
-        Me.btnRegistrarse.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRegistrarse.Location = New System.Drawing.Point(13, 334)
+        Me.btnRegistrarse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRegistrarse.Name = "btnRegistrarse"
-        Me.btnRegistrarse.Size = New System.Drawing.Size(183, 53)
+        Me.btnRegistrarse.Size = New System.Drawing.Size(137, 43)
         Me.btnRegistrarse.TabIndex = 5
         Me.btnRegistrarse.Text = "Registrarse"
         Me.btnRegistrarse.UseVisualStyleBackColor = False
@@ -92,20 +92,20 @@ Partial Class CatalogoLibros
         Me.Panel2.Controls.Add(Me.fest3)
         Me.Panel2.Controls.Add(Me.fest2)
         Me.Panel2.Controls.Add(Me.fest1)
-        Me.Panel2.Location = New System.Drawing.Point(11, 122)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(8, 99)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(197, 173)
+        Me.Panel2.Size = New System.Drawing.Size(148, 141)
         Me.Panel2.TabIndex = 4
         '
         'fest5
         '
         Me.fest5.AutoSize = True
         Me.fest5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.fest5.Location = New System.Drawing.Point(23, 123)
-        Me.fest5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.fest5.Location = New System.Drawing.Point(17, 100)
+        Me.fest5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.fest5.Name = "fest5"
-        Me.fest5.Size = New System.Drawing.Size(124, 32)
+        Me.fest5.Size = New System.Drawing.Size(99, 25)
         Me.fest5.TabIndex = 4
         Me.fest5.Text = "★★★★★"
         Me.fest5.UseVisualStyleBackColor = True
@@ -114,10 +114,10 @@ Partial Class CatalogoLibros
         '
         Me.fest4.AutoSize = True
         Me.fest4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.fest4.Location = New System.Drawing.Point(23, 95)
-        Me.fest4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.fest4.Location = New System.Drawing.Point(17, 77)
+        Me.fest4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.fest4.Name = "fest4"
-        Me.fest4.Size = New System.Drawing.Size(106, 32)
+        Me.fest4.Size = New System.Drawing.Size(85, 25)
         Me.fest4.TabIndex = 3
         Me.fest4.Text = "★★★★"
         Me.fest4.UseVisualStyleBackColor = True
@@ -126,10 +126,10 @@ Partial Class CatalogoLibros
         '
         Me.fest3.AutoSize = True
         Me.fest3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.fest3.Location = New System.Drawing.Point(23, 70)
-        Me.fest3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.fest3.Location = New System.Drawing.Point(17, 57)
+        Me.fest3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.fest3.Name = "fest3"
-        Me.fest3.Size = New System.Drawing.Size(88, 32)
+        Me.fest3.Size = New System.Drawing.Size(71, 25)
         Me.fest3.TabIndex = 2
         Me.fest3.Text = "★★★"
         Me.fest3.UseVisualStyleBackColor = True
@@ -138,10 +138,10 @@ Partial Class CatalogoLibros
         '
         Me.fest2.AutoSize = True
         Me.fest2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.fest2.Location = New System.Drawing.Point(23, 43)
-        Me.fest2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.fest2.Location = New System.Drawing.Point(17, 35)
+        Me.fest2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.fest2.Name = "fest2"
-        Me.fest2.Size = New System.Drawing.Size(70, 32)
+        Me.fest2.Size = New System.Drawing.Size(57, 25)
         Me.fest2.TabIndex = 1
         Me.fest2.Text = "★★"
         Me.fest2.UseVisualStyleBackColor = True
@@ -150,10 +150,10 @@ Partial Class CatalogoLibros
         '
         Me.fest1.AutoSize = True
         Me.fest1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.fest1.Location = New System.Drawing.Point(23, 17)
-        Me.fest1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.fest1.Location = New System.Drawing.Point(17, 14)
+        Me.fest1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.fest1.Name = "fest1"
-        Me.fest1.Size = New System.Drawing.Size(52, 32)
+        Me.fest1.Size = New System.Drawing.Size(43, 25)
         Me.fest1.TabIndex = 0
         Me.fest1.Text = "★"
         Me.fest1.UseVisualStyleBackColor = True
@@ -163,9 +163,10 @@ Partial Class CatalogoLibros
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(13, 94)
+        Me.Label3.Location = New System.Drawing.Point(10, 76)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 25)
+        Me.Label3.Size = New System.Drawing.Size(43, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Filtro"
         '
@@ -176,10 +177,10 @@ Partial Class CatalogoLibros
         Me.btnRegresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btnRegresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnRegresar.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnRegresar.Location = New System.Drawing.Point(17, 489)
-        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRegresar.Location = New System.Drawing.Point(13, 397)
+        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(183, 53)
+        Me.btnRegresar.Size = New System.Drawing.Size(137, 43)
         Me.btnRegresar.TabIndex = 2
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
@@ -191,10 +192,10 @@ Partial Class CatalogoLibros
         Me.Panel1.BackColor = System.Drawing.Color.DimGray
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.txtBuscador)
-        Me.Panel1.Location = New System.Drawing.Point(11, 34)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Location = New System.Drawing.Point(8, 28)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(197, 39)
+        Me.Panel1.Size = New System.Drawing.Size(148, 32)
         Me.Panel1.TabIndex = 1
         '
         'btnBuscar
@@ -206,10 +207,10 @@ Partial Class CatalogoLibros
         Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscar.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnBuscar.Location = New System.Drawing.Point(158, 1)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBuscar.Location = New System.Drawing.Point(118, 1)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(36, 36)
+        Me.btnBuscar.Size = New System.Drawing.Size(27, 29)
         Me.btnBuscar.TabIndex = 6
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
@@ -221,10 +222,10 @@ Partial Class CatalogoLibros
         Me.txtBuscador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscador.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.txtBuscador.ForeColor = System.Drawing.Color.White
-        Me.txtBuscador.Location = New System.Drawing.Point(7, 4)
-        Me.txtBuscador.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtBuscador.Location = New System.Drawing.Point(5, 3)
+        Me.txtBuscador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtBuscador.Name = "txtBuscador"
-        Me.txtBuscador.Size = New System.Drawing.Size(149, 31)
+        Me.txtBuscador.Size = New System.Drawing.Size(112, 26)
         Me.txtBuscador.TabIndex = 0
         '
         'PanelSuperior
@@ -237,19 +238,19 @@ Partial Class CatalogoLibros
         Me.PanelSuperior.Controls.Add(Me.Label1)
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(1084, 70)
+        Me.PanelSuperior.Size = New System.Drawing.Size(813, 57)
         Me.PanelSuperior.TabIndex = 1
         '
         'PictureBox3
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.Image = Global.ProyLibreteao.My.Resources.Resources.user
-        Me.PictureBox3.Location = New System.Drawing.Point(1021, 9)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox3.Location = New System.Drawing.Point(766, 7)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox3.Size = New System.Drawing.Size(38, 41)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 4
         Me.PictureBox3.TabStop = False
@@ -260,19 +261,20 @@ Partial Class CatalogoLibros
         Me.lblUsuario.AutoSize = True
         Me.lblUsuario.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblUsuario.Location = New System.Drawing.Point(931, 25)
+        Me.lblUsuario.Location = New System.Drawing.Point(698, 20)
+        Me.lblUsuario.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(76, 23)
+        Me.lblUsuario.Size = New System.Drawing.Size(64, 19)
         Me.lblUsuario.TabIndex = 3
         Me.lblUsuario.Text = "Invitado"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.ProyLibreteao.My.Resources.Resources.iconVerlibro
-        Me.PictureBox1.Location = New System.Drawing.Point(35, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 10)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox1.Size = New System.Drawing.Size(38, 41)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -282,9 +284,10 @@ Partial Class CatalogoLibros
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(91, 25)
+        Me.Label2.Location = New System.Drawing.Point(68, 20)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 23)
+        Me.Label2.Size = New System.Drawing.Size(61, 19)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Librería"
         '
@@ -294,9 +297,10 @@ Partial Class CatalogoLibros
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(431, 9)
+        Me.Label1.Location = New System.Drawing.Point(323, 7)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(192, 54)
+        Me.Label1.Size = New System.Drawing.Size(155, 45)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Catálogo"
         '
@@ -305,22 +309,22 @@ Partial Class CatalogoLibros
         Me.FlowLayoutPanelContenedorLibros.AutoScroll = True
         Me.FlowLayoutPanelContenedorLibros.BackColor = System.Drawing.Color.White
         Me.FlowLayoutPanelContenedorLibros.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanelContenedorLibros.Location = New System.Drawing.Point(221, 70)
-        Me.FlowLayoutPanelContenedorLibros.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.FlowLayoutPanelContenedorLibros.Location = New System.Drawing.Point(166, 57)
+        Me.FlowLayoutPanelContenedorLibros.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.FlowLayoutPanelContenedorLibros.Name = "FlowLayoutPanelContenedorLibros"
-        Me.FlowLayoutPanelContenedorLibros.Padding = New System.Windows.Forms.Padding(11, 10, 11, 10)
-        Me.FlowLayoutPanelContenedorLibros.Size = New System.Drawing.Size(863, 555)
+        Me.FlowLayoutPanelContenedorLibros.Padding = New System.Windows.Forms.Padding(8, 8, 8, 8)
+        Me.FlowLayoutPanelContenedorLibros.Size = New System.Drawing.Size(647, 451)
         Me.FlowLayoutPanelContenedorLibros.TabIndex = 2
         '
         'CatalogoLibros
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1084, 625)
+        Me.ClientSize = New System.Drawing.Size(813, 508)
         Me.Controls.Add(Me.FlowLayoutPanelContenedorLibros)
         Me.Controls.Add(Me.PanelLateral)
         Me.Controls.Add(Me.PanelSuperior)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "CatalogoLibros"
         Me.Text = "CatalogoLibros"
         Me.PanelLateral.ResumeLayout(False)

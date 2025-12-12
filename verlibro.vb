@@ -133,7 +133,14 @@ Public Class verlibro
         Me.Hide()
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
-
+    Private Sub btnHacerPedido_Click(sender As Object, e As EventArgs) Handles btnHacerPedido.Click
+        Try
+            ' Crear ventana de perfil de usuario pasando título y autor
+            Dim perfil As New PerfilUsuario(lblTitulo.Text, lblAutor.Text.Replace("Autor: ", ""))
+            perfil.ShowDialog() ' Modal
+        Catch ex As Exception
+            MessageBox.Show("Error al abrir PerfilUsuario: " & ex.Message)
+        End Try
     End Sub
+
 End Class
