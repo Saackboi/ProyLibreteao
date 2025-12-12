@@ -18,6 +18,7 @@ Partial Class leerlibro
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(leerlibro))
         Me.pnlSuperior = New System.Windows.Forms.Panel()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.lblTituloLibro = New System.Windows.Forms.Label()
@@ -41,47 +42,47 @@ Partial Class leerlibro
         '
         'pnlSuperior
         '
-        Me.pnlSuperior.BackColor = System.Drawing.Color.Black
+        Me.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.pnlSuperior.Controls.Add(Me.btnVolver)
         Me.pnlSuperior.Controls.Add(Me.lblTituloLibro)
         Me.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlSuperior.Location = New System.Drawing.Point(0, 0)
-        Me.pnlSuperior.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnlSuperior.Name = "pnlSuperior"
-        Me.pnlSuperior.Size = New System.Drawing.Size(712, 45)
+        Me.pnlSuperior.Size = New System.Drawing.Size(712, 55)
         Me.pnlSuperior.TabIndex = 0
         '
         'btnVolver
         '
-        Me.btnVolver.BackColor = System.Drawing.Color.White
+        Me.btnVolver.BackColor = System.Drawing.Color.Transparent
+        Me.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnVolver.FlatAppearance.BorderSize = 0
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnVolver.Location = New System.Drawing.Point(11, 8)
-        Me.btnVolver.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.btnVolver.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnVolver.Location = New System.Drawing.Point(10, 12)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(117, 28)
+        Me.btnVolver.Size = New System.Drawing.Size(120, 32)
         Me.btnVolver.TabIndex = 1
-        Me.btnVolver.Text = "← Volver"
+        Me.btnVolver.Text = "❮ Catálogo"
         Me.btnVolver.UseVisualStyleBackColor = False
         '
         'lblTituloLibro
         '
         Me.lblTituloLibro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTituloLibro.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTituloLibro.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
         Me.lblTituloLibro.ForeColor = System.Drawing.Color.White
         Me.lblTituloLibro.Location = New System.Drawing.Point(150, 8)
         Me.lblTituloLibro.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTituloLibro.Name = "lblTituloLibro"
-        Me.lblTituloLibro.Size = New System.Drawing.Size(450, 28)
+        Me.lblTituloLibro.Size = New System.Drawing.Size(450, 38)
         Me.lblTituloLibro.TabIndex = 0
-        Me.lblTituloLibro.Text = "Matemáticas en segundos"
+        Me.lblTituloLibro.Text = "Libro"
         Me.lblTituloLibro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlLateral
         '
-        Me.pnlLateral.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnlLateral.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.pnlLateral.Controls.Add(Me.btnGuardarNota)
         Me.pnlLateral.Controls.Add(Me.btnBuscar)
         Me.pnlLateral.Controls.Add(Me.txtBuscar)
@@ -90,117 +91,118 @@ Partial Class leerlibro
         Me.pnlLateral.Controls.Add(Me.btnColor)
         Me.pnlLateral.Controls.Add(Me.btnSubrayar)
         Me.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pnlLateral.Location = New System.Drawing.Point(0, 45)
-        Me.pnlLateral.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlLateral.Location = New System.Drawing.Point(0, 55)
         Me.pnlLateral.Name = "pnlLateral"
-        Me.pnlLateral.Padding = New System.Windows.Forms.Padding(8, 8, 8, 8)
-        Me.pnlLateral.Size = New System.Drawing.Size(128, 377)
+        Me.pnlLateral.Padding = New System.Windows.Forms.Padding(12)
+        Me.pnlLateral.Size = New System.Drawing.Size(160, 367)
         Me.pnlLateral.TabIndex = 5
         '
         'btnGuardarNota
         '
-        Me.btnGuardarNota.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGuardarNota.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnGuardarNota.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnGuardarNota.FlatAppearance.BorderSize = 0
         Me.btnGuardarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardarNota.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnGuardarNota.ForeColor = System.Drawing.Color.White
-        Me.btnGuardarNota.Location = New System.Drawing.Point(8, 216)
-        Me.btnGuardarNota.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGuardarNota.Location = New System.Drawing.Point(12, 239)
+        Me.btnGuardarNota.Margin = New System.Windows.Forms.Padding(3, 8, 3, 8)
         Me.btnGuardarNota.Name = "btnGuardarNota"
-        Me.btnGuardarNota.Size = New System.Drawing.Size(112, 37)
+        Me.btnGuardarNota.Size = New System.Drawing.Size(136, 40)
         Me.btnGuardarNota.TabIndex = 0
-        Me.btnGuardarNota.Text = "💾 Guardar Nota"
+        Me.btnGuardarNota.Text = "📝 Guardar Nota"
         Me.btnGuardarNota.UseVisualStyleBackColor = False
         '
         'btnBuscar
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBuscar.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnBuscar.FlatAppearance.BorderSize = 0
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(8, 179)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Location = New System.Drawing.Point(12, 199)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 8, 3, 8)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(112, 37)
+        Me.btnBuscar.Size = New System.Drawing.Size(136, 40)
         Me.btnBuscar.TabIndex = 1
-        Me.btnBuscar.Text = "🔎 Buscar"
+        Me.btnBuscar.Text = "🔎 Buscar Texto"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtBuscar
         '
         Me.txtBuscar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtBuscar.Location = New System.Drawing.Point(8, 156)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtBuscar.Location = New System.Drawing.Point(12, 172)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(3, 3, 3, 5)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(112, 23)
+        Me.txtBuscar.Size = New System.Drawing.Size(136, 27)
         Me.txtBuscar.TabIndex = 2
+        Me.txtBuscar.Text = "Buscar..."
         '
         'btnDisminuir
         '
-        Me.btnDisminuir.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDisminuir.BackColor = System.Drawing.Color.LightGray
         Me.btnDisminuir.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnDisminuir.FlatAppearance.BorderSize = 0
         Me.btnDisminuir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDisminuir.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnDisminuir.ForeColor = System.Drawing.Color.White
-        Me.btnDisminuir.Location = New System.Drawing.Point(8, 119)
-        Me.btnDisminuir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDisminuir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnDisminuir.Location = New System.Drawing.Point(12, 132)
+        Me.btnDisminuir.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnDisminuir.Name = "btnDisminuir"
-        Me.btnDisminuir.Size = New System.Drawing.Size(112, 37)
+        Me.btnDisminuir.Size = New System.Drawing.Size(136, 40)
         Me.btnDisminuir.TabIndex = 3
-        Me.btnDisminuir.Text = "🔎 Disminuir"
+        Me.btnDisminuir.Text = "A- (Zoom Out)"
         Me.btnDisminuir.UseVisualStyleBackColor = False
         '
         'btnAumentar
         '
-        Me.btnAumentar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAumentar.BackColor = System.Drawing.Color.LightGray
         Me.btnAumentar.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnAumentar.FlatAppearance.BorderSize = 0
         Me.btnAumentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAumentar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAumentar.ForeColor = System.Drawing.Color.White
-        Me.btnAumentar.Location = New System.Drawing.Point(8, 82)
-        Me.btnAumentar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAumentar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnAumentar.Location = New System.Drawing.Point(12, 92)
+        Me.btnAumentar.Margin = New System.Windows.Forms.Padding(3, 8, 3, 4)
         Me.btnAumentar.Name = "btnAumentar"
-        Me.btnAumentar.Size = New System.Drawing.Size(112, 37)
+        Me.btnAumentar.Size = New System.Drawing.Size(136, 40)
         Me.btnAumentar.TabIndex = 4
-        Me.btnAumentar.Text = "🔍 Aumentar"
+        Me.btnAumentar.Text = "A+ (Zoom In)"
         Me.btnAumentar.UseVisualStyleBackColor = False
         '
         'btnColor
         '
-        Me.btnColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnColor.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnColor.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnColor.FlatAppearance.BorderSize = 0
         Me.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnColor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnColor.ForeColor = System.Drawing.Color.White
-        Me.btnColor.Location = New System.Drawing.Point(8, 45)
-        Me.btnColor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnColor.Location = New System.Drawing.Point(12, 52)
+        Me.btnColor.Margin = New System.Windows.Forms.Padding(3, 4, 3, 8)
         Me.btnColor.Name = "btnColor"
-        Me.btnColor.Size = New System.Drawing.Size(112, 37)
+        Me.btnColor.Size = New System.Drawing.Size(136, 40)
         Me.btnColor.TabIndex = 5
-        Me.btnColor.Text = "🎨 Color"
+        Me.btnColor.Text = "🎨 Tema"
         Me.btnColor.UseVisualStyleBackColor = False
         '
         'btnSubrayar
         '
-        Me.btnSubrayar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSubrayar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSubrayar.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSubrayar.FlatAppearance.BorderSize = 0
         Me.btnSubrayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubrayar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnSubrayar.ForeColor = System.Drawing.Color.White
-        Me.btnSubrayar.Location = New System.Drawing.Point(8, 8)
-        Me.btnSubrayar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSubrayar.Location = New System.Drawing.Point(12, 12)
+        Me.btnSubrayar.Margin = New System.Windows.Forms.Padding(3, 8, 3, 8)
         Me.btnSubrayar.Name = "btnSubrayar"
-        Me.btnSubrayar.Size = New System.Drawing.Size(112, 37)
+        Me.btnSubrayar.Size = New System.Drawing.Size(136, 40)
         Me.btnSubrayar.TabIndex = 6
-        Me.btnSubrayar.Text = "✏ Subrayar"
+        Me.btnSubrayar.Text = "✏️ Resaltar"
         Me.btnSubrayar.UseVisualStyleBackColor = False
         '
         'txtContenido
@@ -210,24 +212,24 @@ Partial Class leerlibro
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtContenido.BackColor = System.Drawing.Color.White
         Me.txtContenido.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContenido.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.txtContenido.ForeColor = System.Drawing.Color.Black
-        Me.txtContenido.Location = New System.Drawing.Point(132, 57)
-        Me.txtContenido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtContenido.Font = New System.Drawing.Font("Georgia", 15.0!)
+        Me.txtContenido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtContenido.Location = New System.Drawing.Point(180, 75)
+        Me.txtContenido.Margin = New System.Windows.Forms.Padding(20)
         Me.txtContenido.Name = "txtContenido"
-        Me.txtContenido.Size = New System.Drawing.Size(566, 349)
+        Me.txtContenido.ReadOnly = True
+        Me.txtContenido.Size = New System.Drawing.Size(512, 330)
         Me.txtContenido.TabIndex = 4
-        Me.txtContenido.Text = "Aquí aparecerá el contenido del libro..."
+        Me.txtContenido.Text = resources.GetString("txtContenido.Text")
         '
         'pnlInferior
         '
-        Me.pnlInferior.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.pnlInferior.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.pnlInferior.Controls.Add(Me.lblPagina)
         Me.pnlInferior.Controls.Add(Me.btnAnterior)
         Me.pnlInferior.Controls.Add(Me.btnSiguiente)
         Me.pnlInferior.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlInferior.Location = New System.Drawing.Point(0, 422)
-        Me.pnlInferior.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnlInferior.Name = "pnlInferior"
         Me.pnlInferior.Size = New System.Drawing.Size(712, 49)
         Me.pnlInferior.TabIndex = 2
@@ -235,12 +237,12 @@ Partial Class leerlibro
         'lblPagina
         '
         Me.lblPagina.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.lblPagina.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Italic)
-        Me.lblPagina.ForeColor = System.Drawing.Color.Gray
-        Me.lblPagina.Location = New System.Drawing.Point(319, 15)
+        Me.lblPagina.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.lblPagina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblPagina.Location = New System.Drawing.Point(308, 12)
         Me.lblPagina.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPagina.Name = "lblPagina"
-        Me.lblPagina.Size = New System.Drawing.Size(75, 24)
+        Me.lblPagina.Size = New System.Drawing.Size(95, 28)
         Me.lblPagina.TabIndex = 2
         Me.lblPagina.Text = "Página 1 de 5"
         Me.lblPagina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -248,33 +250,31 @@ Partial Class leerlibro
         'btnAnterior
         '
         Me.btnAnterior.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnAnterior.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAnterior.BackColor = System.Drawing.Color.Transparent
         Me.btnAnterior.FlatAppearance.BorderSize = 0
         Me.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnterior.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.btnAnterior.ForeColor = System.Drawing.Color.White
-        Me.btnAnterior.Location = New System.Drawing.Point(38, 11)
-        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAnterior.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAnterior.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAnterior.Location = New System.Drawing.Point(30, 10)
         Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(124, 28)
+        Me.btnAnterior.Size = New System.Drawing.Size(124, 32)
         Me.btnAnterior.TabIndex = 0
-        Me.btnAnterior.Text = "⬅ Anterior"
+        Me.btnAnterior.Text = "« Anterior"
         Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'btnSiguiente
         '
         Me.btnSiguiente.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSiguiente.BackColor = System.Drawing.Color.Transparent
         Me.btnSiguiente.FlatAppearance.BorderSize = 0
         Me.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSiguiente.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Bold)
-        Me.btnSiguiente.ForeColor = System.Drawing.Color.White
-        Me.btnSiguiente.Location = New System.Drawing.Point(585, 11)
-        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSiguiente.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSiguiente.Location = New System.Drawing.Point(558, 10)
         Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(90, 28)
+        Me.btnSiguiente.Size = New System.Drawing.Size(117, 32)
         Me.btnSiguiente.TabIndex = 1
-        Me.btnSiguiente.Text = "Siguiente ➡"
+        Me.btnSiguiente.Text = "Siguiente »"
         Me.btnSiguiente.UseVisualStyleBackColor = False
         '
         'leerlibro
@@ -287,11 +287,9 @@ Partial Class leerlibro
         Me.Controls.Add(Me.pnlLateral)
         Me.Controls.Add(Me.pnlInferior)
         Me.Controls.Add(Me.pnlSuperior)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "leerlibro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "📖 Leer Libro"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Text = "📖 Lector Digital Pro"
         Me.pnlSuperior.ResumeLayout(False)
         Me.pnlLateral.ResumeLayout(False)
         Me.pnlLateral.PerformLayout()

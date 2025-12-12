@@ -90,6 +90,10 @@ Public Class LibroCard
         'Dim detalles As New VistaDetalles(LibroData)
         'detalles.Show()
         'End If
+
+        CatalogoLibros.hide()
+        leerlibro.Show()
+
     End Sub
 
 

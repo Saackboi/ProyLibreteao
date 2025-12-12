@@ -109,7 +109,9 @@ Public Class CatalogoLibros
                 End If
             Next
 
+
             Dim imagenCargada As Image = Nothing
+
 
             Try
                 If rutaImagenEncontrada IsNot Nothing Then
@@ -131,6 +133,7 @@ Public Class CatalogoLibros
             End Try
 
             card.ImagenPortada = imagenCargada
+
 
             FlowLayoutPanelContenedorLibros.Controls.Add(card)
 
@@ -188,4 +191,6 @@ Public Class CatalogoLibros
             Me.Close()
         End If
     End Sub
+
+
 End Class
