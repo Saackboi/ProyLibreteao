@@ -1,8 +1,6 @@
 ﻿Imports System.Configuration
-Imports System.Drawing
 Imports System.Drawing.Printing
 Imports System.Net.Http
-Imports System.Threading.Tasks
 Imports Newtonsoft.Json
 
 Public Class ClaseContenidoTablas
@@ -197,23 +195,40 @@ Public Class ClaseContenidoTablas
                                        End Sub
 
         Try
-            ' --- Configurar impresión silenciosa a PDF ---
-            Dim nombreArchivo As String = $"Reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
+            ' --- Pedir al usuario dónde guardar el PDF ---
+            Dim nombreArchivoDefecto As String = $"Reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
+            Dim ruta As String = Nothing
+
+            Using sfd As New SaveFileDialog()
+                sfd.Filter = "Archivo PDF (*.pdf)|*.pdf"
+                sfd.FileName = nombreArchivoDefecto
+                If sfd.ShowDialog() = DialogResult.OK Then
+                    ruta = sfd.FileName
+                Else
+                    Exit Sub ' Usuario canceló
+                End If
+            End Using
+
+            ' Configurar impresión a PDF
             printDoc.PrinterSettings.PrinterName = "Microsoft Print to PDF"
             printDoc.PrinterSettings.PrintToFile = True
-            printDoc.PrinterSettings.PrintFileName = nombreArchivo
+            printDoc.PrinterSettings.PrintFileName = ruta
+
+            ' Evitar diálogo de impresión
+            printDoc.PrintController = New Printing.StandardPrintController()
 
             ' Imprimir directamente
             printDoc.Print()
 
             ' Mensaje de éxito
-            MessageBox.Show("Reporte generado exitosamente en PDF: " & nombreArchivo, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reporte generado exitosamente en PDF: " & ruta, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             ' Mensaje de error
             MessageBox.Show("Error al imprimir: " & ex.Message & vbCrLf &
-                            "Asegúrese de tener 'Microsoft Print to PDF' instalado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        "Asegúrese de tener 'Microsoft Print to PDF' instalado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     ' Mantener el PrintPageHandler tal como lo tienes
     Private Sub PrintPageHandler(sender As Object, e As PrintPageEventArgs, tabSeleccionada As TabPage)

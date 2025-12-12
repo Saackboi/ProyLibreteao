@@ -1,7 +1,5 @@
-﻿Imports System.Configuration
+﻿Imports System.Drawing.Printing
 Imports System.IO
-Imports System.Drawing
-Imports System.Drawing.Printing
 Imports OfficeOpenXml
 Imports OfficeOpenXml.Style
 Imports Xceed.Words.NET
@@ -112,10 +110,6 @@ Public Class Exportador
     ' ============================================================
     '   EXPORTAR → PDF (Profesional, estilo limpio)
     ' ============================================================
-    ' ============================================================
-    '   EXPORTAR → PDF (Profesional, estilo limpio)
-    ' ============================================================
-
 
     Public Shared Sub ExportarPDF(grid As DataGridView)
         Dim nombreArchivoDefecto As String = GenerarNombreArchivo() & ".pdf"
