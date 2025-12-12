@@ -186,14 +186,20 @@ Public Class FormPrestamos
         End If
 
     End Sub
-
-    Private Sub ToolStripTextBoxBuscar_TextChanged(sender As Object, e As EventArgs) _
-    Handles ToolStripTextBoxBuscar.TextChanged
-
+    ' Marcar el método como Async y usar Async Sub
+    Private Async Sub ToolStripTextBoxBuscar_TextChanged(sender As Object, e As EventArgs) Handles ToolStripTextBoxBuscar.TextChanged
         If manejador Is Nothing Then Exit Sub
-        manejador.BuscarPrestamos(ToolStripTextBoxBuscar.Text)
 
+        Dim texto As String = ToolStripTextBoxBuscar.Text.Trim()
 
+        ' Si está vacío o es el placeholder, recarga todos los préstamos
+        If String.IsNullOrWhiteSpace(texto) OrElse texto = "Buscar Préstamo 🔎" Then
+            Await manejador.CargarPrestamos()   ' <-- Aquí sí podemos usar Await
+        Else
+            manejador.BuscarPrestamos(texto)
+        End If
     End Sub
+
+
 
 End Class
