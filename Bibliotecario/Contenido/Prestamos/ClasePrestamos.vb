@@ -132,6 +132,97 @@ Public Class ClasePrestamos
     End Function
 
     ' ===================================================
+    '   BUSCAR PRÉSTAMOS (GET con parámetro)
+    ' ===================================================
+
+    ' ===================================================
+    '   Sanitizar texto de búsqueda
+    ' ===================================================
+    Public Function SanitizarTexto(texto As String) As String
+        If texto Is Nothing Then Return ""
+
+        texto = texto.Trim()
+
+        ' Evitar caracteres peligrosos para URLs o SQL
+        Dim invalido As Char() = {"'"c, """"c, ";"c, "|"c, "\"c, "/"c, "<"c, ">"c}
+
+        For Each c In invalido
+            texto = texto.Replace(c, "")
+        Next
+
+        Return texto
+    End Function
+
+    Public Async Sub BuscarPrestamos(buscar As String)
+        Try
+            ' -----------------------------
+            ' Validar texto vacío
+            ' -----------------------------
+            If String.IsNullOrWhiteSpace(buscar) Then
+                Await CargarPrestamos() ' <<--- Método que carga TODOS los préstamos
+                Exit Sub
+            End If
+
+            ' -----------------------------
+            ' Sanitizar texto
+            ' -----------------------------
+            buscar = SanitizarTexto(buscar)
+
+            ' -----------------------------
+            ' Consumir API
+            ' -----------------------------
+            Dim url As String = $"{BaseUrl}/buscar?buscar={Uri.EscapeDataString(buscar)}"
+            Dim json As String = Await client.GetStringAsync(url)
+
+            If String.IsNullOrWhiteSpace(json) OrElse json = "null" Then
+                dgv.Rows.Clear()
+                Exit Sub
+            End If
+
+            Dim lista = JsonConvert.DeserializeObject(Of List(Of PrestamoVista))(json)
+            If lista Is Nothing Then
+                dgv.Rows.Clear()
+                Exit Sub
+            End If
+
+            ' -----------------------------
+            ' Mostrar resultados
+            ' -----------------------------
+            dgv.Rows.Clear()
+
+            For Each p In lista
+                Dim rowIndex = dgv.Rows.Add(
+                p.NombreUsuario,
+                p.TituloLibro,
+                p.FechaPrestamo,
+                p.FechaDevolucion,
+                p.Estado,
+                p.IdPrestamo
+            )
+
+                Dim row = dgv.Rows(rowIndex)
+
+                ' Colores del estado
+                Select Case p.Estado.ToLower()
+                    Case "devuelto"
+                        row.Cells("Estado").Style.ForeColor = Color.DarkGreen
+                    Case "activo"
+                        row.Cells("Estado").Style.ForeColor = Color.DarkRed
+                End Select
+
+                row.Cells("Estado").Style.Font = New Font("Segoe UI", 9, FontStyle.Bold)
+            Next
+
+            dgv.Refresh()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al buscar préstamos: " & ex.Message)
+            dgv.Rows.Clear()
+        End Try
+    End Sub
+
+
+    ' ===================================================
     '   MODELOS
     ' ===================================================
 

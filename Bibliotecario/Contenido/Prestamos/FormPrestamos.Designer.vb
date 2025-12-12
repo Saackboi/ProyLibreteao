@@ -34,7 +34,6 @@ Partial Class FormPrestamos
         Me.BtnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.BtnMarcarDevuelto = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripTextBoxBuscar = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.dgvPrestamos = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -104,7 +103,7 @@ Partial Class FormPrestamos
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnEditar, Me.BtnEliminar, Me.BtnMarcarDevuelto, Me.ToolStripTextBoxBuscar, Me.ToolStripButton6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNuevo, Me.BtnEditar, Me.BtnEliminar, Me.BtnMarcarDevuelto, Me.ToolStripTextBoxBuscar})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.ToolStrip1.Location = New System.Drawing.Point(20, 0)
         Me.ToolStrip1.Margin = New System.Windows.Forms.Padding(20, 0, 20, 0)
@@ -123,6 +122,7 @@ Partial Class FormPrestamos
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(72, 33)
         Me.BtnNuevo.Text = "Nuevo"
+        Me.BtnNuevo.ToolTipText = "Agregar un Nuevo Pedido"
         '
         'BtnEditar
         '
@@ -132,6 +132,7 @@ Partial Class FormPrestamos
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(66, 33)
         Me.BtnEditar.Text = "Editar"
+        Me.BtnEditar.ToolTipText = "Modificar Pedido"
         '
         'BtnEliminar
         '
@@ -141,6 +142,7 @@ Partial Class FormPrestamos
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(85, 33)
         Me.BtnEliminar.Text = "Eliminar"
+        Me.BtnEliminar.ToolTipText = "Eliminar Pedido"
         '
         'BtnMarcarDevuelto
         '
@@ -150,6 +152,7 @@ Partial Class FormPrestamos
         Me.BtnMarcarDevuelto.Name = "BtnMarcarDevuelto"
         Me.BtnMarcarDevuelto.Size = New System.Drawing.Size(161, 33)
         Me.BtnMarcarDevuelto.Text = "Marcar devuelto "
+        Me.BtnMarcarDevuelto.ToolTipText = "Marcar Pedido  Devuelto "
         '
         'ToolStripTextBoxBuscar
         '
@@ -158,17 +161,8 @@ Partial Class FormPrestamos
         Me.ToolStripTextBoxBuscar.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.ToolStripTextBoxBuscar.Name = "ToolStripTextBoxBuscar"
         Me.ToolStripTextBoxBuscar.Size = New System.Drawing.Size(300, 38)
-        '
-        'ToolStripButton6
-        '
-        Me.ToolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ToolStripButton6.Image = Global.ProyLibreteao.My.Resources.Resources.buscar
-        Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
-        Me.ToolStripButton6.Size = New System.Drawing.Size(34, 33)
-        Me.ToolStripButton6.Text = "ToolStripButton6"
+        Me.ToolStripTextBoxBuscar.Text = "Buscar Préstamo 🔎"
+        Me.ToolStripTextBoxBuscar.ToolTipText = "Búsqueda de Pedido"
         '
         'dgvPrestamos
         '
@@ -329,5 +323,4 @@ Partial Class FormPrestamos
     Friend WithEvents BtnEliminar As ToolStripButton
     Friend WithEvents BtnMarcarDevuelto As ToolStripButton
     Friend WithEvents ToolStripTextBoxBuscar As ToolStripTextBox
-    Friend WithEvents ToolStripButton6 As ToolStripButton
 End Class

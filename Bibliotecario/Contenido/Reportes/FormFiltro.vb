@@ -1,4 +1,6 @@
 ﻿Public Class FormFiltro
+
+    Public Property PeriodoSeleccionado As String = ""
     Private Sub FormFiltro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Configurar todos los RadioButtons dentro del TableLayoutPanel2
         For Each rb As RadioButton In TableLayoutPanel2.Controls.OfType(Of RadioButton)()
@@ -26,4 +28,30 @@
         Dim rb As RadioButton = DirectCast(sender, RadioButton)
         rb.BackColor = Color.White ' Vuelve al color base
     End Sub
+
+
+    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
+        ' Buscar cuál RadioButton está seleccionado
+        For Each rb As RadioButton In TableLayoutPanel2.Controls.OfType(Of RadioButton)()
+            If rb.Checked Then
+                PeriodoSeleccionado = rb.Text   ' ← devuelve el texto del radio
+                Exit For
+            End If
+        Next
+
+        If PeriodoSeleccionado = "" Then
+            MessageBox.Show("Debe seleccionar un periodo.")
+            Exit Sub
+        End If
+
+        Me.DialogResult = DialogResult.OK
+        Me.Close()
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Me.DialogResult = DialogResult.Cancel
+        Me.Close()
+    End Sub
+
+
 End Class

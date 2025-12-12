@@ -108,52 +108,52 @@ Public Class Interface_Administrador
         ' Abrir formulario según sección
         Select Case titulo.ToUpper()
             Case "INICIO"
-                Dim f As New Inicio()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New Inicio With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "LIBROS"
-                Dim f As New FormLibros()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormLibros With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "CATEGORIAS"
-                Dim f As New FormCategorias()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormCategorias With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "AUTORES"
-                Dim f As New FormAutores()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormAutores With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
             Case "REPORTES"
-                Dim f As New FormReporte()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormReporte With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
-            Case "CONSULTAS"
-                Dim f As New FormConsultas()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
-                PanelContenido.Controls.Add(f)
-                f.Show()
+
             Case "PRÉSTAMOS"
-                Dim f As New FormPrestamos()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
+                Dim f As New FormPrestamos With {
+                    .TopLevel = False,
+                    .FormBorderStyle = FormBorderStyle.None,
+                    .Dock = DockStyle.Fill
+                }
                 PanelContenido.Controls.Add(f)
                 f.Show()
 
@@ -169,11 +169,8 @@ Public Class Interface_Administrador
         seccionActual = titulo
     End Sub
 
-    Private Sub btn_NavCLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles btn_NavCLIENTESToolStripMenuItem.Click
 
-    End Sub
-
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Login.Show()
         Me.Hide()
     End Sub
