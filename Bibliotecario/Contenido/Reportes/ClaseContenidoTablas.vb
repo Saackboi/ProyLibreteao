@@ -9,7 +9,6 @@ Public Class ClaseContenidoTablas
     Private ReadOnly dgvActividad As DataGridView
     Private ReadOnly dgvLibros As DataGridView
     Private ReadOnly dgvMultas As DataGridView
-    Private ReadOnly dgvUsuarios As DataGridView
 
     ' ==========================================
     ' CONFIGURACIÓN API
@@ -25,17 +24,15 @@ Public Class ClaseContenidoTablas
         Return New HttpClient(handler)
     End Function
 
-    Public Sub New(dgvTablaActividadSemanal As DataGridView, dgvLibros As DataGridView, dgvMultas As DataGridView, dgvUsuarios As DataGridView)
+    Public Sub New(dgvTablaActividadSemanal As DataGridView, dgvLibros As DataGridView, dgvMultas As DataGridView)
         ' Validar dependencias
         If dgvTablaActividadSemanal Is Nothing Then Throw New ArgumentNullException(NameOf(dgvTablaActividadSemanal))
         If dgvLibros Is Nothing Then Throw New ArgumentNullException(NameOf(dgvLibros))
         If dgvMultas Is Nothing Then Throw New ArgumentNullException(NameOf(dgvMultas))
-        If dgvUsuarios Is Nothing Then Throw New ArgumentNullException(NameOf(dgvUsuarios))
 
         Me.dgvActividad = dgvTablaActividadSemanal
         Me.dgvLibros = dgvLibros
         Me.dgvMultas = dgvMultas
-        Me.dgvUsuarios = dgvUsuarios
     End Sub
 
     ' =========================================================================
@@ -147,45 +144,7 @@ Public Class ClaseContenidoTablas
     End Sub
 
     ' =========================================================================
-    ' 4. TABLA DE USUARIOS (tabla 4)
-    ' Esta parte NO CAMBIA, funciona sobre los datos visuales del Grid
-    ' =========================================================================
-    Friend Async Sub MostrarTablaUsuarios()
-        If dgvUsuarios Is Nothing Then Return
-        Try
-            ' Llamada API
-            Dim json As String = Await client.GetStringAsync(BaseUrl & "/usuarios")
-            Dim lista = JsonConvert.DeserializeObject(Of List(Of Usuario))(json)
-
-            ' Configuración Visual
-            dgvUsuarios.Columns.Clear()
-            dgvUsuarios.Rows.Clear()
-            dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-
-            dgvUsuarios.Columns.Add("IdUsuario", "ID")
-            dgvUsuarios.Columns.Add("Nombre", "Nombre")
-            dgvUsuarios.Columns.Add("Correo", "Correo")
-            dgvUsuarios.Columns.Add("TipoUsuario", "Tipo de Usuario")
-
-            ' Llenado
-            For Each usuario In lista
-                If usuario.TipoUsuario = "cliente" Then
-
-                End If
-                dgvUsuarios.Rows.Add(
-                    usuario.IdUsuario,
-                    usuario.Nombre,
-                    usuario.Correo,
-                    usuario.TipoUsuario
-                )
-            Next
-        Catch ex As Exception
-            ' Manejo silencioso
-        End Try
-    End Sub
-
-    ' =========================================================================
-    ' 5. LÓGICA DE IMPRESIÓN (PDF)
+    ' 4. LÓGICA DE IMPRESIÓN (PDF)
     ' Esta parte NO CAMBIA, funciona sobre los datos visuales del Grid
     ' =========================================================================
     Friend Sub DescargarReportes(tabSeleccionada As TabPage)
@@ -297,8 +256,6 @@ Public Class ClaseContenidoTablas
                     dibujarTabla(dgvMultas, "Tabla de Multas")
                 Case "tpLibros"
                     dibujarTabla(dgvLibros, "Listado de Libros")
-                Case "tpUsuarios"
-                    dibujarTabla(dgvUsuarios, "Listado de Usuarios")
             End Select
         End If
     End Sub

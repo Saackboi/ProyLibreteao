@@ -139,13 +139,6 @@ Public Class Interface_Administrador
                 }
                 PanelContenido.Controls.Add(f)
                 f.Show()
-            Case "CLIENTES"
-                Dim f As New FormUsuarios()
-                f.TopLevel = False
-                f.FormBorderStyle = FormBorderStyle.None
-                f.Dock = DockStyle.Fill
-                PanelContenido.Controls.Add(f)
-                f.Show()
             Case "REPORTES"
                 Dim f As New FormReporte With {
                     .TopLevel = False,
