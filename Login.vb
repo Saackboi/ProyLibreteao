@@ -56,9 +56,13 @@ Public Class Login
             ' Redirección según tipo de usuario
             Select Case usuarioLogeado.TipoUsuario.Trim().ToLower()
                 Case "cliente"
-                    interfacesninos.Show()
+                    CatalogoLibros.NombreUsuarioActual = usuarioLogeado.Nombre
+                    CatalogoLibros.EsInvitado = False
+                    CatalogoLibros.Show()
 
                 Case "bibliotecario"
+                    CatalogoLibros.NombreUsuarioActual = usuarioLogeado.Nombre
+                    CatalogoLibros.EsInvitado = False
                     Interface_Administrador.Show()
 
                 Case Else
@@ -138,10 +142,14 @@ Public Class Login
         Return True
     End Function
 
+    '========== ENTRAR COMO INVITADO ================
     Private Sub btnEntrarInvitado_Click(sender As Object, e As EventArgs) Handles btnEntrarInvitado.Click
-        'Interface_invitados.Show()
+        CatalogoLibros.NombreUsuarioActual = "Invitado"
+        CatalogoLibros.EsInvitado = True
+        CatalogoLibros.Show()
         Me.Hide()
     End Sub
+
     '======================== CENTRAR PANEL ===========================
     Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         Panel2.Left = (Me.ClientSize.Width - Panel2.Width) / 2
