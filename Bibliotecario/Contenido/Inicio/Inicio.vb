@@ -42,11 +42,11 @@ Public Class Inicio
     ' BOTONES DE ACCESO RÁPIDO
     ' =================================================
     Private Sub btnIrPrestamo_Click(sender As Object, e As EventArgs) Handles btnIrPrestamo.Click
-        Interface_Administrador.CambiarSeccion("INICIO", My.Resources.iconoInicio)
+        Interface_Administrador.CambiarSeccion("PRÉSTAMOS", My.Resources.iconoInicio)
     End Sub
 
     Private Sub btnIrDevolucion_Click(sender As Object, e As EventArgs) Handles btnIrDevolucion.Click
-        Interface_Administrador.CambiarSeccion("INICIO", My.Resources.iconoInicio)
+        Interface_Administrador.CambiarSeccion("CLIENTES", My.Resources.iconoInicio)
     End Sub
 
     Private Sub btnIrCatalogo_Click(sender As Object, e As EventArgs) Handles btnIrCatalogo.Click

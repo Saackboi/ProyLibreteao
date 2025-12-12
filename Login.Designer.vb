@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -51,7 +51,7 @@ Partial Class Login
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.btnIniciarSesion)
         Me.Panel2.Controls.Add(Me.btnRegistrarse)
         Me.Panel2.Controls.Add(Me.btnEntrarInvitado)
@@ -69,11 +69,14 @@ Partial Class Login
         '
         'btnIniciarSesion
         '
-        Me.btnIniciarSesion.BackColor = System.Drawing.Color.Gold
-        Me.btnIniciarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIniciarSesion.Location = New System.Drawing.Point(56, 295)
+        Me.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnIniciarSesion.FlatAppearance.BorderSize = 0
+        Me.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIniciarSesion.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnIniciarSesion.ForeColor = System.Drawing.Color.White
+        Me.btnIniciarSesion.Location = New System.Drawing.Point(56, 300)
         Me.btnIniciarSesion.Name = "btnIniciarSesion"
-        Me.btnIniciarSesion.Size = New System.Drawing.Size(300, 40)
+        Me.btnIniciarSesion.Size = New System.Drawing.Size(300, 45)
         Me.btnIniciarSesion.TabIndex = 12
         Me.btnIniciarSesion.Text = "INICIAR SESIÓN"
         Me.btnIniciarSesion.UseVisualStyleBackColor = False
@@ -81,61 +84,65 @@ Partial Class Login
         'btnRegistrarse
         '
         Me.btnRegistrarse.AutoSize = True
-        Me.btnRegistrarse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarse.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarse.Location = New System.Drawing.Point(53, 358)
+        Me.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrarse.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.btnRegistrarse.ForeColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.btnRegistrarse.Location = New System.Drawing.Point(15, 358)
         Me.btnRegistrarse.Name = "btnRegistrarse"
-        Me.btnRegistrarse.Size = New System.Drawing.Size(70, 15)
+        Me.btnRegistrarse.Size = New System.Drawing.Size(189, 19)
         Me.btnRegistrarse.TabIndex = 11
-        Me.btnRegistrarse.Text = "Registrarse"
+        Me.btnRegistrarse.Text = "¿No tienes cuenta? Regístrate"
         '
         'btnEntrarInvitado
         '
         Me.btnEntrarInvitado.AutoSize = True
-        Me.btnEntrarInvitado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEntrarInvitado.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEntrarInvitado.Location = New System.Drawing.Point(257, 358)
+        Me.btnEntrarInvitado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEntrarInvitado.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.btnEntrarInvitado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEntrarInvitado.Location = New System.Drawing.Point(232, 358)
         Me.btnEntrarInvitado.Name = "btnEntrarInvitado"
-        Me.btnEntrarInvitado.Size = New System.Drawing.Size(119, 15)
+        Me.btnEntrarInvitado.Size = New System.Drawing.Size(137, 19)
         Me.btnEntrarInvitado.TabIndex = 9
         Me.btnEntrarInvitado.Text = "Entrar como invitado"
         '
         'txtContrasena
         '
-        Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContrasena.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.txtContrasena.Location = New System.Drawing.Point(56, 250)
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrasena.Size = New System.Drawing.Size(300, 22)
+        Me.txtContrasena.Size = New System.Drawing.Size(300, 27)
         Me.txtContrasena.TabIndex = 4
         '
         'txtUsuario
         '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.txtUsuario.Location = New System.Drawing.Point(56, 184)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(300, 22)
+        Me.txtUsuario.Size = New System.Drawing.Size(300, 27)
         Me.txtUsuario.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(52, 218)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(52, 224)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 20)
+        Me.Label2.Size = New System.Drawing.Size(103, 19)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "CONTRASEÑA"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(52, 151)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(52, 158)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(197, 20)
+        Me.Label1.Size = New System.Drawing.Size(162, 19)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "CORREO ELECTRÓNICO"
         '
@@ -143,9 +150,9 @@ Partial Class Login
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.ProyLibreteao.My.Resources.Resources.user
-        Me.PictureBox2.Location = New System.Drawing.Point(148, 23)
+        Me.PictureBox2.Location = New System.Drawing.Point(148, 15)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(115, 112)
+        Me.PictureBox2.Size = New System.Drawing.Size(115, 75)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
@@ -157,7 +164,7 @@ Partial Class Login
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(800, 472)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -165,13 +172,12 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Green
         Me.ClientSize = New System.Drawing.Size(800, 472)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Acceso al Sistema"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
